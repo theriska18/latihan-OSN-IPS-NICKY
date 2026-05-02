@@ -1,0 +1,62 @@
+[
+  {
+    "text": "Di bawah ini adalah syarat-syarat peta. Kecuali...",
+    "options": ["Legenda", "Simbol", "Keterangan", "Inset"],
+    "answer": 2,
+    "pembahasan": "'Keterangan' bukan syarat peta yang baku. Syarat peta yang benar meliputi: judul, skala, legenda, simbol, orientasi, sumber, dan inset."
+  },
+  {
+    "text": "Proyeksi peta yang cocok digunakan untuk menggambarkan daerah kutub adalah...",
+    "options": ["Silindris", "Kerucut", "Azimuthal", "Mercator"],
+    "answer": 2,
+    "pembahasan": "Proyeksi Azimuthal paling cocok untuk daerah kutub karena titik pusat proyeksi diletakkan di kutub sehingga distorsi minimal."
+  },
+  {
+    "text": "Skala 1:100.000 berarti 1 cm di peta mewakili berapa km di lapangan?",
+    "options": ["1 km", "10 km", "100 km", "0,1 km"],
+    "answer": 0,
+    "pembahasan": "1:100.000 berarti 1 cm = 100.000 cm = 1.000 m = 1 km di lapangan."
+  },
+  {
+    "text": "Garis yang menghubungkan tempat-tempat yang memiliki tekanan udara yang sama disebut...",
+    "options": ["Isohyet", "Isotherm", "Isobar", "Isohips"],
+    "answer": 2,
+    "pembahasan": "Isobar adalah garis khayal yang menghubungkan tempat-tempat dengan tekanan udara sama. Isohyet = curah hujan, Isotherm = suhu, Isohips = ketinggian."
+  },
+  {
+    "text": "Fenomena alam yang termasuk dalam aspek fisik geografi adalah...",
+    "options": ["Mobilitas penduduk", "Persebaran permukiman", "Erosi tanah", "Kepadatan penduduk"],
+    "answer": 2,
+    "pembahasan": "Erosi tanah merupakan aspek fisik karena berkaitan dengan proses alam. Pilihan lain termasuk aspek sosial/manusia."
+  },
+  {
+    "text": "Lapisan atmosfer yang berfungsi melindungi bumi dari sinar ultraviolet adalah...",
+    "options": ["Troposfer", "Stratosfer", "Mesosfer", "Termosfer"],
+    "answer": 1,
+    "pembahasan": "Stratosfer mengandung lapisan ozon yang menyerap dan melindungi bumi dari radiasi ultraviolet berbahaya."
+  },
+  {
+    "text": "Proses pengendapan material hasil erosi disebut...",
+    "options": ["Abrasi", "Sedimentasi", "Deflasi", "Korasi"],
+    "answer": 1,
+    "pembahasan": "Sedimentasi adalah proses pengendapan material hasil erosi oleh tenaga air, angin, atau gletser."
+  },
+  {
+    "text": "Jenis tanah yang terbentuk dari pelapukan batuan granit adalah...",
+    "options": ["Tanah alluvial", "Tanah vulkanik", "Tanah laterit", "Tanah gambut"],
+    "answer": 2,
+    "pembahasan": "Tanah laterit terbentuk dari pelapukan batuan granit di daerah tropis dengan curah hujan tinggi, menghasilkan tanah merah miskin hara."
+  },
+  {
+    "text": "Sumber air tanah yang keluar secara alami ke permukaan disebut...",
+    "options": ["Artesis", "Mata air", "Danau", "Sungai"],
+    "answer": 1,
+    "pembahasan": "Mata air (spring) adalah air tanah yang keluar secara alami ke permukaan. Artesis adalah sumur yang air tanahnya memancar karena tekanan hidrostatis."
+  },
+  {
+    "text": "Hutan yang terdapat di daerah khatulistiwa dengan curah hujan tinggi disebut...",
+    "options": ["Hutan sabana", "Hutan gugur", "Hutan hujan tropis", "Hutan bakau"],
+    "answer": 2,
+    "pembahasan": "Hutan hujan tropis terdapat di sekitar khatulistiwa dengan curah hujan 2.000–4.000 mm/tahun dan suhu tinggi sepanjang tahun."
+  }
+]
