@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>OSN IPS NICKY</title>
+<title>CBT Tryout Geografi</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -24,7 +24,7 @@
 }}
 body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
 .wrap{max-width:860px;margin:0 auto;padding:20px 24px}
- 
+
 /* ─── LOGIN SCREEN ─── */
 #login-screen{
   min-height:100vh;display:flex;align-items:center;justify-content:center;
@@ -86,7 +86,7 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(
   font-size:10px;font-weight:600;padding:3px 8px;border-radius:20px;
   border:1px solid var(--amber);
 }
- 
+
 /* ─── USER BAR ─── */
 .user-bar{
   display:flex;align-items:center;justify-content:space-between;
@@ -109,14 +109,14 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(
   transition:all .15s;
 }
 .btn-logout:hover{background:var(--red-light);color:var(--red-dark);border-color:var(--red)}
- 
+
 /* ─── Loading ─── */
 #loading-screen{text-align:center;padding:60px 20px}
 .loading-spinner{width:40px;height:40px;border:3px solid var(--border-md);border-top-color:var(--blue);border-radius:50%;animation:spin .8s linear infinite;margin:0 auto 16px}
 @keyframes spin{to{transform:rotate(360deg)}}
 .loading-text{font-size:14px;color:var(--text-sec)}
 .error-box{background:var(--red-light);border:1px solid var(--red);border-radius:12px;padding:16px;color:var(--red-dark);font-size:14px;max-width:400px;margin:0 auto}
- 
+
 /* ─── Header ─── */
 .header-bar{
   display:flex;justify-content:space-between;align-items:center;
@@ -132,7 +132,7 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(
 .timer-val{font-size:22px;font-weight:500;color:#fff;letter-spacing:3px;font-family:monospace}
 .timer-lbl{font-size:10px;color:rgba(255,255,255,.7);margin-top:1px}
 .timer-box.danger{background:rgba(226,75,74,.3);border-color:rgba(226,75,74,.8)}
- 
+
 /* ─── Layout ─── */
 .layout{display:grid;grid-template-columns:1fr 210px;gap:12px}
 .q-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px}
@@ -169,7 +169,7 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(
 .btn-sm{padding:6px 12px;font-size:12px}
 .btn-ghost{background:transparent;border-color:transparent;color:var(--text-sec)}
 .btn-ghost:hover{background:var(--surface);border-color:var(--border)}
- 
+
 /* ─── Sidebar ─── */
 .sidebar{display:flex;flex-direction:column;gap:10px}
 .side-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:14px}
@@ -193,7 +193,7 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(
 .stat-box{background:var(--surface);border-radius:8px;padding:9px;text-align:center}
 .stat-val{font-size:18px;font-weight:500}
 .stat-lbl{font-size:10px;color:var(--text-sec);margin-top:1px}
- 
+
 /* ─── Result ─── */
 #result-screen{display:none}
 .result-header{
@@ -227,7 +227,7 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(
 .ri-skip-ans{color:var(--text-sec)}
 .ri-pembahasan{font-size:12px;color:var(--text-sec);background:rgba(255,255,255,.6);padding:7px 10px;border-radius:7px;margin-top:7px;line-height:1.5}
 .result-actions{display:flex;gap:8px;justify-content:center;margin-top:14px;flex-wrap:wrap}
- 
+
 /* ─── History ─── */
 #history-screen{display:none}
 .history-header{
@@ -260,7 +260,7 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(
 .hi-actions{display:flex;flex-direction:column;gap:5px;align-items:flex-end}
 .hi-empty{text-align:center;padding:40px;color:var(--text-sec);font-size:14px}
 .hi-user-tag{font-size:10px;color:var(--text-sec);margin-top:2px}
- 
+
 /* Admin badge in history */
 .admin-only-notice{
   display:flex;align-items:center;gap:6px;
@@ -268,7 +268,7 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(
   background:var(--amber-light);border:1px solid var(--amber);
   border-radius:8px;padding:8px 12px;margin-bottom:12px;
 }
- 
+
 /* Top nav */
 .top-nav{display:flex;gap:8px;margin-bottom:14px}
 .top-nav-btn{
@@ -277,7 +277,7 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(
 }
 .top-nav-btn:hover{background:var(--surface)}
 .top-nav-btn.active{background:var(--purple-light);color:var(--purple-dark);border-color:var(--purple)}
- 
+
 @media(max-width:640px){
   .wrap{padding:12px 14px}
   .layout{grid-template-columns:1fr}
@@ -289,7 +289,7 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(
 </style>
 </head>
 <body>
- 
+
 <!-- ═══════════════════════════════════════
      LOGIN SCREEN
 ═══════════════════════════════════════ -->
@@ -297,17 +297,17 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(
   <div class="login-box">
     <div class="login-logo">
       <div class="login-logo-icon">📝</div>
-      <h1>LATIHAN OSN IPS NICKY</h1>
+      <h1>CBT Tryout Geografi</h1>
       <p>Masuk untuk mengakses ujian</p>
     </div>
- 
+
     <div class="login-tabs">
       <button class="login-tab active" id="tab-siswa" onclick="switchTab('siswa')">👨‍🎓 Siswa</button>
       <button class="login-tab" id="tab-admin" onclick="switchTab('admin')">🔐 Admin</button>
     </div>
- 
+
     <div id="login-error" class="login-error">Username atau password salah.</div>
- 
+
     <div id="form-siswa">
       <div class="login-field">
         <label>Username Siswa</label>
@@ -323,7 +323,7 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(
       </div>
       <button class="login-btn" onclick="doLogin('siswa')">Masuk sebagai Siswa</button>
     </div>
- 
+
     <div id="form-admin" style="display:none">
       <div class="login-field">
         <label>Username Admin</label>
@@ -340,13 +340,13 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(
     </div>
   </div>
 </div>
- 
+
 <!-- ═══════════════════════════════════════
      MAIN APP
 ═══════════════════════════════════════ -->
 <div id="main-app" style="display:none">
 <div class="wrap">
- 
+
   <!-- User Bar -->
   <div class="user-bar">
     <div class="user-info">
@@ -358,18 +358,18 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(
     </div>
     <button class="btn-logout" onclick="doLogout()">Keluar</button>
   </div>
- 
+
   <div class="top-nav">
     <button class="top-nav-btn active" id="nav-tryout" onclick="showScreen('tryout')">📝 Tryout</button>
     <button class="top-nav-btn" id="nav-history" onclick="showScreen('history')">📋 Riwayat Tryout</button>
   </div>
- 
+
   <!-- LOADING -->
   <div id="loading-screen">
     <div class="loading-spinner"></div>
     <div class="loading-text">Memuat soal...</div>
   </div>
- 
+
   <!-- CBT APP -->
   <div id="cbt-app" style="display:none">
     <div class="header-bar">
@@ -419,7 +419,7 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(
       </div>
     </div>
   </div>
- 
+
   <!-- RESULT -->
   <div id="result-screen" style="display:none">
     <div class="result-header">
@@ -444,7 +444,7 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(
       </div>
     </div>
   </div>
- 
+
   <!-- HISTORY -->
   <div id="history-screen" style="display:none">
     <div class="history-header">
@@ -458,53 +458,57 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(
     </div>
     <div class="history-list" id="history-list"></div>
   </div>
- 
+
 </div>
 </div>
- 
+
 <script>
 // ─────────────────────────────────────────
 // KONFIGURASI
 // ─────────────────────────────────────────
 const CONFIG = {
-  subject: 'OSN IPS',
+  subject: 'Geografi',
   questionsFile: './questions/geografi.json',
   duration: 60 * 60
 };
- 
+
 const HISTORY_KEY = 'tryout_history_' + CONFIG.subject.toLowerCase();
 const SESSION_KEY = 'tryout_session';
- 
+
 // ─────────────────────────────────────────
 // AUTH — tambahkan/edit akun di sini
 // ─────────────────────────────────────────
 const USERS = {
   siswa: [
-    { username: 'nicky',    password: 'nickyips#!1',  name: 'Nicky' },
+    { username: 'nicky',    password: 'nicky123',  name: 'Nicky' },
+    { username: 'budi',     password: 'budi123',   name: 'Budi' },
+    { username: 'sari',     password: 'sari123',   name: 'Sari' },
+    { username: 'dimas',    password: 'dimas123',  name: 'Dimas' },
   ],
   admin: [
-    { username: 'admin',    password: 'riskuy1818', name: 'Administrator' },
+    { username: 'admin',    password: 'admin2024', name: 'Administrator' },
+    { username: 'guru',     password: 'guru2024',  name: 'Guru' },
   ]
 };
- 
+
 // ─────────────────────────────────────────
 // STATE
 // ─────────────────────────────────────────
 let questions = [], cur = 0, answers = [], timeLeft = CONFIG.duration, timerInterval = null;
 let currentUser = null; // { username, name, role }
- 
+
 // ─────────────────────────────────────────
 // AUTH LOGIC
 // ─────────────────────────────────────────
 let activeTab = 'siswa';
- 
+
 function togglePw(inputId, btn){
   const input = document.getElementById(inputId);
   const show = input.type === 'password';
   input.type = show ? 'text' : 'password';
   btn.textContent = show ? '🙈' : '👁';
 }
- 
+
 function switchTab(tab){
   activeTab = tab;
   document.getElementById('tab-siswa').classList.toggle('active', tab==='siswa');
@@ -513,7 +517,7 @@ function switchTab(tab){
   document.getElementById('form-admin').style.display = tab==='admin'?'block':'none';
   document.getElementById('login-error').classList.remove('show');
 }
- 
+
 function doLogin(role){
   const u = document.getElementById(role+'-username').value.trim().toLowerCase();
   const p = document.getElementById(role+'-password').value;
@@ -527,7 +531,7 @@ function doLogin(role){
   sessionStorage.setItem(SESSION_KEY, JSON.stringify(currentUser));
   startApp();
 }
- 
+
 function doLogout(){
   if(!confirm('Yakin ingin keluar?')) return;
   clearInterval(timerInterval);
@@ -543,7 +547,7 @@ function doLogout(){
   document.getElementById('login-error').classList.remove('show');
   switchTab('siswa');
 }
- 
+
 function restoreSession(){
   try {
     const saved = sessionStorage.getItem(SESSION_KEY);
@@ -551,7 +555,7 @@ function restoreSession(){
   } catch(e){}
   return false;
 }
- 
+
 function startApp(){
   document.getElementById('login-screen').style.display = 'none';
   document.getElementById('main-app').style.display = 'block';
@@ -572,7 +576,7 @@ function startApp(){
   showScreen('tryout');
   init();
 }
- 
+
 // ─────────────────────────────────────────
 // INIT — fetch soal
 // ─────────────────────────────────────────
@@ -597,7 +601,7 @@ async function init(){
       '<small>Pastikan file <code>questions/geografi.json</code> ada di folder yang sama dengan <code>index.html</code>.</small></div>';
   }
 }
- 
+
 // ─────────────────────────────────────────
 // TIMER
 // ─────────────────────────────────────────
@@ -613,7 +617,7 @@ function startTimer(){
     if(timeLeft<=0){clearInterval(timerInterval); submitTest();}
   },1000);
 }
- 
+
 // ─────────────────────────────────────────
 // RENDER
 // ─────────────────────────────────────────
@@ -633,7 +637,7 @@ function render(){
   });
   renderNav(); renderStats();
 }
- 
+
 function renderNav(){
   const g = document.getElementById('nav-grid');
   g.innerHTML = '';
@@ -645,7 +649,7 @@ function renderNav(){
     g.appendChild(b);
   });
 }
- 
+
 function renderStats(){
   const done = answers.filter(a=>a!==null).length;
   const pct = Math.round(done/questions.length*100);
@@ -655,10 +659,10 @@ function renderStats(){
   document.getElementById('stat-ans').textContent = done;
   document.getElementById('stat-skip').textContent = questions.length-done;
 }
- 
+
 function nextQ(){if(cur<questions.length-1){cur++; render();}}
 function prevQ(){if(cur>0){cur--; render();}}
- 
+
 function confirmSubmit(){
   const unanswered = answers.filter(a=>a===null).length;
   if(unanswered>0){
@@ -666,11 +670,11 @@ function confirmSubmit(){
   }
   submitTest();
 }
- 
+
 // ─────────────────────────────────────────
 // SUBMIT
 // ─────────────────────────────────────────
-function submitTest(){
+async function submitTest(){
   clearInterval(timerInterval);
   let benar=0, salah=0, skip=0;
   questions.forEach((q,i)=>{
@@ -680,12 +684,12 @@ function submitTest(){
   });
   const nilai = Math.round(benar/questions.length*100);
   const timeUsed = CONFIG.duration - timeLeft;
- 
+
   document.getElementById('res-score').textContent = nilai;
   document.getElementById('res-benar').textContent = benar;
   document.getElementById('res-salah').textContent = salah;
   document.getElementById('res-skip').textContent = skip;
- 
+
   const L = ['A','B','C','D'];
   const rl = document.getElementById('review-list');
   rl.innerHTML = '';
@@ -707,9 +711,9 @@ function submitTest(){
       +'<div class="ri-pembahasan">Pembahasan: '+q.pembahasan+'</div>';
     rl.appendChild(div);
   });
- 
+
   // Simpan riwayat dengan info user
-  saveHistory({
+  await saveHistory({
     id: Date.now(),
     date: new Date().toISOString(),
     subject: CONFIG.subject,
@@ -725,93 +729,146 @@ function submitTest(){
       pembahasan: q.pembahasan
     }))
   });
- 
+
   document.getElementById('result-actions').innerHTML =
     '<button class="btn" onclick="showScreen(\'history\')">📋 Lihat Riwayat</button>' +
     '<button class="btn btn-blue" onclick="resetTest()">🔄 Ulangi Tryout</button>';
- 
+
   document.getElementById('cbt-app').style.display = 'none';
   document.getElementById('result-screen').style.display = 'block';
 }
- 
+
 // ─────────────────────────────────────────
-// HISTORY
+// HISTORY — Google Sheets Backend
 // ─────────────────────────────────────────
-function loadHistory(){
-  try { return JSON.parse(localStorage.getItem(HISTORY_KEY)) || []; }
-  catch(e){ return []; }
+const SHEET_URL = 'https://script.google.com/macros/s/AKfycbzD4uRI3-7bKgwq2iOPGcXW9p5da0H2OEkrSGJgcjUdNwt8qYW66ajMjx0RE0ien_U/exec';
+
+async function loadHistory(){
+  try {
+    const isAdmin = currentUser?.role === 'admin';
+    const url = isAdmin
+      ? SHEET_URL + '?action=getAll'
+      : SHEET_URL + '?action=getByUser&username=' + encodeURIComponent(currentUser.username);
+    const res = await fetch(url);
+    const data = await res.json();
+    // Normalise field names dari sheet ke format lama
+    return data.map(r => ({
+      id: r.id,
+      username: r.username,
+      userName: r.name,
+      date: r.date,
+      subject: CONFIG.subject,
+      totalQ: Number(r.total),
+      nilai: Number(r.score),
+      benar: r.answers.filter ? undefined : undefined, // dihitung ulang dari answers
+      salah: undefined,
+      skip: undefined,
+      timeUsed: r.answers.timeUsed || 0,
+      snapshot: r.answers.snapshot || [],
+      _raw: r
+    })).map(r => {
+      const snap = r.snapshot;
+      const benar = snap.filter(q => q.userAnswer !== null && q.userAnswer === q.answer).length;
+      const salah = snap.filter(q => q.userAnswer !== null && q.userAnswer !== q.answer).length;
+      const skip  = snap.filter(q => q.userAnswer === null).length;
+      return { ...r, benar, salah, skip };
+    });
+  } catch(e){
+    console.error('Gagal load riwayat:', e);
+    return [];
+  }
 }
- 
-function saveHistory(record){
-  const hist = loadHistory();
-  hist.unshift(record);
-  localStorage.setItem(HISTORY_KEY, JSON.stringify(hist));
+
+async function saveHistory(record){
+  try {
+    await fetch(SHEET_URL, {
+      method: 'POST',
+      body: JSON.stringify({
+        action: 'save',
+        username: record.username,
+        name: record.userName,
+        score: record.nilai,
+        total: record.totalQ,
+        date: record.date,
+        answers: {
+          timeUsed: record.timeUsed,
+          snapshot: record.snapshot
+        }
+      })
+    });
+  } catch(e){
+    console.error('Gagal simpan riwayat:', e);
+  }
 }
- 
-function deleteHistory(id){
-  // Double-check role di runtime — jangan hanya sembunyikan tombol di UI
+
+async function deleteHistory(id){
   if(currentUser?.role !== 'admin'){
     alert('Hanya admin yang dapat menghapus riwayat.');
     return;
   }
   if(!confirm('Hapus riwayat ini?')) return;
-  const hist = loadHistory().filter(r=>r.id!==id);
-  localStorage.setItem(HISTORY_KEY, JSON.stringify(hist));
-  renderHistory();
+  try {
+    await fetch(SHEET_URL, {
+      method: 'POST',
+      body: JSON.stringify({ action: 'delete', id })
+    });
+    renderHistory();
+  } catch(e){ alert('Gagal menghapus riwayat.'); }
 }
- 
-function clearAllHistory(){
+
+async function clearAllHistory(){
   if(currentUser?.role !== 'admin'){
     alert('Hanya admin yang dapat menghapus riwayat.');
     return;
   }
   if(!confirm('Hapus SEMUA riwayat tryout? Tindakan ini tidak bisa dibatalkan.')) return;
-  localStorage.removeItem(HISTORY_KEY);
-  renderHistory();
+  try {
+    await fetch(SHEET_URL, {
+      method: 'POST',
+      body: JSON.stringify({ action: 'deleteAll', username: 'ALL' })
+    });
+    renderHistory();
+  } catch(e){ alert('Gagal menghapus semua riwayat.'); }
 }
- 
+
 function formatTime(sec){
   const m=Math.floor(sec/60), s=sec%60;
   return pad(m)+'m '+pad(s)+'s';
 }
- 
+
 function formatDate(iso){
   return new Date(iso).toLocaleString('id-ID',{
     day:'numeric',month:'short',year:'numeric',hour:'2-digit',minute:'2-digit'
   });
 }
- 
-function renderHistory(){
-  const isAdmin = currentUser?.role === 'admin';
-  let hist = loadHistory();
- 
-  // Siswa hanya melihat riwayat miliknya sendiri
-  if(!isAdmin){
-    hist = hist.filter(r => r.username === currentUser.username);
-  }
- 
+
+async function renderHistory(){
   const container = document.getElementById('history-list');
+  container.innerHTML = '<div class="hi-empty">⏳ Memuat riwayat...</div>';
+  const hist = await loadHistory();
+
   if(hist.length===0){
     container.innerHTML = '<div class="hi-empty">Belum ada riwayat tryout.<br>Selesaikan tryout untuk menyimpan hasil.</div>';
     return;
   }
- 
+
   container.innerHTML = '';
+  const isAdmin = currentUser?.role === 'admin';
   hist.forEach(r=>{
     const ringClass = r.nilai>=80?'excellent':r.nilai>=60?'good':'poor';
     const item = document.createElement('div');
     item.className = 'history-item';
- 
+
     // Tombol hapus hanya muncul jika admin
     const deleteBtn = isAdmin
       ? '<button class="btn btn-sm btn-ghost" style="color:var(--red)" onclick="deleteHistory('+r.id+')">Hapus</button>'
       : '';
- 
+
     // Admin lihat nama siswa, siswa tidak perlu
     const userTag = isAdmin && r.userName
       ? '<div class="hi-user-tag">👤 '+r.userName+' ('+r.username+')</div>'
       : '';
- 
+
     item.innerHTML =
       '<div class="hi-score-ring '+ringClass+'">'+r.nilai+'</div>'+
       '<div class="hi-body">'+
@@ -831,22 +888,23 @@ function renderHistory(){
     container.appendChild(item);
   });
 }
- 
-function viewHistoryDetail(id){
-  const record = loadHistory().find(r=>r.id===id);
+
+async function viewHistoryDetail(id){
+  const hist = await loadHistory();
+  const record = hist.find(r=>r.id==id);
   if(!record) return;
- 
+
   // Siswa hanya bisa lihat miliknya
   if(currentUser.role !== 'admin' && record.username !== currentUser.username){
     alert('Anda tidak memiliki akses ke riwayat ini.');
     return;
   }
- 
+
   document.getElementById('res-score').textContent = record.nilai;
   document.getElementById('res-benar').textContent = record.benar;
   document.getElementById('res-salah').textContent = record.salah;
   document.getElementById('res-skip').textContent = record.skip;
- 
+
   const L = ['A','B','C','D'];
   const rl = document.getElementById('review-list');
   rl.innerHTML = '';
@@ -868,7 +926,7 @@ function viewHistoryDetail(id){
       +'<div class="ri-pembahasan">Pembahasan: '+q.pembahasan+'</div>';
     rl.appendChild(div);
   });
- 
+
   document.getElementById('history-screen').style.display = 'none';
   document.getElementById('result-screen').style.display = 'block';
   document.getElementById('result-actions').innerHTML =
@@ -876,7 +934,7 @@ function viewHistoryDetail(id){
     '<button class="btn btn-blue" onclick="resetTest()">🔄 Coba Lagi</button>';
   setActiveNav('history');
 }
- 
+
 // ─────────────────────────────────────────
 // SCREEN ROUTING
 // ─────────────────────────────────────────
@@ -896,12 +954,12 @@ function showScreen(screen){
     document.getElementById('history-screen').style.display = 'block';
   }
 }
- 
+
 function setActiveNav(screen){
   document.getElementById('nav-tryout').classList.toggle('active', screen==='tryout');
   document.getElementById('nav-history').classList.toggle('active', screen==='history');
 }
- 
+
 function resetTest(){
   answers = new Array(questions.length).fill(null);
   cur = 0; timeLeft = CONFIG.duration;
@@ -911,7 +969,7 @@ function resetTest(){
   render();
   startTimer();
 }
- 
+
 // ─────────────────────────────────────────
 // BOOTSTRAP
 // ─────────────────────────────────────────
@@ -921,7 +979,7 @@ document.addEventListener('keydown', e => {
     doLogin(activeTab);
   }
 });
- 
+
 // Restore session if exists (e.g. page refresh)
 if(restoreSession()){
   startApp();
