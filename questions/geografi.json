@@ -1,244 +1,216 @@
 [
   {
     "id": 1,
-    "pertanyaan": "Apa ciri utama masyarakat Indonesia pada masa praaksara?",
-    "pilihan": ["Sudah mengenal tulisan", "Menggunakan logam", "Belum mengenal tulisan", "Sudah mengenal kerajaan"],
-    "jawaban": "Belum mengenal tulisan",
-    "tingkat": "mudah",
-    "materi": "Pembentukan awal budaya"
+    "text": "Kerajaan Kutai yang terletak di Kalimantan Timur dikenal sebagai kerajaan Hindu tertua di Indonesia. Bukti keberadaan kerajaan ini diketahui melalui prasasti berbentuk tiang batu yang disebut ....",
+    "options": ["Prasasti Ciaruteun", "Yupa", "Prasasti Talang Tuo", "Prasasti Kedukan Bukit"],
+    "answer": 1,
+    "pembahasan": "Yupa adalah prasasti peninggalan Kerajaan Kutai."
   },
   {
     "id": 2,
-    "pertanyaan": "Alat yang digunakan manusia purba pada zaman batu adalah?",
-    "pilihan": ["Kapak perunggu", "Kapak genggam", "Keramik", "Besi"],
-    "jawaban": "Kapak genggam",
-    "tingkat": "mudah",
-    "materi": "Pembentukan awal budaya"
+    "text": "Kerajaan Tarumanegara yang berkembang di Jawa Barat meninggalkan prasasti yang menunjukkan kekuasaan Raja Purnawarman, salah satunya adalah prasasti ....",
+    "options": ["Yupa", "Ciaruteun", "Kedukan Bukit", "Karang Berahi"],
+    "answer": 1,
+    "pembahasan": "Prasasti Ciaruteun adalah peninggalan Tarumanegara."
   },
   {
     "id": 3,
-    "pertanyaan": "Sistem kepercayaan animisme adalah kepercayaan terhadap?",
-    "pilihan": ["Dewa-dewa", "Roh nenek moyang", "Satu Tuhan", "Benda mati"],
-    "jawaban": "Roh nenek moyang",
-    "tingkat": "mudah",
-    "materi": "Pembentukan awal budaya"
+    "text": "Kerajaan Sriwijaya dikenal sebagai kerajaan maritim yang kuat karena menguasai jalur perdagangan di Selat Malaka. Hal ini menyebabkan Sriwijaya berkembang pesat dalam bidang ....",
+    "options": ["Pertanian", "Perdagangan laut", "Industri", "Pertambangan"],
+    "answer": 1,
+    "pembahasan": "Sriwijaya kuat dalam perdagangan laut."
   },
   {
     "id": 4,
-    "pertanyaan": "Masuknya budaya Hindu-Buddha ke Indonesia melalui jalur?",
-    "pilihan": ["Perdagangan", "Penjajahan", "Perang", "Migrasi paksa"],
-    "jawaban": "Perdagangan",
-    "tingkat": "mudah",
-    "materi": "Hindu Buddha"
+    "text": "Kerajaan Majapahit mencapai puncak kejayaan pada masa pemerintahan Hayam Wuruk dengan bantuan Mahapatih Gajah Mada. Wilayah kekuasaannya meliputi hampir seluruh Nusantara. Hal ini dikenal melalui sumpah ....",
+    "options": ["Sumpah Pemuda", "Sumpah Palapa", "Sumpah Setia", "Sumpah Raja"],
+    "answer": 1,
+    "pembahasan": "Sumpah Palapa diucapkan Gajah Mada."
   },
   {
     "id": 5,
-    "pertanyaan": "Kerajaan Hindu tertua di Indonesia adalah?",
-    "pilihan": ["Majapahit", "Sriwijaya", "Kutai", "Tarumanegara"],
-    "jawaban": "Kutai",
-    "tingkat": "mudah",
-    "materi": "Hindu Buddha"
+    "text": "Kerajaan Samudera Pasai yang terletak di Aceh dikenal sebagai kerajaan Islam pertama di Indonesia. Salah satu bukti berkembangnya Islam di kerajaan ini adalah ....",
+    "options": ["Candi", "Masjid dan nisan Islam", "Benteng", "Prasasti Hindu"],
+    "answer": 1,
+    "pembahasan": "Nisan Islam menjadi bukti keberadaan Samudera Pasai."
   },
+
   {
     "id": 6,
-    "pertanyaan": "Candi Borobudur merupakan peninggalan agama?",
-    "pilihan": ["Islam", "Hindu", "Buddha", "Kristen"],
-    "jawaban": "Buddha",
-    "tingkat": "mudah",
-    "materi": "Hindu Buddha"
+    "text": "Kerajaan Demak sebagai kerajaan Islam pertama di Pulau Jawa memiliki peran penting dalam penyebaran Islam. Pendiri kerajaan ini adalah ....",
+    "options": ["Sunan Ampel", "Raden Patah", "Sultan Agung", "Sunan Kalijaga"],
+    "answer": 1,
+    "pembahasan": "Raden Patah adalah pendiri Demak."
   },
   {
     "id": 7,
-    "pertanyaan": "Wali Songo berperan dalam penyebaran agama?",
-    "pilihan": ["Hindu", "Buddha", "Islam", "Katolik"],
-    "jawaban": "Islam",
-    "tingkat": "mudah",
-    "materi": "Islam"
+    "text": "Kerajaan Mataram Islam mencapai puncak kejayaan pada masa Sultan Agung yang berhasil memperluas wilayah kekuasaan di Jawa. Hal ini menunjukkan bahwa Mataram merupakan kerajaan yang bersifat ....",
+    "options": ["Maritim", "Agraris", "Industri", "Modern"],
+    "answer": 1,
+    "pembahasan": "Mataram adalah kerajaan agraris."
   },
   {
     "id": 8,
-    "pertanyaan": "Kerajaan Islam pertama di Indonesia adalah?",
-    "pilihan": ["Demak", "Samudera Pasai", "Mataram", "Banten"],
-    "jawaban": "Samudera Pasai",
-    "tingkat": "mudah",
-    "materi": "Islam"
+    "text": "Kerajaan Singasari merupakan kerajaan Hindu-Buddha yang didirikan oleh Ken Arok. Peninggalan penting dari kerajaan ini adalah candi yang digunakan sebagai tempat pemujaan, yaitu ....",
+    "options": ["Candi Borobudur", "Candi Kidal", "Candi Prambanan", "Candi Muara Takus"],
+    "answer": 1,
+    "pembahasan": "Candi Kidal adalah peninggalan Singasari."
   },
   {
     "id": 9,
-    "pertanyaan": "Masjid sebagai pusat penyebaran Islam berfungsi sebagai?",
-    "pilihan": ["Tempat perdagangan", "Tempat ibadah", "Tempat perang", "Gudang"],
-    "jawaban": "Tempat ibadah",
-    "tingkat": "mudah",
-    "materi": "Islam"
+    "text": "Kerajaan Banten berkembang sebagai kerajaan Islam yang kuat di bidang perdagangan karena letaknya yang strategis di wilayah ....",
+    "options": ["Selat Sunda", "Selat Malaka", "Laut Jawa", "Selat Bali"],
+    "answer": 0,
+    "pembahasan": "Banten berkembang di Selat Sunda."
   },
   {
     "id": 10,
-    "pertanyaan": "Salah satu bukti awal tulisan di Indonesia adalah?",
-    "pilihan": ["Prasasti", "Lukisan gua", "Kapak batu", "Gerabah"],
-    "jawaban": "Prasasti",
-    "tingkat": "mudah",
-    "materi": "Pembentukan awal budaya"
+    "text": "Kerajaan Gowa-Tallo di Sulawesi Selatan dikenal sebagai kerajaan Islam yang kuat dalam perdagangan dan pelayaran. Raja terkenal dari kerajaan ini adalah ....",
+    "options": ["Sultan Agung", "Sultan Hasanuddin", "Raden Patah", "Hayam Wuruk"],
+    "answer": 1,
+    "pembahasan": "Sultan Hasanuddin adalah raja Gowa-Tallo."
   },
 
   {
     "id": 11,
-    "pertanyaan": "Teori Brahmana menjelaskan masuknya Hindu ke Indonesia melalui?",
-    "pilihan": ["Pedagang", "Pendeta", "Prajurit", "Petani"],
-    "jawaban": "Pendeta",
-    "tingkat": "sedang",
-    "materi": "Hindu Buddha"
+    "text": "Kerajaan Kutai dan Tarumanegara merupakan dua kerajaan Hindu tertua di Indonesia. Keduanya memiliki kesamaan dalam hal penggunaan bahasa pada prasasti, yaitu ....",
+    "options": ["Bahasa Melayu", "Bahasa Sanskerta", "Bahasa Jawa", "Bahasa Arab"],
+    "answer": 1,
+    "pembahasan": "Keduanya menggunakan bahasa Sanskerta."
   },
   {
     "id": 12,
-    "pertanyaan": "Ciri masyarakat bercocok tanam adalah?",
-    "pilihan": ["Nomaden", "Menetap", "Berburu", "Mengembara"],
-    "jawaban": "Menetap",
-    "tingkat": "sedang",
-    "materi": "Pembentukan awal budaya"
+    "text": "Kerajaan Sriwijaya tidak hanya dikenal sebagai pusat perdagangan, tetapi juga sebagai pusat pendidikan agama Buddha di Asia Tenggara. Hal ini dibuktikan dengan adanya hubungan dengan ....",
+    "options": ["India dan Cina", "Arab dan Persia", "Eropa", "Afrika"],
+    "answer": 0,
+    "pembahasan": "Sriwijaya berhubungan dengan India dan Cina."
   },
   {
     "id": 13,
-    "pertanyaan": "Kerajaan Sriwijaya dikenal sebagai kerajaan?",
-    "pilihan": ["Agraris", "Maritim", "Industri", "Modern"],
-    "jawaban": "Maritim",
-    "tingkat": "sedang",
-    "materi": "Hindu Buddha"
+    "text": "Kerajaan Majapahit mengalami kemunduran setelah wafatnya Hayam Wuruk dan Gajah Mada. Salah satu penyebab utama kemunduran tersebut adalah ....",
+    "options": ["Bencana alam", "Perang saudara", "Kurangnya perdagangan", "Penjajahan langsung"],
+    "answer": 1,
+    "pembahasan": "Perang saudara melemahkan Majapahit."
   },
   {
     "id": 14,
-    "pertanyaan": "Kitab Negarakertagama ditulis oleh?",
-    "pilihan": ["Empu Tantular", "Mpu Prapanca", "Gajah Mada", "Hayam Wuruk"],
-    "jawaban": "Mpu Prapanca",
-    "tingkat": "sedang",
-    "materi": "Hindu Buddha"
+    "text": "Kerajaan Demak memiliki hubungan erat dengan Wali Songo dalam penyebaran Islam di Jawa. Hal ini menunjukkan bahwa penyebaran Islam dilakukan melalui pendekatan ....",
+    "options": ["Militer", "Budaya dan dakwah", "Paksaan", "Kolonial"],
+    "answer": 1,
+    "pembahasan": "Islam disebarkan melalui dakwah dan budaya."
   },
   {
     "id": 15,
-    "pertanyaan": "Akulturasi budaya terlihat pada bangunan?",
-    "pilihan": ["Candi", "Rumah adat", "Istana modern", "Gedung"],
-    "jawaban": "Candi",
-    "tingkat": "sedang",
-    "materi": "Hindu Buddha"
+    "text": "Kerajaan Mataram Islam mengalami konflik internal yang menyebabkan terpecahnya wilayah menjadi dua kerajaan, yaitu ....",
+    "options": ["Demak dan Banten", "Yogyakarta dan Surakarta", "Gowa dan Tallo", "Sriwijaya dan Majapahit"],
+    "answer": 1,
+    "pembahasan": "Mataram terpecah menjadi Yogyakarta dan Surakarta."
   },
+
   {
     "id": 16,
-    "pertanyaan": "Salah satu faktor cepatnya penyebaran Islam adalah?",
-    "pilihan": ["Paksaan", "Perang", "Perdagangan", "Kolonialisme"],
-    "jawaban": "Perdagangan",
-    "tingkat": "sedang",
-    "materi": "Islam"
+    "text": "Perhatikan perbandingan berikut: Sriwijaya sebagai kerajaan maritim dan Mataram sebagai kerajaan agraris. Perbedaan ini terutama disebabkan oleh ....",
+    "options": ["Letak geografis", "Agama", "Bahasa", "Budaya"],
+    "answer": 0,
+    "pembahasan": "Letak geografis mempengaruhi jenis kerajaan."
   },
   {
     "id": 17,
-    "pertanyaan": "Demak menjadi pusat penyebaran Islam di?",
-    "pilihan": ["Sumatra", "Jawa", "Kalimantan", "Sulawesi"],
-    "jawaban": "Jawa",
-    "tingkat": "sedang",
-    "materi": "Islam"
+    "text": "Kerajaan Samudera Pasai berkembang pesat karena menjadi pusat perdagangan internasional sekaligus pusat penyebaran Islam. Hal ini menunjukkan bahwa agama Islam berkembang melalui jalur ....",
+    "options": ["Perang", "Perdagangan", "Penjajahan", "Migrasi paksa"],
+    "answer": 1,
+    "pembahasan": "Islam berkembang melalui perdagangan."
   },
   {
     "id": 18,
-    "pertanyaan": "Kapak lonjong banyak ditemukan di wilayah?",
-    "pilihan": ["Sumatra", "Papua", "Jawa", "Bali"],
-    "jawaban": "Papua",
-    "tingkat": "sedang",
-    "materi": "Pembentukan awal budaya"
+    "text": "Kerajaan Singasari runtuh akibat pemberontakan yang dipimpin oleh ....",
+    "options": ["Ken Arok", "Jayakatwang", "Gajah Mada", "Hayam Wuruk"],
+    "answer": 1,
+    "pembahasan": "Singasari runtuh oleh Jayakatwang."
   },
   {
     "id": 19,
-    "pertanyaan": "Pengaruh Hindu dalam sistem pemerintahan adalah?",
-    "pilihan": ["Demokrasi", "Kerajaan", "Republik", "Koloni"],
-    "jawaban": "Kerajaan",
-    "tingkat": "sedang",
-    "materi": "Hindu Buddha"
+    "text": "Kerajaan Majapahit mencapai puncak kejayaan karena memiliki sistem pemerintahan yang kuat serta didukung oleh tokoh penting seperti Gajah Mada. Hal ini menunjukkan peran penting ....",
+    "options": ["Rakyat", "Pemimpin", "Pedagang", "Petani"],
+    "answer": 1,
+    "pembahasan": "Pemimpin berperan besar dalam kejayaan kerajaan."
   },
   {
     "id": 20,
-    "pertanyaan": "Sultan pertama Demak adalah?",
-    "pilihan": ["Sunan Kalijaga", "Raden Patah", "Sultan Agung", "Hasanuddin"],
-    "jawaban": "Raden Patah",
-    "tingkat": "sedang",
-    "materi": "Islam"
+    "text": "Kerajaan Banten dan Gowa-Tallo berkembang sebagai kerajaan Islam yang kuat karena faktor utama berupa ....",
+    "options": ["Pertanian", "Perdagangan dan pelayaran", "Industri", "Pertambangan"],
+    "answer": 1,
+    "pembahasan": "Keduanya kuat di perdagangan laut."
   },
 
   {
     "id": 21,
-    "pertanyaan": "Teori Ksatria menyatakan penyebaran Hindu dilakukan oleh?",
-    "pilihan": ["Pedagang", "Pendeta", "Prajurit", "Petani"],
-    "jawaban": "Prajurit",
-    "tingkat": "sulit",
-    "materi": "Hindu Buddha"
+    "text": "Kerajaan Sriwijaya mampu menguasai jalur perdagangan di Asia Tenggara karena memiliki armada laut yang kuat. Hal ini menunjukkan bahwa kekuatan utama Sriwijaya terletak pada bidang ....",
+    "options": ["Militer darat", "Maritim", "Pertanian", "Industri"],
+    "answer": 1,
+    "pembahasan": "Sriwijaya kuat di bidang maritim."
   },
   {
     "id": 22,
-    "pertanyaan": "Fungsi dolmen dalam budaya megalitik adalah?",
-    "pilihan": ["Alat berburu", "Tempat pemujaan", "Tempat tinggal", "Senjata"],
-    "jawaban": "Tempat pemujaan",
-    "tingkat": "sulit",
-    "materi": "Pembentukan awal budaya"
+    "text": "Kerajaan Majapahit dikenal sebagai kerajaan besar di Nusantara yang berhasil menyatukan wilayah luas. Faktor utama yang mendukung keberhasilan tersebut adalah ....",
+    "options": ["Teknologi modern", "Kepemimpinan dan strategi politik", "Bantuan asing", "Letak terpencil"],
+    "answer": 1,
+    "pembahasan": "Strategi politik dan kepemimpinan penting."
   },
   {
     "id": 23,
-    "pertanyaan": "Letak strategis Indonesia mempengaruhi masuknya budaya asing karena?",
-    "pilihan": ["Dekat kutub", "Jalur perdagangan internasional", "Daerah terpencil", "Pegunungan"],
-    "jawaban": "Jalur perdagangan internasional",
-    "tingkat": "sulit",
-    "materi": "Umum"
+    "text": "Kerajaan Demak mengalami kemunduran setelah wafatnya Sultan Trenggana. Hal ini disebabkan oleh ....",
+    "options": ["Bencana alam", "Konflik internal", "Serangan asing", "Wabah"],
+    "answer": 1,
+    "pembahasan": "Konflik internal melemahkan Demak."
   },
   {
     "id": 24,
-    "pertanyaan": "Sumpah Palapa diucapkan oleh?",
-    "pilihan": ["Hayam Wuruk", "Gajah Mada", "Airlangga", "Ken Arok"],
-    "jawaban": "Gajah Mada",
-    "tingkat": "sulit",
-    "materi": "Hindu Buddha"
+    "text": "Perkembangan Islam di Indonesia tidak menghapus budaya lokal, melainkan berpadu menjadi budaya baru. Contoh nyata dari proses ini terlihat pada ....",
+    "options": ["Candi", "Wayang kulit", "Benteng", "Prasasti"],
+    "answer": 1,
+    "pembahasan": "Wayang adalah hasil akulturasi."
   },
   {
     "id": 25,
-    "pertanyaan": "Bukti kuat Islam berkembang melalui budaya adalah?",
-    "pilihan": ["Perang", "Wayang kulit", "Penjajahan", "Migrasi"],
-    "jawaban": "Wayang kulit",
-    "tingkat": "sulit",
-    "materi": "Islam"
+    "text": "Kerajaan Mataram Islam di bawah Sultan Agung berusaha melawan kekuasaan VOC di Batavia. Hal ini menunjukkan bahwa kerajaan tersebut memiliki sikap ....",
+    "options": ["Kooperatif", "Perlawanan", "Pasif", "Netral"],
+    "answer": 1,
+    "pembahasan": "Sultan Agung melakukan perlawanan terhadap VOC."
   },
   {
     "id": 26,
-    "pertanyaan": "Prasasti Yupa berasal dari kerajaan?",
-    "pilihan": ["Majapahit", "Kutai", "Sriwijaya", "Demak"],
-    "jawaban": "Kutai",
-    "tingkat": "sulit",
-    "materi": "Hindu Buddha"
+    "text": "Kerajaan Tarumanegara menunjukkan pengaruh Hindu melalui prasasti yang menggambarkan raja sebagai titisan dewa. Konsep ini dikenal sebagai ....",
+    "options": ["Demokrasi", "Devaraja", "Republik", "Teokrasi"],
+    "answer": 1,
+    "pembahasan": "Devaraja adalah konsep raja sebagai dewa."
   },
   {
     "id": 27,
-    "pertanyaan": "Perbedaan utama Hindu dan Buddha di Indonesia terletak pada?",
-    "pilihan": ["Bahasa", "Sistem kasta", "Lokasi", "Cuaca"],
-    "jawaban": "Sistem kasta",
-    "tingkat": "sulit",
-    "materi": "Hindu Buddha"
+    "text": "Kerajaan Gowa-Tallo menjadi pusat perdagangan di Indonesia timur karena letaknya yang strategis dan keterbukaan terhadap pedagang asing. Hal ini menunjukkan bahwa kerajaan tersebut memiliki sifat ....",
+    "options": ["Tertutup", "Terbuka", "Terisolasi", "Tradisional"],
+    "answer": 1,
+    "pembahasan": "Gowa-Tallo terbuka terhadap perdagangan."
   },
   {
     "id": 28,
-    "pertanyaan": "Peran ulama dalam penyebaran Islam adalah sebagai?",
-    "pilihan": ["Pedagang", "Guru agama", "Raja", "Prajurit"],
-    "jawaban": "Guru agama",
-    "tingkat": "sulit",
-    "materi": "Islam"
+    "text": "Kerajaan Samudera Pasai menggunakan mata uang emas dalam perdagangan. Hal ini menunjukkan bahwa kerajaan tersebut telah memiliki sistem ....",
+    "options": ["Sosial", "Ekonomi maju", "Budaya sederhana", "Politik lemah"],
+    "answer": 1,
+    "pembahasan": "Penggunaan uang menunjukkan ekonomi maju."
   },
   {
     "id": 29,
-    "pertanyaan": "Menhir digunakan sebagai?",
-    "pilihan": ["Alat masak", "Tugu peringatan", "Senjata", "Rumah"],
-    "jawaban": "Tugu peringatan",
-    "tingkat": "sulit",
-    "materi": "Pembentukan awal budaya"
+    "text": "Kerajaan Singasari dan Majapahit memiliki hubungan erat karena Majapahit merupakan kelanjutan dari Singasari. Hal ini menunjukkan adanya ....",
+    "options": ["Perang besar", "Kontinuitas kekuasaan", "Penjajahan", "Migrasi"],
+    "answer": 1,
+    "pembahasan": "Majapahit melanjutkan Singasari."
   },
   {
     "id": 30,
-    "pertanyaan": "Salah satu faktor runtuhnya Majapahit adalah?",
-    "pilihan": ["Kemajuan teknologi", "Perang saudara", "Perdagangan", "Iklim"],
-    "jawaban": "Perang saudara",
-    "tingkat": "sulit",
-    "materi": "Hindu Buddha"
+    "text": "Secara umum, masuknya Hindu-Buddha dan Islam ke Indonesia memberikan dampak besar terhadap perkembangan kerajaan-kerajaan di Nusantara, terutama dalam bidang ....",
+    "options": ["Teknologi modern", "Sosial, budaya, dan pemerintahan", "Industri berat", "Transportasi"],
+    "answer": 1,
+    "pembahasan": "Pengaruh terbesar ada pada sosial, budaya, dan pemerintahan."
   }
 ]
