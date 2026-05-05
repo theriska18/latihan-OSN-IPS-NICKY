@@ -484,6 +484,7 @@ const SESSION_KEY = 'tryout_session';
 const USERS = {
   siswa: [
     { username: 'nicky',    password: 'nickyips#!1',  name: 'Nicky' },
+    
   ],
   admin: [
     { username: 'admin',    password: 'riskuy1818', name: 'Administrator' },
@@ -674,7 +675,7 @@ function confirmSubmit(){
 // ─────────────────────────────────────────
 // SUBMIT
 // ─────────────────────────────────────────
-async function submitTest(){
+function submitTest(){
   clearInterval(timerInterval);
   let benar=0, salah=0, skip=0;
   questions.forEach((q,i)=>{
@@ -713,7 +714,7 @@ async function submitTest(){
   });
 
   // Simpan riwayat dengan info user
-  await saveHistory({
+  saveHistory({
     id: Date.now(),
     date: new Date().toISOString(),
     subject: CONFIG.subject,
@@ -739,100 +740,39 @@ async function submitTest(){
 }
 
 // ─────────────────────────────────────────
-// HISTORY — Google Sheets Backend
+// HISTORY — localStorage
 // ─────────────────────────────────────────
-const SHEET_URL = 'https://script.google.com/macros/s/AKfycbyM7sr5xp0b9xvL4Jn6GmDq1inhu5gxE6nDGetxZRLXaJuMNLQ4cgBd-byvTf2a1a4o/exec';
 
-async function loadHistory(){
-  try {
-    const isAdmin = currentUser?.role === 'admin';
-    const url = isAdmin
-      ? SHEET_URL + '?action=getAll'
-      : SHEET_URL + '?action=getByUser&username=' + encodeURIComponent(currentUser.username);
-    const res = await fetch(url);
-    const data = await res.json();
-    return data.map(r => {
-      // answers disimpan sebagai JSON string di Sheet — parse dulu
-      let ans = r.answers;
-      if(typeof ans === 'string'){ try { ans = JSON.parse(ans); } catch(e){ ans = {}; } }
-      const snapshot = ans.snapshot || [];
-      const timeUsed = ans.timeUsed || 0;
-      const benar = snapshot.filter(q => q.userAnswer !== null && q.userAnswer === q.answer).length;
-      const salah = snapshot.filter(q => q.userAnswer !== null && q.userAnswer !== q.answer).length;
-      const skip  = snapshot.filter(q => q.userAnswer === null).length;
-      return {
-        id: r.id,
-        username: r.username,
-        userName: r.name,
-        date: r.date,
-        subject: CONFIG.subject,
-        totalQ: Number(r.total),
-        nilai: Number(r.score),
-        benar, salah, skip, timeUsed, snapshot
-      };
-    });
-  } catch(e){
-    console.error('Gagal load riwayat:', e);
-    return [];
-  }
+function loadHistory(){
+  try { return JSON.parse(localStorage.getItem(HISTORY_KEY)) || []; }
+  catch(e){ return []; }
 }
 
-async function saveHistory(record){
-  try {
-    const payload = JSON.stringify({
-      action: 'save',
-      username: record.username,
-      name: record.userName,
-      score: record.nilai,
-      total: record.totalQ,
-      date: record.date,
-      answers: JSON.stringify({
-        timeUsed: record.timeUsed,
-        snapshot: record.snapshot
-      })
-    });
-    // Google Apps Script butuh no-cors agar tidak diblokir browser
-    await fetch(SHEET_URL, {
-      method: 'POST',
-      mode: 'no-cors',
-      headers: { 'Content-Type': 'text/plain' },
-      body: payload
-    });
-  } catch(e){
-    console.error('Gagal simpan riwayat:', e);
-  }
+function saveHistory(record){
+  const hist = loadHistory();
+  hist.unshift(record);
+  localStorage.setItem(HISTORY_KEY, JSON.stringify(hist));
 }
 
-async function deleteHistory(id){
+function deleteHistory(id){
   if(currentUser?.role !== 'admin'){
     alert('Hanya admin yang dapat menghapus riwayat.');
     return;
   }
   if(!confirm('Hapus riwayat ini?')) return;
-  try {
-    await fetch(SHEET_URL, {
-      method: 'POST', mode: 'no-cors',
-      headers: { 'Content-Type': 'text/plain' },
-      body: JSON.stringify({ action: 'delete', id })
-    });
-    setTimeout(() => renderHistory(), 1000);
-  } catch(e){ alert('Gagal menghapus riwayat.'); }
+  const hist = loadHistory().filter(r => r.id !== id);
+  localStorage.setItem(HISTORY_KEY, JSON.stringify(hist));
+  renderHistory();
 }
 
-async function clearAllHistory(){
+function clearAllHistory(){
   if(currentUser?.role !== 'admin'){
     alert('Hanya admin yang dapat menghapus riwayat.');
     return;
   }
   if(!confirm('Hapus SEMUA riwayat tryout? Tindakan ini tidak bisa dibatalkan.')) return;
-  try {
-    await fetch(SHEET_URL, {
-      method: 'POST', mode: 'no-cors',
-      headers: { 'Content-Type': 'text/plain' },
-      body: JSON.stringify({ action: 'deleteAll', username: 'ALL' })
-    });
-    setTimeout(() => renderHistory(), 1000);
-  } catch(e){ alert('Gagal menghapus semua riwayat.'); }
+  localStorage.removeItem(HISTORY_KEY);
+  renderHistory();
 }
 
 function formatTime(sec){
@@ -846,10 +786,14 @@ function formatDate(iso){
   });
 }
 
-async function renderHistory(){
+function renderHistory(){
   const container = document.getElementById('history-list');
-  container.innerHTML = '<div class="hi-empty">⏳ Memuat riwayat...</div>';
-  const hist = await loadHistory();
+  const isAdmin = currentUser?.role === 'admin';
+  let hist = loadHistory();
+
+  if(!isAdmin){
+    hist = hist.filter(r => r.username === currentUser.username);
+  }
 
   if(hist.length===0){
     container.innerHTML = '<div class="hi-empty">Belum ada riwayat tryout.<br>Selesaikan tryout untuk menyimpan hasil.</div>';
@@ -893,8 +837,8 @@ async function renderHistory(){
   });
 }
 
-async function viewHistoryDetail(id){
-  const hist = await loadHistory();
+function viewHistoryDetail(id){
+  const hist = loadHistory();
   const record = hist.find(r=>r.id==id);
   if(!record) return;
 
@@ -942,13 +886,16 @@ async function viewHistoryDetail(id){
 // ─────────────────────────────────────────
 // DOWNLOAD PDF LAPORAN
 // ─────────────────────────────────────────
-async function downloadPDF(){
+function downloadPDF(){
   const btn = document.querySelector('[onclick="downloadPDF()"]');
   const origText = btn.textContent;
   btn.textContent = '⏳ Memuat...';
   btn.disabled = true;
 
-  const hist = await loadHistory();
+  const hist = loadHistory().filter(r => {
+    if(currentUser?.role === 'admin') return true;
+    return r.username === currentUser.username;
+  });
 
   if(hist.length === 0){
     alert('Belum ada riwayat untuk diunduh.');
