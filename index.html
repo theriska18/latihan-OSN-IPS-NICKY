@@ -487,6 +487,7 @@ const USERS = {
   ],
   admin: [
     { username: 'admin',    password: 'riskuy1818', name: 'Administrator' },
+    { username: 'guru',     password: 'guru2024',  name: 'Guru' },
   ]
 };
 
@@ -740,7 +741,7 @@ async function submitTest(){
 // ─────────────────────────────────────────
 // HISTORY — Google Sheets Backend
 // ─────────────────────────────────────────
-const SHEET_URL = 'https://script.google.com/macros/s/AKfycbzD4uRI3-7bKgwq2iOPGcXW9p5da0H2OEkrSGJgcjUdNwt8qYW66ajMjx0RE0ien_U/exec';
+const SHEET_URL = 'https://script.google.com/macros/s/AKfycbyM7sr5xp0b9xvL4Jn6GmDq1inhu5gxE6nDGetxZRLXaJuMNLQ4cgBd-byvTf2a1a4o/exec';
 
 async function loadHistory(){
   try {
@@ -750,27 +751,25 @@ async function loadHistory(){
       : SHEET_URL + '?action=getByUser&username=' + encodeURIComponent(currentUser.username);
     const res = await fetch(url);
     const data = await res.json();
-    // Normalise field names dari sheet ke format lama
-    return data.map(r => ({
-      id: r.id,
-      username: r.username,
-      userName: r.name,
-      date: r.date,
-      subject: CONFIG.subject,
-      totalQ: Number(r.total),
-      nilai: Number(r.score),
-      benar: r.answers.filter ? undefined : undefined, // dihitung ulang dari answers
-      salah: undefined,
-      skip: undefined,
-      timeUsed: r.answers.timeUsed || 0,
-      snapshot: r.answers.snapshot || [],
-      _raw: r
-    })).map(r => {
-      const snap = r.snapshot;
-      const benar = snap.filter(q => q.userAnswer !== null && q.userAnswer === q.answer).length;
-      const salah = snap.filter(q => q.userAnswer !== null && q.userAnswer !== q.answer).length;
-      const skip  = snap.filter(q => q.userAnswer === null).length;
-      return { ...r, benar, salah, skip };
+    return data.map(r => {
+      // answers disimpan sebagai JSON string di Sheet — parse dulu
+      let ans = r.answers;
+      if(typeof ans === 'string'){ try { ans = JSON.parse(ans); } catch(e){ ans = {}; } }
+      const snapshot = ans.snapshot || [];
+      const timeUsed = ans.timeUsed || 0;
+      const benar = snapshot.filter(q => q.userAnswer !== null && q.userAnswer === q.answer).length;
+      const salah = snapshot.filter(q => q.userAnswer !== null && q.userAnswer !== q.answer).length;
+      const skip  = snapshot.filter(q => q.userAnswer === null).length;
+      return {
+        id: r.id,
+        username: r.username,
+        userName: r.name,
+        date: r.date,
+        subject: CONFIG.subject,
+        totalQ: Number(r.total),
+        nilai: Number(r.score),
+        benar, salah, skip, timeUsed, snapshot
+      };
     });
   } catch(e){
     console.error('Gagal load riwayat:', e);
@@ -780,20 +779,24 @@ async function loadHistory(){
 
 async function saveHistory(record){
   try {
+    const payload = JSON.stringify({
+      action: 'save',
+      username: record.username,
+      name: record.userName,
+      score: record.nilai,
+      total: record.totalQ,
+      date: record.date,
+      answers: JSON.stringify({
+        timeUsed: record.timeUsed,
+        snapshot: record.snapshot
+      })
+    });
+    // Google Apps Script butuh no-cors agar tidak diblokir browser
     await fetch(SHEET_URL, {
       method: 'POST',
-      body: JSON.stringify({
-        action: 'save',
-        username: record.username,
-        name: record.userName,
-        score: record.nilai,
-        total: record.totalQ,
-        date: record.date,
-        answers: {
-          timeUsed: record.timeUsed,
-          snapshot: record.snapshot
-        }
-      })
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'text/plain' },
+      body: payload
     });
   } catch(e){
     console.error('Gagal simpan riwayat:', e);
@@ -808,10 +811,11 @@ async function deleteHistory(id){
   if(!confirm('Hapus riwayat ini?')) return;
   try {
     await fetch(SHEET_URL, {
-      method: 'POST',
+      method: 'POST', mode: 'no-cors',
+      headers: { 'Content-Type': 'text/plain' },
       body: JSON.stringify({ action: 'delete', id })
     });
-    renderHistory();
+    setTimeout(() => renderHistory(), 1000);
   } catch(e){ alert('Gagal menghapus riwayat.'); }
 }
 
@@ -823,10 +827,11 @@ async function clearAllHistory(){
   if(!confirm('Hapus SEMUA riwayat tryout? Tindakan ini tidak bisa dibatalkan.')) return;
   try {
     await fetch(SHEET_URL, {
-      method: 'POST',
+      method: 'POST', mode: 'no-cors',
+      headers: { 'Content-Type': 'text/plain' },
       body: JSON.stringify({ action: 'deleteAll', username: 'ALL' })
     });
-    renderHistory();
+    setTimeout(() => renderHistory(), 1000);
   } catch(e){ alert('Gagal menghapus semua riwayat.'); }
 }
 
