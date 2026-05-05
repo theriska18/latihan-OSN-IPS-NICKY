@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>OSN IPS NICKY</title>
+<title>Latihan OSN IPS Nicky</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -297,8 +297,8 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(
   <div class="login-box">
     <div class="login-logo">
       <div class="login-logo-icon">📝</div>
-      <h1>LATIHAN OSN IPS NICKY</h1>
-      <p>Masuk untuk mengakses ujian</p>
+      <h1>Latihan OSN IPS Nicky</h1>
+      <p>Masuk untuk mengakses latihan</p>
     </div>
 
     <div class="login-tabs">
@@ -449,8 +449,11 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(
   <div id="history-screen" style="display:none">
     <div class="history-header">
       <h2>📋 Riwayat Tryout</h2>
-      <div id="admin-clear-btn" style="display:none">
-        <button class="btn btn-sm" style="background:rgba(255,255,255,.15);border-color:rgba(255,255,255,.3);color:#fff" onclick="clearAllHistory()">🗑 Hapus Semua</button>
+      <div style="display:flex;gap:8px;align-items:center">
+        <button class="btn btn-sm" style="background:rgba(255,255,255,.15);border-color:rgba(255,255,255,.3);color:#fff" onclick="downloadPDF()">📥 Unduh PDF</button>
+        <div id="admin-clear-btn" style="display:none">
+          <button class="btn btn-sm" style="background:rgba(255,255,255,.15);border-color:rgba(255,255,255,.3);color:#fff" onclick="clearAllHistory()">🗑 Hapus Semua</button>
+        </div>
       </div>
     </div>
     <div id="admin-only-notice" class="admin-only-notice" style="display:none">
@@ -484,7 +487,6 @@ const USERS = {
   ],
   admin: [
     { username: 'admin',    password: 'riskuy1818', name: 'Administrator' },
-    { username: 'guru',     password: 'guru2024',  name: 'Guru' },
   ]
 };
 
@@ -930,6 +932,112 @@ async function viewHistoryDetail(id){
     '<button class="btn" onclick="showScreen(\'history\')">← Kembali ke Riwayat</button>'+
     '<button class="btn btn-blue" onclick="resetTest()">🔄 Coba Lagi</button>';
   setActiveNav('history');
+}
+
+// ─────────────────────────────────────────
+// DOWNLOAD PDF LAPORAN
+// ─────────────────────────────────────────
+async function downloadPDF(){
+  const btn = document.querySelector('[onclick="downloadPDF()"]');
+  const origText = btn.textContent;
+  btn.textContent = '⏳ Memuat...';
+  btn.disabled = true;
+
+  const hist = await loadHistory();
+
+  if(hist.length === 0){
+    alert('Belum ada riwayat untuk diunduh.');
+    btn.textContent = origText;
+    btn.disabled = false;
+    return;
+  }
+
+  const isAdmin = currentUser?.role === 'admin';
+  const userName = isAdmin ? 'Semua Siswa' : currentUser.name;
+  const now = new Date().toLocaleString('id-ID', {
+    day:'numeric', month:'long', year:'numeric', hour:'2-digit', minute:'2-digit'
+  });
+
+  // Hitung statistik
+  const avgNilai = Math.round(hist.reduce((s,r) => s + r.nilai, 0) / hist.length);
+  const best = Math.max(...hist.map(r => r.nilai));
+  const worst = Math.min(...hist.map(r => r.nilai));
+
+  // Build HTML untuk di-print
+  const rows = hist.map((r, i) => {
+    const warna = r.nilai >= 80 ? '#27500A' : r.nilai >= 60 ? '#633806' : '#791F1F';
+    const bg    = r.nilai >= 80 ? '#EAF3DE' : r.nilai >= 60 ? '#FAEEDA' : '#FCEBEB';
+    const userCol = isAdmin ? `<td style="padding:8px 10px;border-bottom:1px solid #eee">${r.userName || r.username}</td>` : '';
+    return `<tr>
+      <td style="padding:8px 10px;border-bottom:1px solid #eee;text-align:center">${i+1}</td>
+      ${userCol}
+      <td style="padding:8px 10px;border-bottom:1px solid #eee">${formatDate(r.date)}</td>
+      <td style="padding:8px 10px;border-bottom:1px solid #eee;text-align:center">${r.totalQ} soal</td>
+      <td style="padding:8px 10px;border-bottom:1px solid #eee;text-align:center">
+        <span style="background:${bg};color:${warna};font-weight:700;padding:3px 10px;border-radius:20px;font-size:13px">${r.nilai}</span>
+      </td>
+      <td style="padding:8px 10px;border-bottom:1px solid #eee;text-align:center;color:#27500A">✓ ${r.benar}</td>
+      <td style="padding:8px 10px;border-bottom:1px solid #eee;text-align:center;color:#791F1F">✗ ${r.salah}</td>
+      <td style="padding:8px 10px;border-bottom:1px solid #eee;text-align:center;color:#633806">— ${r.skip}</td>
+      <td style="padding:8px 10px;border-bottom:1px solid #eee;text-align:center">${formatTime(r.timeUsed)}</td>
+    </tr>`;
+  }).join('');
+
+  const userHeader = isAdmin ? '<th style="padding:9px 10px;text-align:left">Nama Siswa</th>' : '';
+
+  const html = `<!DOCTYPE html><html><head><meta charset="UTF-8">
+  <title>Laporan Riwayat - Latihan OSN IPS Nicky</title>
+  <style>
+    body { font-family: 'Segoe UI', sans-serif; margin: 0; padding: 32px; color: #1a1a1a; background: #fff; }
+    .header { background: linear-gradient(135deg, #26215C, #0C447C); color: #fff; padding: 28px 32px; border-radius: 12px; margin-bottom: 24px; }
+    .header h1 { font-size: 22px; margin: 0 0 6px; }
+    .header p { font-size: 12px; opacity: .75; margin: 0; }
+    .stats { display: flex; gap: 16px; margin-bottom: 24px; }
+    .stat-card { flex: 1; background: #f5f5f3; border-radius: 10px; padding: 16px; text-align: center; }
+    .stat-card .val { font-size: 28px; font-weight: 700; color: #26215C; }
+    .stat-card .lbl { font-size: 11px; color: #6b6b6b; margin-top: 4px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    thead { background: #26215C; color: #fff; }
+    th { padding: 9px 10px; text-align: left; font-weight: 600; }
+    tr:nth-child(even) td { background: #fafafa; }
+    .footer { margin-top: 24px; font-size: 11px; color: #999; text-align: center; }
+    @media print { body { padding: 0; } }
+  </style></head><body>
+  <div class="header">
+    <h1>📋 Laporan Riwayat Latihan OSN IPS Nicky</h1>
+    <p>Dicetak pada: ${now} &nbsp;·&nbsp; ${isAdmin ? 'Laporan Admin — Semua Siswa' : 'Siswa: ' + userName}</p>
+  </div>
+  <div class="stats">
+    <div class="stat-card"><div class="val">${hist.length}</div><div class="lbl">Total Percobaan</div></div>
+    <div class="stat-card"><div class="val">${avgNilai}</div><div class="lbl">Rata-rata Nilai</div></div>
+    <div class="stat-card"><div class="val">${best}</div><div class="lbl">Nilai Terbaik</div></div>
+    <div class="stat-card"><div class="val">${worst}</div><div class="lbl">Nilai Terendah</div></div>
+  </div>
+  <table>
+    <thead><tr>
+      <th style="padding:9px 10px;text-align:center">#</th>
+      ${userHeader}
+      <th style="padding:9px 10px">Tanggal</th>
+      <th style="padding:9px 10px;text-align:center">Soal</th>
+      <th style="padding:9px 10px;text-align:center">Nilai</th>
+      <th style="padding:9px 10px;text-align:center">Benar</th>
+      <th style="padding:9px 10px;text-align:center">Salah</th>
+      <th style="padding:9px 10px;text-align:center">Skip</th>
+      <th style="padding:9px 10px;text-align:center">Waktu</th>
+    </tr></thead>
+    <tbody>${rows}</tbody>
+  </table>
+  <div class="footer">Latihan OSN IPS Nicky &mdash; Laporan otomatis dibuat oleh sistem</div>
+  <script>window.onload = function(){ window.print(); }<\/script>
+  </body></html>`;
+
+  const blob = new Blob([html], { type: 'text/html' });
+  const url = URL.createObjectURL(blob);
+  const win = window.open(url, '_blank');
+  if(!win) alert('Popup diblokir browser. Izinkan popup untuk mengunduh PDF.');
+
+  btn.textContent = origText;
+  btn.disabled = false;
 }
 
 // ─────────────────────────────────────────
