@@ -1,282 +1,244 @@
 [
   {
     "id": 1,
-    "kategori": "Geografi",
-    "text": "Perhatikan kegiatan ekonomi berikut!\n1. Pengembangan objek wisata bahari\n2. Budidaya perikanan darat\n3. Budidaya tambak garam\n4. Pertanian pasang surut\n5. Pertanian ladang\n\nKegiatan ekonomi yang diusahakan penduduk di daerah pantai ditunjukkan oleh nomor ….",
-    "options": ["1, 2, dan 3", "1, 3, dan 4", "2, 3, dan 4", "3, 4, dan 5"],
-    "answer": 1,
-    "pembahasan": "Kegiatan khas wilayah pantai meliputi wisata bahari (1), tambak garam (3), dan pertanian pasang surut (4). Perikanan darat (2) dan pertanian ladang (5) tidak spesifik untuk wilayah pantai."
+    "pertanyaan": "Apa ciri utama masyarakat Indonesia pada masa praaksara?",
+    "pilihan": ["Sudah mengenal tulisan", "Menggunakan logam", "Belum mengenal tulisan", "Sudah mengenal kerajaan"],
+    "jawaban": "Belum mengenal tulisan",
+    "tingkat": "mudah",
+    "materi": "Pembentukan awal budaya"
   },
   {
     "id": 2,
-    "kategori": "Geografi",
-    "text": "Indonesia memiliki banyak gunung api aktif. Hal tersebut merupakan akibat dari ….",
-    "options": ["Letak astronomis", "Letak geografis", "Letak geologis", "Letak absolut"],
-    "answer": 2,
-    "pembahasan": "Letak geologis Indonesia yang berada di pertemuan tiga lempeng tektonik besar menyebabkan banyaknya gunung api aktif di wilayah Indonesia."
+    "pertanyaan": "Alat yang digunakan manusia purba pada zaman batu adalah?",
+    "pilihan": ["Kapak perunggu", "Kapak genggam", "Keramik", "Besi"],
+    "jawaban": "Kapak genggam",
+    "tingkat": "mudah",
+    "materi": "Pembentukan awal budaya"
   },
   {
     "id": 3,
-    "kategori": "Sosiologi",
-    "text": "Perhatikan pernyataan berikut!\n1. Jumlah pelakunya lebih dari satu orang\n2. Berlangsung secara sepihak\n3. Adanya komunikasi antarpelaku\n4. Terjadi pada masa kini dan mendatang\n5. Tidak harus memiliki tujuan tertentu\n\nCiri-ciri interaksi sosial ditunjukkan oleh nomor ….",
-    "options": ["1 dan 2", "1 dan 3", "2 dan 4", "3 dan 5"],
-    "answer": 1,
-    "pembahasan": "Interaksi sosial memerlukan minimal dua orang (1) dan adanya komunikasi dua arah antarpelaku (3). Interaksi tidak berlangsung sepihak dan selalu ada tujuan tertentu."
+    "pertanyaan": "Sistem kepercayaan animisme adalah kepercayaan terhadap?",
+    "pilihan": ["Dewa-dewa", "Roh nenek moyang", "Satu Tuhan", "Benda mati"],
+    "jawaban": "Roh nenek moyang",
+    "tingkat": "mudah",
+    "materi": "Pembentukan awal budaya"
   },
   {
     "id": 4,
-    "kategori": "Geografi",
-    "text": "Tipe gunung api yang paling banyak terdapat di Indonesia adalah ….",
-    "options": ["Maar", "Perisai", "Strato", "Kaldera"],
-    "answer": 2,
-    "pembahasan": "Gunung api di Indonesia umumnya bertipe strato (kerucut komposit), terbentuk dari lapisan lava dan abu vulkanik yang bergantian akibat letusan berulang."
+    "pertanyaan": "Masuknya budaya Hindu-Buddha ke Indonesia melalui jalur?",
+    "pilihan": ["Perdagangan", "Penjajahan", "Perang", "Migrasi paksa"],
+    "jawaban": "Perdagangan",
+    "tingkat": "mudah",
+    "materi": "Hindu Buddha"
   },
   {
     "id": 5,
-    "kategori": "Geografi",
-    "text": "Pengikisan pantai yang disebabkan oleh gelombang laut disebut ….",
-    "options": ["Abrasi", "Deflasi", "Glasial", "Korasi"],
-    "answer": 0,
-    "pembahasan": "Abrasi adalah proses pengikisan batuan atau pantai oleh gelombang dan arus laut. Deflasi disebabkan oleh angin, glasial oleh es, dan korasi oleh pasir yang dibawa air."
+    "pertanyaan": "Kerajaan Hindu tertua di Indonesia adalah?",
+    "pilihan": ["Majapahit", "Sriwijaya", "Kutai", "Tarumanegara"],
+    "jawaban": "Kutai",
+    "tingkat": "mudah",
+    "materi": "Hindu Buddha"
   },
   {
     "id": 6,
-    "kategori": "Geografi",
-    "text": "Negara-negara yang seluruhnya berada di kawasan Asia adalah ….",
-    "options": [
-      "Pakistan, India, Nepal, Guatemala, Haiti",
-      "Korea Selatan, Taiwan, Maroko, Sahara Barat, Aljazair",
-      "Korea Selatan, Taiwan, Indonesia, Malaysia, Singapura",
-      "Indonesia, Malaysia, Singapura, Myanmar, Thailand, Portugal"
-    ],
-    "answer": 2,
-    "pembahasan": "Korea Selatan, Taiwan, Indonesia, Malaysia, dan Singapura semuanya berada di kawasan Asia. Opsi lain memuat negara dari benua atau kawasan berbeda."
+    "pertanyaan": "Candi Borobudur merupakan peninggalan agama?",
+    "pilihan": ["Islam", "Hindu", "Buddha", "Kristen"],
+    "jawaban": "Buddha",
+    "tingkat": "mudah",
+    "materi": "Hindu Buddha"
   },
   {
     "id": 7,
-    "kategori": "Geografi",
-    "text": "Perhatikan daftar provinsi berikut!\n1. Kalimantan Tengah\n2. Sulawesi Selatan\n3. DI Yogyakarta\n4. Kepulauan Riau\n5. Bangka Belitung\n6. Nusa Tenggara Barat\n\nProvinsi yang termasuk provinsi kepulauan ditunjukkan oleh nomor ….",
-    "options": ["1, 2, dan 3", "1, 4, dan 6", "3, 4, dan 5", "4, 5, dan 6"],
-    "answer": 3,
-    "pembahasan": "Provinsi kepulauan adalah provinsi yang wilayahnya terdiri atas pulau-pulau, yaitu Kepulauan Riau (4), Bangka Belitung (5), dan Nusa Tenggara Barat (6)."
+    "pertanyaan": "Wali Songo berperan dalam penyebaran agama?",
+    "pilihan": ["Hindu", "Buddha", "Islam", "Katolik"],
+    "jawaban": "Islam",
+    "tingkat": "mudah",
+    "materi": "Islam"
   },
   {
     "id": 8,
-    "kategori": "Peta & Geografi",
-    "text": "Sebuah peta berskala 1 : 15.000.000. Jarak 1 cm pada peta tersebut sama dengan jarak sebenarnya sebesar ….",
-    "options": ["1,5 km", "15 km", "150 km", "1.500 km"],
-    "answer": 2,
-    "pembahasan": "1 cm pada peta = 15.000.000 cm pada jarak nyata = 150.000 m = 150 km. Konversi: 15.000.000 cm ÷ 100.000 = 150 km."
+    "pertanyaan": "Kerajaan Islam pertama di Indonesia adalah?",
+    "pilihan": ["Demak", "Samudera Pasai", "Mataram", "Banten"],
+    "jawaban": "Samudera Pasai",
+    "tingkat": "mudah",
+    "materi": "Islam"
   },
   {
     "id": 9,
-    "kategori": "Ekonomi",
-    "text": "Pak Iwan menjual tanah miliknya dan menggunakan hasil penjualan tersebut untuk membeli sebuah rumah. Fungsi uang yang digunakan Pak Iwan dalam peristiwa tersebut adalah ….",
-    "options": ["Fungsi turunan", "Alat pengukur nilai", "Alat tukar", "Alat pemindah kekayaan"],
-    "answer": 3,
-    "pembahasan": "Uang berfungsi sebagai alat pemindah kekayaan karena digunakan untuk mengalihkan kepemilikan aset dari satu bentuk (tanah) ke bentuk lain (rumah)."
+    "pertanyaan": "Masjid sebagai pusat penyebaran Islam berfungsi sebagai?",
+    "pilihan": ["Tempat perdagangan", "Tempat ibadah", "Tempat perang", "Gudang"],
+    "jawaban": "Tempat ibadah",
+    "tingkat": "mudah",
+    "materi": "Islam"
   },
   {
     "id": 10,
-    "kategori": "Peta & Geografi",
-    "text": "Kegunaan utama garis lintang dalam ilmu geografi adalah ….",
-    "options": [
-      "Menentukan letak dan perbedaan waktu",
-      "Menentukan letak dan iklim matahari",
-      "Menentukan letak dan pembagian zona iklim",
-      "Menentukan letak negara dan zona waktu"
-    ],
-    "answer": 2,
-    "pembahasan": "Garis lintang digunakan untuk menentukan letak suatu tempat serta pembagian zona iklim, seperti iklim tropis, subtropis, sedang, dan kutub."
+    "pertanyaan": "Salah satu bukti awal tulisan di Indonesia adalah?",
+    "pilihan": ["Prasasti", "Lukisan gua", "Kapak batu", "Gerabah"],
+    "jawaban": "Prasasti",
+    "tingkat": "mudah",
+    "materi": "Pembentukan awal budaya"
   },
+
   {
     "id": 11,
-    "kategori": "Ekonomi",
-    "text": "Kerja sama ekonomi negara-negara di kawasan Asia Pasifik terwadahi dalam organisasi ….",
-    "options": ["ASEAN", "OPEC", "APEC", "WTO"],
-    "answer": 2,
-    "pembahasan": "APEC (Asia-Pacific Economic Cooperation) adalah forum kerja sama ekonomi yang beranggotakan negara-negara di kawasan Asia Pasifik."
+    "pertanyaan": "Teori Brahmana menjelaskan masuknya Hindu ke Indonesia melalui?",
+    "pilihan": ["Pedagang", "Pendeta", "Prajurit", "Petani"],
+    "jawaban": "Pendeta",
+    "tingkat": "sedang",
+    "materi": "Hindu Buddha"
   },
   {
     "id": 12,
-    "kategori": "Sejarah",
-    "text": "Candi Prambanan yang terletak di Jawa Tengah merupakan peninggalan bercorak ….",
-    "options": ["Hindu", "Buddha", "Islam", "Hindu-Buddha"],
-    "answer": 0,
-    "pembahasan": "Candi Prambanan merupakan kompleks candi Hindu terbesar di Indonesia yang dibangun pada abad ke-9 Masehi, didedikasikan untuk Trimurti (Brahma, Wisnu, Siwa)."
+    "pertanyaan": "Ciri masyarakat bercocok tanam adalah?",
+    "pilihan": ["Nomaden", "Menetap", "Berburu", "Mengembara"],
+    "jawaban": "Menetap",
+    "tingkat": "sedang",
+    "materi": "Pembentukan awal budaya"
   },
   {
     "id": 13,
-    "kategori": "Sejarah",
-    "text": "Sisa-sisa tulang manusia atau hewan purba yang telah membatu dan tersimpan dalam lapisan bumi disebut ….",
-    "options": ["Fosil", "Candi", "Prasasti", "Monumen"],
-    "answer": 0,
-    "pembahasan": "Fosil adalah sisa organisme purba (tulang, cangkang, jejak) yang telah mengalami proses mineralisasi sehingga berubah menjadi batu dan tersimpan dalam lapisan sedimen."
+    "pertanyaan": "Kerajaan Sriwijaya dikenal sebagai kerajaan?",
+    "pilihan": ["Agraris", "Maritim", "Industri", "Modern"],
+    "jawaban": "Maritim",
+    "tingkat": "sedang",
+    "materi": "Hindu Buddha"
   },
   {
     "id": 14,
-    "kategori": "Lingkungan",
-    "text": "Upaya yang paling tepat untuk mengurangi dampak pemanasan global adalah ….",
-    "options": [
-      "Membuang sampah pada tempatnya",
-      "Tidak membuang limbah ke sungai",
-      "Menanam pohon di lingkungan sekitar",
-      "Membangun waduk penampung air"
-    ],
-    "answer": 2,
-    "pembahasan": "Menanam pohon secara masif efektif mengurangi pemanasan global karena pohon menyerap karbon dioksida (CO₂) yang merupakan gas rumah kaca utama penyebab pemanasan global."
+    "pertanyaan": "Kitab Negarakertagama ditulis oleh?",
+    "pilihan": ["Empu Tantular", "Mpu Prapanca", "Gajah Mada", "Hayam Wuruk"],
+    "jawaban": "Mpu Prapanca",
+    "tingkat": "sedang",
+    "materi": "Hindu Buddha"
   },
   {
     "id": 15,
-    "kategori": "Geografi",
-    "text": "Salah satu keajaiban dunia yang berada di negara India adalah ….",
-    "options": ["Menara Eiffel", "Taj Mahal", "Tembok Besar China", "Piramida Giza"],
-    "answer": 1,
-    "pembahasan": "Taj Mahal yang terletak di Agra, India, merupakan salah satu dari Tujuh Keajaiban Dunia. Dibangun oleh Kaisar Mughal Shah Jahan sebagai makam istrinya."
+    "pertanyaan": "Akulturasi budaya terlihat pada bangunan?",
+    "pilihan": ["Candi", "Rumah adat", "Istana modern", "Gedung"],
+    "jawaban": "Candi",
+    "tingkat": "sedang",
+    "materi": "Hindu Buddha"
   },
   {
     "id": 16,
-    "kategori": "Sosiologi",
-    "text": "Ciri utama yang menandai era globalisasi adalah ….",
-    "options": [
-      "Batas antarnegara semakin tegas",
-      "Perdagangan internasional semakin luas",
-      "Informasi semakin sulit diperoleh",
-      "Wawasan masyarakat semakin sempit"
-    ],
-    "answer": 1,
-    "pembahasan": "Globalisasi ditandai dengan meluasnya perdagangan dan hubungan antarnegara, kemajuan teknologi informasi, serta semakin tipisnya batas-batas wilayah dalam berbagai aspek kehidupan."
+    "pertanyaan": "Salah satu faktor cepatnya penyebaran Islam adalah?",
+    "pilihan": ["Paksaan", "Perang", "Perdagangan", "Kolonialisme"],
+    "jawaban": "Perdagangan",
+    "tingkat": "sedang",
+    "materi": "Islam"
   },
   {
     "id": 17,
-    "kategori": "Sosiologi",
-    "text": "Sikap yang tepat dalam menyikapi masuknya pengaruh globalisasi adalah ….",
-    "options": [
-      "Meniru gaya hidup konsumtif dari luar negeri",
-      "Mengambil pengaruh positif dan menolak yang negatif",
-      "Menggunakan teknologi untuk kegiatan yang merugikan",
-      "Menerima seluruh budaya asing tanpa penyaringan"
-    ],
-    "answer": 1,
-    "pembahasan": "Sikap bijak terhadap globalisasi adalah selektif, yaitu menerima pengaruh positif seperti kemajuan teknologi dan ilmu pengetahuan, serta menolak pengaruh negatif yang bertentangan dengan nilai dan budaya bangsa."
+    "pertanyaan": "Demak menjadi pusat penyebaran Islam di?",
+    "pilihan": ["Sumatra", "Jawa", "Kalimantan", "Sulawesi"],
+    "jawaban": "Jawa",
+    "tingkat": "sedang",
+    "materi": "Islam"
   },
   {
     "id": 18,
-    "kategori": "Sosiologi",
-    "text": "Sikap yang seharusnya dimiliki pelajar dalam menghadapi era globalisasi adalah ….",
-    "options": [
-      "Memilih informasi sesuai keinginan pribadi",
-      "Membeli perangkat teknologi terbaru",
-      "Aktif belajar dan mengikuti perkembangan zaman",
-      "Belajar sesuka hati tanpa tujuan yang jelas"
-    ],
-    "answer": 2,
-    "pembahasan": "Pelajar harus bersikap aktif dengan terus belajar, meningkatkan kompetensi, dan mengikuti perkembangan ilmu pengetahuan agar dapat bersaing di era global."
+    "pertanyaan": "Kapak lonjong banyak ditemukan di wilayah?",
+    "pilihan": ["Sumatra", "Papua", "Jawa", "Bali"],
+    "jawaban": "Papua",
+    "tingkat": "sedang",
+    "materi": "Pembentukan awal budaya"
   },
   {
     "id": 19,
-    "kategori": "Sosiologi",
-    "text": "Dampak negatif globalisasi yang paling terasa dalam kehidupan masyarakat adalah ….",
-    "options": [
-      "Komunikasi antarnegara semakin mudah",
-      "Masyarakat semakin maju dalam teknologi",
-      "Nilai dan norma budaya lokal mulai bergeser",
-      "Pergaulan antarbangsa semakin terbuka"
-    ],
-    "answer": 2,
-    "pembahasan": "Dampak negatif globalisasi adalah tergesernya nilai dan norma budaya lokal akibat masuknya budaya asing yang tidak selalu sesuai dengan kepribadian bangsa."
+    "pertanyaan": "Pengaruh Hindu dalam sistem pemerintahan adalah?",
+    "pilihan": ["Demokrasi", "Kerajaan", "Republik", "Koloni"],
+    "jawaban": "Kerajaan",
+    "tingkat": "sedang",
+    "materi": "Hindu Buddha"
   },
   {
     "id": 20,
-    "kategori": "Ekonomi",
-    "text": "Perilaku konsumerisme yang berlebihan berkaitan langsung dengan bidang ….",
-    "options": ["Sosial", "Budaya", "Ekonomi", "Pendidikan"],
-    "answer": 2,
-    "pembahasan": "Konsumerisme adalah perilaku mengonsumsi barang atau jasa secara berlebihan yang berdampak pada kondisi keuangan pribadi dan ekonomi masyarakat secara keseluruhan."
+    "pertanyaan": "Sultan pertama Demak adalah?",
+    "pilihan": ["Sunan Kalijaga", "Raden Patah", "Sultan Agung", "Hasanuddin"],
+    "jawaban": "Raden Patah",
+    "tingkat": "sedang",
+    "materi": "Islam"
   },
+
   {
     "id": 21,
-    "kategori": "Peta & Geografi",
-    "text": "Simbol pada peta yang digunakan untuk menunjukkan ketinggian suatu wilayah secara bertahap disebut ….",
-    "options": ["Garis kontur", "Skala peta", "Legenda", "Inset"],
-    "answer": 0,
-    "pembahasan": "Garis kontur adalah garis pada peta yang menghubungkan titik-titik dengan ketinggian yang sama di atas permukaan laut, sehingga dapat menggambarkan bentuk relief suatu wilayah."
+    "pertanyaan": "Teori Ksatria menyatakan penyebaran Hindu dilakukan oleh?",
+    "pilihan": ["Pedagang", "Pendeta", "Prajurit", "Petani"],
+    "jawaban": "Prajurit",
+    "tingkat": "sulit",
+    "materi": "Hindu Buddha"
   },
   {
     "id": 22,
-    "kategori": "Peta & Geografi",
-    "text": "Komponen peta yang berfungsi memberikan keterangan tentang simbol-simbol yang digunakan dalam peta disebut ….",
-    "options": ["Judul peta", "Skala peta", "Legenda", "Mata angin"],
-    "answer": 2,
-    "pembahasan": "Legenda adalah keterangan yang memuat makna dari simbol-simbol yang digunakan dalam peta, sehingga pembaca dapat memahami informasi yang disajikan."
+    "pertanyaan": "Fungsi dolmen dalam budaya megalitik adalah?",
+    "pilihan": ["Alat berburu", "Tempat pemujaan", "Tempat tinggal", "Senjata"],
+    "jawaban": "Tempat pemujaan",
+    "tingkat": "sulit",
+    "materi": "Pembentukan awal budaya"
   },
   {
     "id": 23,
-    "kategori": "Peta & Geografi",
-    "text": "Perbandingan jarak pada peta dengan jarak sesungguhnya di lapangan disebut ….",
-    "options": ["Legenda", "Proyeksi", "Skala", "Inset"],
-    "answer": 2,
-    "pembahasan": "Skala peta adalah perbandingan antara jarak pada peta dengan jarak sebenarnya di permukaan bumi. Skala dapat dinyatakan dalam bentuk angka, garis, atau kata-kata."
+    "pertanyaan": "Letak strategis Indonesia mempengaruhi masuknya budaya asing karena?",
+    "pilihan": ["Dekat kutub", "Jalur perdagangan internasional", "Daerah terpencil", "Pegunungan"],
+    "jawaban": "Jalur perdagangan internasional",
+    "tingkat": "sulit",
+    "materi": "Umum"
   },
   {
     "id": 24,
-    "kategori": "Peta & Geografi",
-    "text": "Jika jarak dua kota pada peta berskala 1 : 500.000 adalah 4 cm, maka jarak sebenarnya antara dua kota tersebut adalah ….",
-    "options": ["2 km", "20 km", "200 km", "2.000 km"],
-    "answer": 1,
-    "pembahasan": "Jarak sebenarnya = jarak peta × skala = 4 cm × 500.000 = 2.000.000 cm = 20.000 m = 20 km."
+    "pertanyaan": "Sumpah Palapa diucapkan oleh?",
+    "pilihan": ["Hayam Wuruk", "Gajah Mada", "Airlangga", "Ken Arok"],
+    "jawaban": "Gajah Mada",
+    "tingkat": "sulit",
+    "materi": "Hindu Buddha"
   },
   {
     "id": 25,
-    "kategori": "Peta & Geografi",
-    "text": "Proyeksi peta yang paling tepat digunakan untuk menggambarkan wilayah Indonesia adalah ….",
-    "options": ["Proyeksi silinder", "Proyeksi kerucut", "Proyeksi azimuthal", "Proyeksi Mercator"],
-    "answer": 0,
-    "pembahasan": "Proyeksi silinder cocok untuk menggambarkan wilayah di sekitar khatulistiwa seperti Indonesia, karena distorsi di daerah ekuator relatif kecil."
+    "pertanyaan": "Bukti kuat Islam berkembang melalui budaya adalah?",
+    "pilihan": ["Perang", "Wayang kulit", "Penjajahan", "Migrasi"],
+    "jawaban": "Wayang kulit",
+    "tingkat": "sulit",
+    "materi": "Islam"
   },
   {
     "id": 26,
-    "kategori": "Peta & Geografi",
-    "text": "Garis bujur pada peta digunakan untuk menentukan ….",
-    "options": ["Zona iklim", "Perbedaan waktu", "Ketinggian tempat", "Jenis tanah"],
-    "answer": 1,
-    "pembahasan": "Garis bujur (meridian) digunakan untuk menentukan perbedaan waktu antardaerah. Setiap 15° bujur setara dengan selisih waktu 1 jam."
+    "pertanyaan": "Prasasti Yupa berasal dari kerajaan?",
+    "pilihan": ["Majapahit", "Kutai", "Sriwijaya", "Demak"],
+    "jawaban": "Kutai",
+    "tingkat": "sulit",
+    "materi": "Hindu Buddha"
   },
   {
     "id": 27,
-    "kategori": "Peta & Geografi",
-    "text": "Peta kecil yang ditempatkan di dalam peta utama untuk menunjukkan posisi daerah yang dipetakan dalam konteks wilayah yang lebih luas disebut ….",
-    "options": ["Legenda", "Inset", "Skala", "Proyeksi"],
-    "answer": 1,
-    "pembahasan": "Inset adalah peta kecil yang ditempatkan di dalam atau di sudut peta utama untuk menunjukkan lokasi daerah yang dipetakan dalam konteks wilayah yang lebih luas."
+    "pertanyaan": "Perbedaan utama Hindu dan Buddha di Indonesia terletak pada?",
+    "pilihan": ["Bahasa", "Sistem kasta", "Lokasi", "Cuaca"],
+    "jawaban": "Sistem kasta",
+    "tingkat": "sulit",
+    "materi": "Hindu Buddha"
   },
   {
     "id": 28,
-    "kategori": "Peta & Geografi",
-    "text": "Titik koordinat 6°LS 106°BT menunjukkan lokasi kota ….",
-    "options": ["Surabaya", "Medan", "Jakarta", "Makassar"],
-    "answer": 2,
-    "pembahasan": "Koordinat 6°LS 106°BT menunjukkan lokasi Jakarta, ibu kota Indonesia yang terletak di bagian barat Pulau Jawa."
+    "pertanyaan": "Peran ulama dalam penyebaran Islam adalah sebagai?",
+    "pilihan": ["Pedagang", "Guru agama", "Raja", "Prajurit"],
+    "jawaban": "Guru agama",
+    "tingkat": "sulit",
+    "materi": "Islam"
   },
   {
     "id": 29,
-    "kategori": "Peta & Geografi",
-    "text": "Wilayah Indonesia secara astronomis terletak pada koordinat ….",
-    "options": [
-      "6°LU–11°LS dan 95°BT–141°BT",
-      "6°LU–11°LU dan 95°BT–141°BT",
-      "11°LU–6°LS dan 141°BT–95°BT",
-      "6°LS–11°LS dan 95°BT–141°BT"
-    ],
-    "answer": 0,
-    "pembahasan": "Secara astronomis, Indonesia terletak antara 6°LU–11°LS (garis lintang) dan 95°BT–141°BT (garis bujur), menjadikan Indonesia sebagai negara kepulauan yang membentang di dua belahan bumi."
+    "pertanyaan": "Menhir digunakan sebagai?",
+    "pilihan": ["Alat masak", "Tugu peringatan", "Senjata", "Rumah"],
+    "jawaban": "Tugu peringatan",
+    "tingkat": "sulit",
+    "materi": "Pembentukan awal budaya"
   },
   {
     "id": 30,
-    "kategori": "Peta & Geografi",
-    "text": "Peta tematik yang menampilkan persebaran hasil tambang, pertanian, atau penduduk termasuk jenis peta ….",
-    "options": ["Peta topografi", "Peta korografi", "Peta khusus", "Peta umum"],
-    "answer": 2,
-    "pembahasan": "Peta khusus (tematik) adalah peta yang menyajikan tema atau topik tertentu, seperti persebaran sumber daya alam, kepadatan penduduk, atau kondisi iklim suatu wilayah."
+    "pertanyaan": "Salah satu faktor runtuhnya Majapahit adalah?",
+    "pilihan": ["Kemajuan teknologi", "Perang saudara", "Perdagangan", "Iklim"],
+    "jawaban": "Perang saudara",
+    "tingkat": "sulit",
+    "materi": "Hindu Buddha"
   }
 ]
