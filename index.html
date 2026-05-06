@@ -463,7 +463,7 @@ const SEGMENTS = [
     name:'Penampakan Fenomena Alam, Sosial & Budaya',
     short:'Fenomena Alam',
     color:'var(--purple)', colorLight:'var(--purple-light)', colorDark:'var(--purple-dark)',
-    cls:'seg-a', btnCls:'seg-a-btn', icon:'🌍',
+    cls:'seg-a', btnCls:'seg-a-btn', icon:'',
     start:0, end:14   // indeks soal 1–15
   },
   {
@@ -471,7 +471,7 @@ const SEGMENTS = [
     name:'Keragaman, Interaksi & Perubahan Sosial',
     short:'Perubahan Sosial',
     color:'var(--teal)', colorLight:'var(--teal-light)', colorDark:'var(--teal-dark)',
-    cls:'seg-b', btnCls:'seg-b-btn', icon:'🤝',
+    cls:'seg-b', btnCls:'seg-b-btn', icon:'',
     start:15, end:29  // indeks soal 16–30
   },
   {
@@ -479,7 +479,7 @@ const SEGMENTS = [
     name:'Kegiatan Ekonomi & Peran Indonesia dalam Ekonomi Global',
     short:'Ekonomi Global',
     color:'var(--amber)', colorLight:'var(--amber-light)', colorDark:'var(--amber-dark)',
-    cls:'seg-c', btnCls:'seg-c-btn', icon:'📈',
+    cls:'seg-c', btnCls:'seg-c-btn', icon:'',
     start:30, end:44  // indeks soal 31–45
   },
   {
@@ -487,7 +487,7 @@ const SEGMENTS = [
     name:'Perkembangan Sejarah Indonesia',
     short:'Sejarah Indonesia',
     color:'var(--pink)', colorLight:'var(--pink-light)', colorDark:'var(--pink-dark)',
-    cls:'seg-d', btnCls:'seg-d-btn', icon:'🏛️',
+    cls:'seg-d', btnCls:'seg-d-btn', icon:'',
     start:45, end:59  // indeks soal 46–60
   }
 ];
@@ -501,7 +501,7 @@ function getSegment(idx){
 // ─────────────────────────────────────────
 const CONFIG = {
   subject: 'IPS',
-  duration: 90 * 60,  // 90 menit untuk 60 soal
+  duration: 60 * 60,  // 90 menit untuk 60 soal
 
   // ── UPDATE SOAL DARI GITHUB ──────────────────────────────────────────────
   // Ganti URL di bawah dengan raw URL file JSON di GitHub Anda.
@@ -525,371 +525,384 @@ const LOG_KEY     = 'tryout_activity_log';
 // ─────────────────────────────────────────
 const BUILTIN_QUESTIONS = [
   // ═══ SEGMEN A: Penampakan Fenomena Alam, Sosial & Budaya (Soal 1–15) ═══
+[
   {
-    text:"Lapisan atmosfer yang berfungsi melindungi bumi dari radiasi ultraviolet adalah...",
-    options:["Troposfer","Stratosfer","Mesosfer","Termosfer"],
-    answer:1,
-    pembahasan:"Stratosfer mengandung lapisan ozon (O₃) yang menyerap sebagian besar radiasi ultraviolet dari matahari sehingga melindungi kehidupan di Bumi."
+    "text": "Indonesia dikenal sebagai negara kepulauan yang memiliki posisi sangat strategis di dunia. Secara geografis, Indonesia terletak di antara dua benua besar yang memengaruhi kondisi sosial, ekonomi, dan budaya masyarakatnya. Dua benua tersebut adalah...",
+    "options": ["Asia dan Afrika", "Asia dan Australia", "Eropa dan Asia", "Australia dan Amerika"],
+    "answer": 1,
+    "pembahasan": "Indonesia berada di antara Benua Asia dan Australia, sehingga terjadi interaksi budaya dan perdagangan."
   },
   {
-    text:"Fenomena angin yang bertiup dari darat ke laut pada malam hari disebut...",
-    options:["Angin laut","Angin darat","Angin fohn","Angin muson"],
-    answer:1,
-    pembahasan:"Pada malam hari, daratan lebih cepat dingin daripada lautan sehingga tekanan udara di darat lebih tinggi. Udara bergerak dari darat ke laut — inilah angin darat."
+    "text": "Dalam pembelajaran geografi, peta digunakan sebagai alat untuk menggambarkan permukaan bumi dalam bidang datar. Peta yang menampilkan seluruh permukaan bumi dengan skala sangat kecil disebut...",
+    "options": ["Peta topografi", "Peta dunia", "Peta tematik", "Peta kadaster"],
+    "answer": 1,
+    "pembahasan": "Peta dunia menggambarkan seluruh permukaan bumi secara umum dengan skala kecil."
   },
   {
-    text:"Garis khayal yang menghubungkan tempat-tempat yang memiliki tekanan udara sama disebut...",
-    options:["Isohyet","Isotherm","Isobar","Isohips"],
-    answer:2,
-    pembahasan:"Isobar adalah garis pada peta yang menghubungkan titik-titik dengan tekanan udara yang sama, digunakan untuk membaca pola cuaca."
+    "text": "Indonesia memiliki keanekaragaman hayati yang sangat tinggi dibandingkan negara lain. Hal ini salah satunya disebabkan oleh letaknya yang berada di wilayah dengan penyinaran matahari sepanjang tahun dan curah hujan tinggi. Wilayah tersebut adalah...",
+    "options": ["Subtropis", "Tropis", "Kutub", "Gurun"],
+    "answer": 1,
+    "pembahasan": "Wilayah tropis memiliki sinar matahari sepanjang tahun sehingga mendukung keanekaragaman hayati."
   },
   {
-    text:"Proses pembentukan tanah dari pelapukan batuan induk disebut...",
-    options:["Erosi","Sedimentasi","Pedogenesis","Deflasi"],
-    answer:2,
-    pembahasan:"Pedogenesis adalah proses alami pembentukan tanah yang melibatkan pelapukan fisik, kimia, dan biologis dari batuan induk serta penambahan bahan organik."
+    "text": "Dalam kehidupan sehari-hari, manusia memanfaatkan sumber daya alam untuk memenuhi kebutuhan. Salah satu contoh sumber daya alam yang dapat diperbarui dan masih bisa dilestarikan melalui pengelolaan yang baik adalah...",
+    "options": ["Minyak bumi", "Batu bara", "Hutan", "Emas"],
+    "answer": 2,
+    "pembahasan": "Hutan termasuk SDA yang dapat diperbarui jika dikelola dengan bijak."
   },
   {
-    text:"Teori yang menyatakan bahwa benua-benua pernah menyatu dalam satu daratan besar disebut teori...",
-    options:["Lempeng tektonik","Kontraksi","Pergeseran Benua (Pangaea)","Isostasi"],
-    answer:2,
-    pembahasan:"Alfred Wegener mengemukakan teori Pergeseran Benua bahwa semua benua pernah bergabung menjadi superbenua Pangaea, kemudian terpisah hingga posisi sekarang."
+    "text": "Fenomena yang terjadi di alam seperti gempa bumi, letusan gunung berapi, dan tsunami merupakan peristiwa yang tidak dapat dihindari oleh manusia. Fenomena tersebut termasuk ke dalam kategori...",
+    "options": ["Gejala sosial", "Gejala alam", "Mobilitas sosial", "Interaksi sosial"],
+    "answer": 1,
+    "pembahasan": "Gempa bumi dan tsunami merupakan gejala alam karena terjadi akibat proses alami bumi."
+  },
+
+  {
+    "text": "Bumi memiliki garis khayal yang digunakan untuk menentukan letak suatu wilayah. Salah satu garis tersebut adalah garis lintang 0° yang membagi bumi menjadi dua belahan. Garis tersebut dikenal sebagai...",
+    "options": ["Garis bujur", "Garis ekuator", "Garis meridian", "Garis horizon"],
+    "answer": 1,
+    "pembahasan": "Garis ekuator adalah garis lintang 0° yang membagi bumi menjadi belahan utara dan selatan."
   },
   {
-    text:"Iklim yang ditandai dengan suhu tinggi sepanjang tahun dan curah hujan merata setiap bulan adalah iklim...",
-    options:["Subtropis","Tropis","Sedang","Kutub"],
-    answer:1,
-    pembahasan:"Iklim tropis (ekuatorial) dicirikan suhu rata-rata >18°C sepanjang tahun dan curah hujan tinggi >2000 mm/tahun."
+    "text": "Indonesia berada pada jalur pertemuan lempeng tektonik dunia yang dikenal sebagai Ring of Fire. Kondisi ini menyebabkan Indonesia memiliki banyak gunung berapi aktif dan sering terjadi...",
+    "options": ["Banjir besar", "Gempa bumi dan letusan gunung api", "Angin topan", "Kekeringan panjang"],
+    "answer": 1,
+    "pembahasan": "Letak Indonesia di Ring of Fire menyebabkan sering terjadi gempa dan aktivitas vulkanik."
   },
   {
-    text:"Fenomena El Niño menyebabkan Indonesia mengalami...",
-    options:["Musim hujan lebih panjang","Kenaikan muka air laut","Kekeringan dan berkurangnya curah hujan","Peningkatan curah hujan ekstrem"],
-    answer:2,
-    pembahasan:"El Niño adalah pemanasan permukaan Samudra Pasifik tengah-timur yang menyebabkan Indonesia bagian barat Pasifik mengalami kekeringan."
+    "text": "Perubahan wilayah dapat terjadi karena faktor alam maupun aktivitas manusia. Contoh perubahan wilayah yang disebabkan oleh aktivitas manusia adalah...",
+    "options": ["Gempa bumi", "Letusan gunung", "Penebangan hutan", "Erosi tanah"],
+    "answer": 2,
+    "pembahasan": "Penebangan hutan merupakan perubahan wilayah akibat aktivitas manusia."
   },
   {
-    text:"Jenis batuan yang terbentuk dari pembekuan magma di dalam kerak bumi disebut...",
-    options:["Batuan sedimen","Batuan metamorf","Batuan beku dalam (intrusi)","Batuan beku luar (ekstrusi)"],
-    answer:2,
-    pembahasan:"Batuan beku dalam (intrusi/plutonik) terbentuk dari magma yang membeku perlahan di bawah permukaan bumi, menghasilkan kristal besar seperti granit."
+    "text": "Dalam kajian geografi, kenampakan di permukaan bumi dibedakan menjadi kenampakan alam dan kenampakan sosial. Berikut yang termasuk kenampakan sosial adalah...",
+    "options": ["Gunung", "Sungai", "Jalan raya", "Danau"],
+    "answer": 2,
+    "pembahasan": "Jalan raya merupakan hasil buatan manusia sehingga termasuk kenampakan sosial."
   },
   {
-    text:"Gerakan air laut yang disebabkan oleh perbedaan suhu dan salinitas disebut...",
-    options:["Arus turbulensi","Arus termohalin","Arus pasang surut","Arus pantai"],
-    answer:1,
-    pembahasan:"Arus termohalin (thermohaline circulation) digerakkan oleh perbedaan suhu (thermos) dan kadar garam (haline) yang memengaruhi densitas air laut."
+    "text": "Bentang alam suatu wilayah sangat memengaruhi jenis pekerjaan masyarakatnya. Masyarakat yang tinggal di wilayah pesisir pantai umumnya memiliki mata pencaharian sebagai...",
+    "options": ["Petani", "Nelayan", "Peternak", "Pedagang"],
+    "answer": 1,
+    "pembahasan": "Wilayah pantai identik dengan aktivitas perikanan sehingga masyarakat bekerja sebagai nelayan."
+  },
+
+  {
+    "text": "Dalam sebuah peta, terdapat komponen penting yang berfungsi menunjukkan arah mata angin sehingga pengguna peta dapat mengetahui orientasi wilayah. Komponen peta tersebut adalah...",
+    "options": ["Legenda", "Skala", "Arah mata angin", "Inset"],
+    "answer": 2,
+    "pembahasan": "Arah mata angin digunakan untuk menentukan orientasi atau arah pada peta."
   },
   {
-    text:"Gunung berapi berbentuk kerucut sempurna dengan lereng curam hasil letusan eksplosif disebut...",
-    options:["Gunung perisai","Gunung maar","Gunung strato (komposit)","Gunung kaldera"],
-    answer:2,
-    pembahasan:"Gunung strato/komposit terbentuk dari material lava dan piroklastik yang berlapis-lapis sehingga membentuk kerucut simetris dengan lereng curam."
+    "text": "Seorang siswa melihat sebuah peta dan menemukan simbol-simbol tertentu yang menjelaskan arti kenampakan seperti jalan, sungai, dan gunung. Bagian peta yang menjelaskan arti simbol tersebut disebut...",
+    "options": ["Judul peta", "Legenda", "Skala", "Proyeksi"],
+    "answer": 1,
+    "pembahasan": "Legenda berfungsi menjelaskan arti simbol-simbol pada peta."
   },
   {
-    text:"Angin muson barat di Indonesia membawa musim...",
-    options:["Kemarau","Hujan","Pancaroba","Dingin"],
-    answer:1,
-    pembahasan:"Angin muson barat (November–Maret) bertiup dari Asia membawa banyak uap air melewati Samudra Hindia dan menyebabkan musim hujan di Indonesia."
+    "text": "Sebuah peta memiliki skala 1 : 100.000. Hal ini berarti bahwa setiap 1 cm pada peta mewakili jarak sebenarnya di lapangan sejauh...",
+    "options": ["1 km", "10 km", "100 km", "1000 km"],
+    "answer": 0,
+    "pembahasan": "Skala 1:100.000 berarti 1 cm di peta = 100.000 cm = 1 km di lapangan."
   },
   {
-    text:"Daerah bayangan hujan (rain shadow) terbentuk di sisi mana dari pegunungan?",
-    options:["Sisi windward (menghadap angin)","Sisi leeward (membelakangi angin)","Di puncak pegunungan","Di kaki pegunungan windward"],
-    answer:1,
-    pembahasan:"Sisi leeward (belakang angin) mendapat lebih sedikit hujan karena udara yang turun sudah kehilangan kelembabannya di sisi windward — disebut daerah bayangan hujan."
+    "text": "Pada sebuah peta, terdapat gambar kecil yang menunjukkan lokasi wilayah yang dipetakan dalam lingkup yang lebih luas. Komponen ini bertujuan untuk memberikan konteks letak wilayah tersebut. Komponen ini disebut...",
+    "options": ["Legenda", "Inset", "Skala", "Simbol"],
+    "answer": 1,
+    "pembahasan": "Inset adalah peta kecil yang menunjukkan lokasi daerah dalam wilayah yang lebih luas."
   },
   {
-    text:"Proses pengikisan pantai oleh gelombang laut disebut...",
-    options:["Ablasi","Abrasi","Korasi","Atrisi"],
-    answer:1,
-    pembahasan:"Abrasi adalah proses pengikisan pantai atau dasar laut oleh kekuatan gelombang dan materi yang dibawa gelombang tersebut."
-  },
-  {
-    text:"Fenomena sosial yang terjadi ketika seseorang berpindah tempat tinggal dari desa ke kota disebut...",
-    options:["Transmigrasi","Urbanisasi","Ruralisasi","Imigrasi"],
-    answer:1,
-    pembahasan:"Urbanisasi adalah perpindahan penduduk dari desa ke kota, biasanya didorong oleh faktor pull (daya tarik kota) dan push (pendorong dari desa)."
-  },
-  {
-    text:"Upacara adat yang menandai perpindahan seseorang dari satu status sosial ke status lainnya disebut...",
-    options:["Ritual agraris","Ritual siklus hidup (rites of passage)","Ritual kosmologi","Ritual penyembuhan"],
-    answer:1,
-    pembahasan:"Rites of passage adalah upacara yang menandai transisi sosial penting seperti kelahiran, khitanan, pernikahan, dan kematian."
-  },
+    "text": "Jika jarak antara dua kota pada peta adalah 5 cm dan skala peta tersebut adalah 1 : 200.000, maka jarak sebenarnya antara kedua kota tersebut adalah...",
+    "options": ["1 km", "5 km", "10 km", "20 km"],
+    "answer": 2,
+    "pembahasan": "5 cm × 200.000 = 1.000.000 cm = 10 km."
+  }
+]
 
   // ═══ SEGMEN B: Keragaman, Interaksi & Perubahan Sosial (Soal 16–30) ═══
+ [
   {
-    text:"Teori difusi budaya menyatakan bahwa kebudayaan dapat menyebar melalui...",
-    options:["Evolusi biologis","Kontak antara kelompok masyarakat","Mutasi genetik","Isolasi geografis"],
-    answer:1,
-    pembahasan:"Difusi budaya adalah penyebaran unsur budaya dari satu kelompok ke kelompok lain melalui kontak langsung, perdagangan, migrasi, atau media."
+    "text": "Dalam kehidupan bermasyarakat, setiap individu diajarkan untuk bersikap sopan, menghormati orang tua, dan membantu sesama. Nilai-nilai tersebut menjadi pedoman dalam bertindak sehari-hari. Konsep tersebut dikenal sebagai...",
+    "options": ["Nilai sosial", "Norma hukum", "Peran sosial", "Status sosial"],
+    "answer": 0,
+    "pembahasan": "Nilai sosial adalah sesuatu yang dianggap baik, benar, dan diharapkan oleh masyarakat sebagai pedoman perilaku."
   },
   {
-    text:"Proses di mana individu belajar dan menginternalisasi norma serta nilai budayanya disebut...",
-    options:["Sosialisasi","Akulturasi","Asimilasi","Enkulturasi"],
-    answer:0,
-    pembahasan:"Sosialisasi adalah proses seumur hidup di mana individu belajar nilai, norma, dan peran sosial yang dibutuhkan untuk berpartisipasi dalam masyarakat."
+    "text": "Seorang siswa diwajibkan datang tepat waktu ke sekolah dan mengenakan seragam sesuai aturan. Jika melanggar, ia akan mendapatkan sanksi dari sekolah. Aturan tersebut merupakan contoh dari...",
+    "options": ["Nilai sosial", "Norma sosial", "Perubahan sosial", "Mobilitas sosial"],
+    "answer": 1,
+    "pembahasan": "Norma sosial adalah aturan atau pedoman perilaku yang mengikat dan memiliki sanksi jika dilanggar."
   },
   {
-    text:"Kondisi masyarakat yang memiliki banyak perbedaan suku, agama, ras, dan antargolongan disebut...",
-    options:["Masyarakat majemuk","Masyarakat homogen","Masyarakat tertutup","Masyarakat tradisional"],
-    answer:0,
-    pembahasan:"Masyarakat majemuk (plural society) ditandai oleh keberagaman etnis, agama, dan budaya yang hidup berdampingan dalam satu wilayah."
+    "text": "Dalam keluarga, seorang anak memiliki kewajiban untuk menghormati orang tua dan membantu pekerjaan rumah. Hal ini menunjukkan adanya hubungan antara hak dan kewajiban dalam kehidupan sosial. Konsep ini berkaitan dengan...",
+    "options": ["Interaksi sosial", "Peran dan tanggung jawab sosial", "Nilai budaya", "Struktur sosial"],
+    "answer": 1,
+    "pembahasan": "Peran dan tanggung jawab sosial menunjukkan kewajiban yang harus dijalankan sesuai posisi seseorang."
   },
   {
-    text:"Integrasi dua kebudayaan yang menghasilkan budaya baru tanpa menghilangkan kebudayaan asli disebut...",
-    options:["Asimilasi","Akulturasi","Amalgamasi","Segregasi"],
-    answer:1,
-    pembahasan:"Akulturasi adalah perpaduan dua budaya yang berbeda namun unsur budaya asli masih tetap ada, contohnya wayang yang mendapat pengaruh Hindu-Buddha."
+    "text": "Ketika dua orang atau lebih saling berkomunikasi dan saling memengaruhi, maka terjadi suatu hubungan timbal balik. Hubungan ini menjadi dasar terbentuknya kehidupan masyarakat. Fenomena tersebut disebut...",
+    "options": ["Mobilitas sosial", "Interaksi sosial", "Perubahan sosial", "Integrasi sosial"],
+    "answer": 1,
+    "pembahasan": "Interaksi sosial adalah hubungan timbal balik antara individu atau kelompok."
   },
   {
-    text:"Konflik sosial yang terjadi antara kelompok dengan status sosial berbeda disebut konflik...",
-    options:["Horizontal","Vertikal","Diagonal","Lateral"],
-    answer:1,
-    pembahasan:"Konflik vertikal terjadi antara kelompok dengan hierarki berbeda, seperti antara buruh dengan pengusaha atau rakyat dengan pemerintah."
+    "text": "Indonesia dikenal sebagai negara dengan beragam suku, agama, dan budaya yang hidup berdampingan. Keberagaman ini menjadi ciri khas bangsa Indonesia. Kondisi tersebut disebut...",
+    "options": ["Homogenitas sosial", "Keragaman sosial budaya", "Integrasi sosial", "Mobilitas sosial"],
+    "answer": 1,
+    "pembahasan": "Keragaman sosial budaya adalah kondisi masyarakat yang memiliki banyak perbedaan."
+  },
+
+  {
+    "text": "Dalam kehidupan masyarakat, terdapat aturan tidak tertulis seperti kebiasaan memberi salam atau menghormati orang yang lebih tua. Meskipun tidak tertulis, aturan ini tetap ditaati oleh masyarakat. Jenis norma tersebut adalah...",
+    "options": ["Norma hukum", "Norma agama", "Norma kesopanan", "Norma kebiasaan"],
+    "answer": 3,
+    "pembahasan": "Norma kebiasaan (folkways) adalah aturan yang tidak tertulis namun dilakukan secara berulang dalam masyarakat."
   },
   {
-    text:"Mobilitas sosial yang terjadi ketika seseorang berpindah dari kelas sosial rendah ke kelas lebih tinggi disebut...",
-    options:["Mobilitas horizontal","Mobilitas vertikal ke bawah","Mobilitas vertikal ke atas","Mobilitas antargenerasi"],
-    answer:2,
-    pembahasan:"Mobilitas vertikal ke atas (social climbing) adalah perpindahan status sosial dari lapisan lebih rendah ke lapisan lebih tinggi, misalnya petani menjadi pengusaha."
+    "text": "Seorang guru menjalankan tugasnya mengajar di sekolah, sementara siswa belajar dan mengikuti aturan yang berlaku. Hal ini menunjukkan adanya pelaksanaan fungsi sesuai kedudukan masing-masing. Konsep tersebut disebut...",
+    "options": ["Status sosial", "Peran sosial", "Mobilitas sosial", "Stratifikasi sosial"],
+    "answer": 1,
+    "pembahasan": "Peran sosial adalah pelaksanaan hak dan kewajiban sesuai status seseorang."
   },
   {
-    text:"Lembaga sosial yang berfungsi sebagai agen sosialisasi pertama bagi individu adalah...",
-    options:["Sekolah","Media massa","Keluarga","Teman sebaya"],
-    answer:2,
-    pembahasan:"Keluarga adalah agen sosialisasi primer pertama yang mengajarkan nilai, norma, bahasa, dan perilaku dasar kepada anak sejak lahir."
+    "text": "Dalam masyarakat sering terjadi kerja sama, persaingan, maupun konflik antara individu atau kelompok. Semua bentuk hubungan tersebut termasuk dalam dinamika kehidupan sosial. Istilah untuk menggambarkan hal tersebut adalah...",
+    "options": ["Struktur sosial", "Proses sosial", "Mobilitas sosial", "Perubahan budaya"],
+    "answer": 1,
+    "pembahasan": "Proses sosial adalah interaksi yang terjadi dalam masyarakat, baik asosiatif maupun disosiatif."
   },
   {
-    text:"Perubahan sosial yang berlangsung lambat dan bertahap dalam jangka panjang disebut...",
-    options:["Revolusi","Evolusi","Reformasi","Inovasi"],
-    answer:1,
-    pembahasan:"Evolusi sosial adalah perubahan yang terjadi secara perlahan dan bertahap tanpa guncangan besar, sebaliknya revolusi adalah perubahan cepat dan mendasar."
+    "text": "Masuknya budaya asing melalui media sosial, seperti gaya berpakaian atau musik dari luar negeri, memengaruhi gaya hidup remaja Indonesia. Fenomena ini menunjukkan adanya proses...",
+    "options": ["Sosialisasi", "Modernisasi", "Globalisasi", "Urbanisasi"],
+    "answer": 2,
+    "pembahasan": "Globalisasi adalah proses masuknya pengaruh global ke dalam kehidupan masyarakat."
   },
   {
-    text:"Norma yang paling kuat dan pelanggarannya dianggap dosa atau kejahatan besar adalah...",
-    options:["Folkways","Mores","Taboo (tabu)","Hukum formal"],
-    answer:2,
-    pembahasan:"Tabu (taboo) adalah larangan kuat yang dianggap sangat serius oleh masyarakat. Pelanggarannya dianggap sangat memalukan atau berdosa, seperti larangan inses."
+    "text": "Perubahan sosial dapat terjadi secara perlahan atau cepat. Perubahan yang terjadi secara bertahap tanpa mengganggu keseimbangan masyarakat disebut...",
+    "options": ["Revolusi", "Evolusi", "Modernisasi", "Inovasi"],
+    "answer": 1,
+    "pembahasan": "Evolusi adalah perubahan sosial yang berlangsung lambat dan bertahap."
+  },
+
+  {
+    "text": "Dalam masyarakat terdapat nilai dan norma yang mengatur perilaku individu agar tercipta keteraturan sosial. Jika seseorang melanggar norma tersebut, maka akan dikenakan sanksi sesuai tingkat pelanggarannya. Hal ini menunjukkan fungsi norma sebagai...",
+    "options": ["Alat kontrol sosial", "Sarana mobilitas", "Media sosialisasi", "Simbol budaya"],
+    "answer": 0,
+    "pembahasan": "Norma berfungsi sebagai alat kontrol sosial untuk mengatur perilaku masyarakat."
   },
   {
-    text:"Organisasi sosial yang mengatur hubungan antara anggota berdasarkan garis keturunan disebut...",
-    options:["Klan","Komunitas","Asosiasi","Institusi"],
-    answer:0,
-    pembahasan:"Klan adalah kelompok kekerabatan yang anggotanya meyakini memiliki nenek moyang yang sama, baik berdasarkan garis ayah (patrilineal) atau ibu (matrilineal)."
+    "text": "Dalam interaksi sosial, terdapat syarat utama agar hubungan dapat terjadi, yaitu adanya kontak sosial dan komunikasi. Tanpa kedua hal tersebut, interaksi tidak akan berlangsung. Pernyataan ini menunjukkan bahwa interaksi sosial membutuhkan...",
+    "options": ["Status dan peran", "Nilai dan norma", "Kontak dan komunikasi", "Konflik dan integrasi"],
+    "answer": 2,
+    "pembahasan": "Syarat interaksi sosial adalah adanya kontak sosial dan komunikasi."
   },
   {
-    text:"Keberagaman suku bangsa di Indonesia salah satunya disebabkan oleh...",
-    options:["Faktor iklim yang homogen","Isolasi geografis antar pulau","Keseragaman bahasa","Sistem pemerintahan sentralistis"],
-    answer:1,
-    pembahasan:"Indonesia terdiri dari ribuan pulau yang menyebabkan kelompok manusia hidup terpisah, berkembang sendiri, dan membentuk budaya, bahasa, serta adat istiadat yang beragam."
+    "text": "Keragaman sosial budaya di Indonesia dapat menjadi kekuatan sekaligus potensi konflik jika tidak dikelola dengan baik. Oleh karena itu, diperlukan sikap saling menghargai dan toleransi. Sikap tersebut bertujuan untuk menciptakan...",
+    "options": ["Disintegrasi sosial", "Konflik sosial", "Integrasi sosial", "Mobilitas sosial"],
+    "answer": 2,
+    "pembahasan": "Integrasi sosial adalah proses penyatuan masyarakat agar tetap harmonis."
   },
   {
-    text:"Proses penyesuaian diri individu terhadap norma kelompok baru setelah meninggalkan kelompok lama disebut...",
-    options:["Sosialisasi primer","Sosialisasi sekunder","Resosialisasi","Desabilisasi"],
-    answer:2,
-    pembahasan:"Resosialisasi adalah proses belajar norma dan nilai baru untuk menggantikan yang lama, seperti saat seseorang masuk penjara, pesantren, atau pindah ke budaya baru."
+    "text": "Globalisasi membawa dampak positif dan negatif bagi masyarakat. Salah satu dampak negatifnya adalah lunturnya nilai-nilai budaya lokal akibat pengaruh budaya asing yang kuat. Fenomena ini menunjukkan terjadinya...",
+    "options": ["Asimilasi budaya", "Disorganisasi sosial", "Westernisasi", "Modernisasi"],
+    "answer": 2,
+    "pembahasan": "Westernisasi adalah proses meniru budaya Barat yang dapat mengikis budaya lokal."
   },
   {
-    text:"Kelompok sosial yang terbentuk berdasarkan kesamaan kepentingan dan tujuan adalah...",
-    options:["Kelompok primer","Kelompok sekunder","Paguyuban (gemeinschaft)","Patembayan (gesellschaft)"],
-    answer:3,
-    pembahasan:"Patembayan (gesellschaft) adalah kelompok sosial yang terbentuk atas dasar kepentingan bersama dan bersifat formal, tidak berdasarkan kekerabatan atau perasaan batin."
-  },
-  {
-    text:"Sikap menganggap kebudayaan sendiri lebih baik dari kebudayaan lain disebut...",
-    options:["Relativisme budaya","Etnosentrisme","Xenosentrisme","Primordialisme"],
-    answer:1,
-    pembahasan:"Etnosentrisme adalah kecenderungan menilai kebudayaan lain berdasarkan standar budayanya sendiri dan menganggap budayanya superior. Ini dapat menghambat integrasi sosial."
-  },
-  {
-    text:"Perubahan sosial yang terjadi akibat adopsi teknologi baru dalam masyarakat disebut...",
-    options:["Perubahan struktural","Perubahan budaya","Modernisasi","Globalisasi"],
-    answer:2,
-    pembahasan:"Modernisasi adalah proses perubahan dari masyarakat tradisional ke modern yang ditandai adopsi teknologi, ilmu pengetahuan, dan sistem nilai rasional."
-  },
+    "text": "Perubahan sosial yang terjadi secara cepat dan mendasar hingga mengubah struktur masyarakat secara signifikan sering kali disertai konflik. Perubahan seperti ini biasanya terjadi dalam waktu singkat. Jenis perubahan tersebut disebut...",
+    "options": ["Evolusi", "Revolusi", "Adaptasi", "Difusi"],
+    "answer": 1,
+    "pembahasan": "Revolusi adalah perubahan sosial yang berlangsung cepat dan menyeluruh."
+  }
+]
 
   // ═══ SEGMEN C: Kegiatan Ekonomi & Peran Indonesia dalam Ekonomi Global (Soal 31–45) ═══
+ [
   {
-    text:"Kegiatan ekonomi yang mengolah bahan mentah menjadi barang jadi termasuk sektor...",
-    options:["Primer","Sekunder","Tersier","Kuarter"],
-    answer:1,
-    pembahasan:"Sektor sekunder mencakup kegiatan industri pengolahan yang mengubah bahan mentah menjadi produk siap pakai, seperti pabrik tekstil dan manufaktur otomotif."
+    "text": "Dalam kehidupan sehari-hari, manusia selalu dihadapkan pada keterbatasan sumber daya untuk memenuhi kebutuhan yang tidak terbatas. Kondisi ini menyebabkan manusia harus memilih kebutuhan yang paling prioritas. Permasalahan tersebut dikenal sebagai...",
+    "options": ["Masalah distribusi", "Masalah ekonomi", "Masalah produksi", "Masalah konsumsi"],
+    "answer": 1,
+    "pembahasan": "Masalah ekonomi muncul karena adanya keterbatasan sumber daya untuk memenuhi kebutuhan manusia yang tidak terbatas."
   },
   {
-    text:"Hukum permintaan menyatakan bahwa jika harga naik maka permintaan akan...",
-    options:["Naik","Tetap","Turun","Tidak menentu"],
-    answer:2,
-    pembahasan:"Hukum permintaan: ceteris paribus, kenaikan harga suatu barang akan menyebabkan penurunan jumlah barang yang diminta konsumen."
+    "text": "Air memiliki manfaat yang berbeda tergantung pada kondisi dan kebutuhan seseorang, seperti untuk minum, memasak, atau mencuci. Perbedaan manfaat ini menunjukkan bahwa suatu barang memiliki berbagai kegunaan. Konsep ini disebut...",
+    "options": ["Nilai guna", "Nilai tukar", "Nilai produksi", "Nilai distribusi"],
+    "answer": 0,
+    "pembahasan": "Nilai guna adalah kemampuan suatu barang atau jasa untuk memenuhi kebutuhan manusia."
   },
   {
-    text:"Indonesia termasuk negara berkembang. Salah satu ciri negara berkembang adalah...",
-    options:["Pendapatan per kapita tinggi","Sektor jasa mendominasi ekonomi","Ketergantungan pada sektor primer","Angka harapan hidup sangat tinggi"],
-    answer:2,
-    pembahasan:"Negara berkembang umumnya bergantung pada sektor primer (pertanian, pertambangan), memiliki pendapatan per kapita rendah-menengah, dan infrastruktur belum merata."
+    "text": "Indonesia sebagai negara agraris memiliki banyak penduduk yang bekerja di sektor pertanian. Kegiatan ekonomi yang berkaitan dengan pengolahan tanah dan hasil pertanian disebut sektor...",
+    "options": ["Primer", "Sekunder", "Tersier", "Kuarter"],
+    "answer": 0,
+    "pembahasan": "Sektor primer berkaitan dengan pengambilan sumber daya langsung dari alam seperti pertanian dan pertambangan."
   },
   {
-    text:"Komoditas ekspor utama Indonesia yang menjadi andalan di pasar global adalah...",
-    options:["Produk elektronik","Minyak kelapa sawit (CPO)","Kendaraan bermotor","Produk farmasi"],
-    answer:1,
-    pembahasan:"Minyak kelapa sawit (Crude Palm Oil/CPO) adalah salah satu komoditas ekspor terbesar Indonesia, menempatkan Indonesia sebagai produsen sawit terbesar di dunia."
+    "text": "Dalam kegiatan ekonomi, terdapat pelaku ekonomi seperti rumah tangga, perusahaan, dan pemerintah yang saling berinteraksi. Rumah tangga konsumen berperan dalam kegiatan ekonomi sebagai...",
+    "options": ["Produsen barang", "Pengatur kebijakan", "Pengguna barang dan jasa", "Penyalur distribusi"],
+    "answer": 2,
+    "pembahasan": "Rumah tangga konsumen berperan sebagai pengguna atau konsumen barang dan jasa."
   },
   {
-    text:"Organisasi internasional yang mengatur perdagangan antarnegara adalah...",
-    options:["IMF","World Bank","WTO","OECD"],
-    answer:2,
-    pembahasan:"WTO (World Trade Organization) adalah organisasi internasional yang mengatur aturan perdagangan antarnegara, memfasilitasi negosiasi, dan menyelesaikan sengketa dagang."
-  },
-  {
-    text:"Kondisi di mana suatu negara memiliki kemampuan memproduksi barang dengan biaya lebih rendah dari negara lain disebut...",
-    options:["Keunggulan komparatif","Keunggulan absolut","Keunggulan kompetitif","Keunggulan relatif"],
-    answer:1,
-    pembahasan:"Keunggulan absolut (absolute advantage) terjadi ketika suatu negara dapat memproduksi barang dengan lebih efisien (biaya lebih rendah atau output lebih tinggi) dibanding negara lain."
-  },
-  {
-    text:"Inflasi yang disebabkan oleh kenaikan biaya produksi disebut...",
-    options:["Demand pull inflation","Cost push inflation","Built-in inflation","Hyperinflation"],
-    answer:1,
-    pembahasan:"Cost push inflation terjadi ketika biaya produksi naik (misalnya upah atau harga bahan baku) sehingga produsen menaikkan harga jual, mendorong kenaikan harga umum."
-  },
-  {
-    text:"ASEAN Free Trade Area (AFTA) bertujuan untuk...",
-    options:["Membatasi perdagangan antar negara ASEAN","Menciptakan kawasan perdagangan bebas di ASEAN","Menyatukan mata uang negara ASEAN","Membentuk angkatan bersenjata bersama ASEAN"],
-    answer:1,
-    pembahasan:"AFTA bertujuan menciptakan kawasan perdagangan bebas di ASEAN dengan mengurangi atau menghapus tarif dan hambatan non-tarif untuk meningkatkan daya saing regional."
-  },
-  {
-    text:"Gross Domestic Product (GDP) mengukur...",
-    options:["Total pendapatan warga negara di luar negeri","Nilai barang dan jasa yang diproduksi dalam wilayah suatu negara dalam satu tahun","Total kekayaan negara","Nilai ekspor dikurangi impor"],
-    answer:1,
-    pembahasan:"GDP adalah nilai total semua barang dan jasa akhir yang diproduksi di dalam batas wilayah suatu negara selama satu tahun, tanpa memandang kewarganegaraan produsen."
-  },
-  {
-    text:"Kebijakan pemerintah yang mengurangi pajak dan meningkatkan belanja untuk merangsang ekonomi disebut...",
-    options:["Kebijakan moneter ekspansif","Kebijakan fiskal ekspansif","Kebijakan fiskal kontraktif","Kebijakan devaluasi"],
-    answer:1,
-    pembahasan:"Kebijakan fiskal ekspansif dilakukan dengan menurunkan pajak dan meningkatkan belanja pemerintah untuk merangsang pertumbuhan ekonomi, terutama saat resesi."
-  },
-  {
-    text:"Indonesia merupakan anggota G20. G20 adalah forum yang mempertemukan...",
-    options:["20 negara termiskin di dunia","20 negara dengan ekonomi terbesar di dunia","20 negara anggota ASEAN","20 negara produsen minyak terbesar"],
-    answer:1,
-    pembahasan:"G20 adalah forum internasional yang mempertemukan 19 negara dengan ekonomi terbesar di dunia plus Uni Eropa untuk membahas isu-isu ekonomi global."
-  },
-  {
-    text:"Sistem ekonomi yang menggabungkan mekanisme pasar dengan intervensi pemerintah disebut...",
-    options:["Ekonomi komando","Ekonomi pasar bebas","Ekonomi campuran","Ekonomi tradisional"],
-    answer:2,
-    pembahasan:"Ekonomi campuran menggabungkan elemen pasar bebas (swasta bebas bersaing) dengan perencanaan pemerintah untuk mengoreksi kegagalan pasar dan melindungi kepentingan publik."
-  },
-  {
-    text:"Devaluasi mata uang suatu negara bertujuan untuk...",
-    options:["Meningkatkan nilai impor","Mendorong ekspor menjadi lebih kompetitif","Mengurangi utang luar negeri","Menurunkan tingkat inflasi"],
-    answer:1,
-    pembahasan:"Devaluasi menurunkan nilai mata uang domestik sehingga harga ekspor menjadi lebih murah bagi pembeli asing, meningkatkan daya saing produk domestik di pasar global."
-  },
-  {
-    text:"Maquiladora di Meksiko merupakan contoh praktik...",
-    options:["Autarki ekonomi","Zona ekonomi khusus untuk manufaktur ekspor","Proteksionisme perdagangan","Nasionalisasi industri"],
-    answer:1,
-    pembahasan:"Maquiladora adalah pabrik di kawasan perbatasan Meksiko yang mengimpor bahan baku bebas bea untuk diolah dan diekspor, contoh zona ekonomi khusus berorientasi ekspor."
-  },
-  {
-    text:"Bonus demografi yang dialami Indonesia berarti...",
-    options:["Jumlah penduduk lansia lebih banyak","Jumlah penduduk usia produktif lebih besar dari non-produktif","Tingkat kelahiran sangat tinggi","Jumlah penduduk menurun drastis"],
-    answer:1,
-    pembahasan:"Bonus demografi terjadi ketika proporsi penduduk usia produktif (15–64 tahun) lebih besar dari non-produktif, memberikan peluang percepatan pertumbuhan ekonomi."
+    "text": "Indonesia menjual hasil sumber daya alam seperti batu bara dan minyak sawit ke luar negeri untuk mendapatkan devisa. Kegiatan menjual barang ke luar negeri tersebut disebut...",
+    "options": ["Impor", "Ekspor", "Distribusi", "Produksi"],
+    "answer": 1,
+    "pembahasan": "Ekspor adalah kegiatan menjual barang atau jasa ke luar negeri."
   },
 
+  {
+    "text": "Negara-negara ASEAN menjalin kerja sama ekonomi untuk meningkatkan kesejahteraan masyarakatnya. Salah satu bentuk kerja sama tersebut adalah perdagangan bebas antarnegara anggota. Tujuan utama kerja sama ini adalah...",
+    "options": ["Mengurangi produksi", "Meningkatkan daya saing ekonomi", "Membatasi perdagangan", "Mengurangi konsumsi"],
+    "answer": 1,
+    "pembahasan": "Kerja sama ekonomi ASEAN bertujuan meningkatkan daya saing dan pertumbuhan ekonomi kawasan."
+  },
+  {
+    "text": "Dalam kegiatan ekonomi internasional, suatu negara akan mengimpor barang jika tidak dapat memproduksi barang tersebut secara efisien. Kegiatan membeli barang dari luar negeri ini disebut...",
+    "options": ["Ekspor", "Distribusi", "Impor", "Produksi"],
+    "answer": 2,
+    "pembahasan": "Impor adalah kegiatan membeli barang dari luar negeri untuk memenuhi kebutuhan dalam negeri."
+  },
+  {
+    "text": "Indonesia dikenal sebagai negara maritim karena sebagian besar wilayahnya berupa lautan. Kondisi ini menyebabkan banyak masyarakat bekerja di sektor perikanan dan pelayaran. Hal ini menunjukkan pentingnya ekonomi...",
+    "options": ["Agraris", "Maritim", "Industri", "Digital"],
+    "answer": 1,
+    "pembahasan": "Ekonomi maritim berkaitan dengan pemanfaatan sumber daya laut."
+  },
+  {
+    "text": "Pemerintah memiliki peran penting dalam mengatur jalannya perekonomian negara. Salah satu bentuk peran tersebut adalah membuat kebijakan ekonomi untuk kesejahteraan masyarakat. Peran ini menunjukkan bahwa pemerintah bertindak sebagai...",
+    "options": ["Produsen", "Konsumen", "Regulator", "Distributor"],
+    "answer": 2,
+    "pembahasan": "Pemerintah berperan sebagai regulator yang membuat kebijakan ekonomi."
+  },
+  {
+    "text": "Dalam pembangunan ekonomi, tidak hanya pertumbuhan ekonomi yang diperhatikan, tetapi juga kelestarian lingkungan. Pembangunan yang memperhatikan kebutuhan generasi sekarang tanpa merusak generasi mendatang disebut...",
+    "options": ["Pembangunan nasional", "Pembangunan berkelanjutan", "Pembangunan ekonomi", "Pembangunan sosial"],
+    "answer": 1,
+    "pembahasan": "Pembangunan berkelanjutan memperhatikan keseimbangan antara ekonomi, sosial, dan lingkungan."
+  },
+
+  {
+    "text": "Dalam teori ekonomi, manusia harus membuat pilihan karena sumber daya yang terbatas. Setiap pilihan yang diambil memiliki konsekuensi berupa pengorbanan terhadap pilihan lain yang tidak diambil. Konsep ini dikenal sebagai...",
+    "options": ["Biaya produksi", "Biaya peluang", "Biaya tetap", "Biaya variabel"],
+    "answer": 1,
+    "pembahasan": "Biaya peluang adalah nilai dari alternatif terbaik yang dikorbankan."
+  },
+  {
+    "text": "Perdagangan internasional memberikan keuntungan bagi negara-negara yang terlibat. Salah satu alasannya adalah adanya spesialisasi produksi sesuai keunggulan masing-masing negara. Konsep ini dikenal sebagai...",
+    "options": ["Keunggulan absolut", "Keunggulan komparatif", "Monopoli", "Oligopoli"],
+    "answer": 1,
+    "pembahasan": "Keunggulan komparatif adalah kemampuan memproduksi barang dengan biaya relatif lebih rendah dibanding negara lain."
+  },
+  {
+    "text": "Indonesia sebagai negara anggota ASEAN memiliki peran penting dalam perdagangan global, terutama dalam ekspor komoditas seperti kelapa sawit dan batu bara. Hal ini menunjukkan bahwa Indonesia berperan dalam ekonomi global sebagai...",
+    "options": ["Negara konsumen", "Negara produsen", "Negara distributor", "Negara pengatur"],
+    "answer": 1,
+    "pembahasan": "Indonesia berperan sebagai produsen dan eksportir komoditas utama dunia."
+  },
+  {
+    "text": "Dalam sistem perekonomian, perusahaan memiliki peran penting dalam menghasilkan barang dan jasa untuk memenuhi kebutuhan masyarakat. Selain itu, perusahaan juga menyerap tenaga kerja. Hal ini menunjukkan bahwa perusahaan berperan sebagai...",
+    "options": ["Konsumen", "Produsen", "Regulator", "Distributor"],
+    "answer": 1,
+    "pembahasan": "Perusahaan berperan sebagai produsen yang menghasilkan barang dan jasa."
+  },
+  {
+    "text": "Pembangunan ekonomi yang hanya berfokus pada pertumbuhan tanpa memperhatikan lingkungan dapat menyebabkan kerusakan alam. Oleh karena itu, diperlukan kebijakan yang seimbang antara ekonomi dan lingkungan. Upaya ini bertujuan untuk mencapai...",
+    "options": ["Keuntungan maksimal", "Keseimbangan ekologi dan ekonomi", "Produksi massal", "Konsumsi tinggi"],
+    "answer": 1,
+    "pembahasan": "Pembangunan berkelanjutan bertujuan menyeimbangkan pertumbuhan ekonomi dengan kelestarian lingkungan agar tetap terjaga untuk generasi mendatang."
+  }
+]
+
   // ═══ SEGMEN D: Perkembangan Sejarah Indonesia (Soal 46–60) ═══
+[
   {
-    text:"Kerajaan Hindu pertama di Indonesia yang diketahui berdasarkan prasasti Yupa adalah...",
-    options:["Sriwijaya","Majapahit","Kutai","Tarumanegara"],
-    answer:2,
-    pembahasan:"Kerajaan Kutai di Kalimantan Timur adalah kerajaan Hindu tertua di Indonesia yang diketahui melalui prasasti Yupa (abad ke-4 M) yang menggunakan aksara Pallawa."
+    "text": "Pada masa awal pembentukan budaya masyarakat Indonesia, terjadi percampuran antara budaya lokal dengan budaya dari luar. Hal ini terlihat dari adanya pengaruh India dalam sistem kepercayaan dan kerajaan. Proses ini menunjukkan adanya...",
+    "options": ["Isolasi budaya", "Akulturasi budaya", "Asimilasi budaya", "Difusi budaya"],
+    "answer": 1,
+    "pembahasan": "Akulturasi adalah percampuran dua budaya tanpa menghilangkan budaya asli."
   },
   {
-    text:"Sumpah Pemuda tahun 1928 menghasilkan ikrar bertanah air, berbangsa, dan berbahasa satu, yaitu...",
-    options:["Jawa","Melayu","Indonesia","Nusantara"],
-    answer:2,
-    pembahasan:"Sumpah Pemuda 28 Oktober 1928 menegaskan satu tanah air, satu bangsa, dan satu bahasa: Indonesia. Ini menjadi titik tonggak nasionalisme Indonesia."
+    "text": "Kerajaan Hindu pertama di Indonesia diketahui melalui peninggalan prasasti yang ditemukan di Kalimantan Timur. Prasasti tersebut berbentuk tugu batu yang disebut Yupa. Kerajaan yang dimaksud adalah...",
+    "options": ["Sriwijaya", "Majapahit", "Kutai", "Tarumanegara"],
+    "answer": 2,
+    "pembahasan": "Kerajaan Kutai adalah kerajaan Hindu tertua di Indonesia berdasarkan prasasti Yupa."
   },
   {
-    text:"Perjanjian Renville (1948) mengakibatkan...",
-    options:["Pengakuan kemerdekaan Indonesia oleh Belanda","Wilayah RI menyusut dan terkepung Belanda","Terbentuknya Republik Indonesia Serikat","Berakhirnya Perang Kemerdekaan Indonesia"],
-    answer:1,
-    pembahasan:"Perjanjian Renville merugikan Indonesia karena wilayah RI menyusut hanya mencakup sebagian Jawa dan Madura, sementara Belanda menguasai wilayah yang lebih luas."
+    "text": "Pengaruh agama Buddha di Indonesia terlihat dari berdirinya kerajaan besar yang menjadi pusat pembelajaran agama Buddha di Asia Tenggara. Kerajaan ini juga menguasai jalur perdagangan penting. Kerajaan tersebut adalah...",
+    "options": ["Majapahit", "Sriwijaya", "Mataram Kuno", "Kediri"],
+    "answer": 1,
+    "pembahasan": "Sriwijaya dikenal sebagai pusat agama Buddha dan perdagangan di Asia Tenggara."
   },
   {
-    text:"Sistem Tanam Paksa (Cultuurstelsel) yang diterapkan Belanda mewajibkan rakyat...",
-    options:["Membayar pajak dalam bentuk uang","Menyerahkan 1/5 tanah atau 66 hari kerja per tahun untuk tanaman ekspor","Bekerja di tambang milik Belanda","Menjual hasil bumi dengan harga tetap"],
-    answer:1,
-    pembahasan:"Cultuurstelsel (1830–1870) mewajibkan petani menyerahkan 1/5 tanahnya untuk tanaman ekspor atau bekerja 66 hari per tahun. Ini sangat memberatkan rakyat Indonesia."
+    "text": "Masuknya Islam ke Indonesia membawa perubahan dalam berbagai bidang kehidupan masyarakat. Salah satu bukti pengaruh tersebut adalah berkembangnya kerajaan-kerajaan Islam. Kerajaan Islam pertama di Indonesia adalah...",
+    "options": ["Demak", "Aceh", "Samudra Pasai", "Banten"],
+    "answer": 2,
+    "pembahasan": "Samudra Pasai merupakan kerajaan Islam pertama di Indonesia."
   },
   {
-    text:"Proklamasi Kemerdekaan Indonesia dibacakan oleh Soekarno–Hatta pada tanggal...",
-    options:["17 Agustus 1944","17 Agustus 1945","18 Agustus 1945","1 Juni 1945"],
-    answer:1,
-    pembahasan:"Proklamasi Kemerdekaan Indonesia dibacakan pada 17 Agustus 1945 pukul 10.00 WIB di Jalan Pegangsaan Timur No. 56, Jakarta oleh Soekarno didampingi Hatta."
+    "text": "Bangsa Eropa datang ke Indonesia dengan tujuan utama mencari keuntungan dari perdagangan rempah-rempah. Selain itu, mereka juga ingin menguasai wilayah dan sumber daya. Peristiwa ini dikenal sebagai...",
+    "options": ["Nasionalisme", "Kolonialisme dan imperialisme", "Revolusi industri", "Globalisasi"],
+    "answer": 1,
+    "pembahasan": "Kolonialisme dan imperialisme adalah upaya menguasai wilayah dan sumber daya negara lain."
   },
   {
-    text:"Peristiwa Rengasdengklok terjadi karena...",
-    options:["Jepang menyerang Indonesia","Golongan muda mendesak Soekarno-Hatta segera memproklamasikan kemerdekaan","Belanda melancarkan Agresi Militer","Terjadi pemberontakan di Jawa Barat"],
-    answer:1,
-    pembahasan:"Pada 16 Agustus 1945, golongan muda mengamankan Soekarno-Hatta ke Rengasdengklok untuk mendesak proklamasi segera, tanpa menunggu persetujuan Jepang atau PPKI."
+    "text": "Sistem Tanam Paksa yang diterapkan oleh Belanda sangat memberatkan rakyat Indonesia. Rakyat diwajibkan menanam tanaman tertentu untuk kepentingan Belanda. Sistem ini dikenal dengan istilah...",
+    "options": ["Liberalisme", "Cultuurstelsel", "Politik Etis", "Monopoli"],
+    "answer": 1,
+    "pembahasan": "Cultuurstelsel adalah sistem tanam paksa yang diterapkan Belanda pada abad ke-19."
   },
   {
-    text:"Kerajaan Sriwijaya berkembang menjadi kerajaan maritim besar karena...",
-    options:["Memiliki pasukan darat terkuat","Menguasai jalur perdagangan Selat Malaka","Memiliki teknologi pertanian maju","Memperoleh dukungan Kerajaan Majapahit"],
-    answer:1,
-    pembahasan:"Sriwijaya (abad 7–13 M) menguasai Selat Malaka yang merupakan jalur perdagangan penting antara India dan China, sehingga menjadi pusat perdagangan dan pusat Buddha di Asia Tenggara."
+    "text": "Perlawanan rakyat Indonesia terhadap penjajahan terjadi di berbagai daerah. Salah satu perlawanan besar dipimpin oleh Pangeran Diponegoro di Jawa. Perlawanan ini dikenal sebagai...",
+    "options": ["Perang Aceh", "Perang Padri", "Perang Diponegoro", "Perang Banjar"],
+    "answer": 2,
+    "pembahasan": "Perang Diponegoro (1825–1830) adalah salah satu perlawanan terbesar terhadap Belanda."
   },
   {
-    text:"Kongres Perempuan Indonesia pertama diadakan pada tahun...",
-    options:["1908","1928","1938","1945"],
-    answer:1,
-    pembahasan:"Kongres Perempuan Indonesia pertama diselenggarakan pada 22–25 Desember 1928 di Yogyakarta, membahas hak perempuan, pendidikan, dan peran perempuan dalam pergerakan nasional."
+    "text": "Perjuangan bangsa Indonesia untuk mencapai kemerdekaan tidak hanya dilakukan dengan perlawanan fisik, tetapi juga melalui organisasi. Organisasi modern pertama di Indonesia adalah...",
+    "options": ["Sarekat Islam", "Boedi Oetomo", "Indische Partij", "PNI"],
+    "answer": 1,
+    "pembahasan": "Boedi Oetomo didirikan tahun 1908 dan menjadi tonggak kebangkitan nasional."
   },
   {
-    text:"Apa tujuan utama dibentuknya BPUPKI (Badan Penyelidik Usaha-usaha Persiapan Kemerdekaan Indonesia)?",
-    options:["Memimpin perjuangan kemerdekaan secara militer","Menyelidiki hal-hal penting terkait kemerdekaan Indonesia","Mengatur hubungan diplomatik dengan negara lain","Menyusun anggaran negara Indonesia merdeka"],
-    answer:1,
-    pembahasan:"BPUPKI dibentuk Jepang pada April 1945 untuk menyelidiki hal-hal penting terkait persiapan kemerdekaan Indonesia, termasuk merumuskan dasar negara (Pancasila) dan rancangan UUD."
+    "text": "Peristiwa penting yang menunjukkan persatuan pemuda Indonesia terjadi pada tahun 1928. Dalam peristiwa tersebut, para pemuda mengikrarkan satu tanah air, satu bangsa, dan satu bahasa. Peristiwa tersebut dikenal sebagai...",
+    "options": ["Proklamasi", "Sumpah Pemuda", "Reformasi", "Konferensi Asia Afrika"],
+    "answer": 1,
+    "pembahasan": "Sumpah Pemuda menjadi tonggak persatuan bangsa Indonesia."
   },
   {
-    text:"Perang Diponegoro (1825–1830) merupakan perlawanan terhadap...",
-    options:["VOC Belanda","Pemerintah Kolonial Belanda","Kerajaan Mataram","Pasukan Inggris"],
-    answer:1,
-    pembahasan:"Perang Diponegoro (Perang Jawa) adalah perlawanan Pangeran Diponegoro terhadap pemerintah kolonial Belanda yang merupakan perang terbesar dan termahal bagi Belanda di Indonesia."
+    "text": "Proklamasi Kemerdekaan Indonesia merupakan puncak perjuangan bangsa Indonesia melawan penjajahan. Peristiwa ini dibacakan oleh Soekarno dan Hatta pada tanggal...",
+    "options": ["1 Juni 1945", "17 Agustus 1945", "18 Agustus 1945", "28 Oktober 1928"],
+    "answer": 1,
+    "pembahasan": "Proklamasi dibacakan pada 17 Agustus 1945."
   },
   {
-    text:"Masa Orde Baru di Indonesia berlangsung di bawah kepemimpinan...",
-    options:["Soekarno","Soeharto","B.J. Habibie","Megawati Soekarnoputri"],
-    answer:1,
-    pembahasan:"Orde Baru adalah periode pemerintahan Presiden Soeharto (1966–1998) yang ditandai pembangunan ekonomi (REPELITA), stabilitas politik, namun juga otoriter dan korupsi."
+    "text": "Peristiwa Rengasdengklok terjadi karena adanya perbedaan pendapat antara golongan muda dan tua mengenai waktu proklamasi. Golongan muda mendesak agar kemerdekaan segera diproklamasikan tanpa campur tangan Jepang. Peristiwa ini bertujuan untuk...",
+    "options": ["Menyerahkan kekuasaan ke Jepang", "Mempercepat proklamasi kemerdekaan", "Mengakhiri perang", "Membentuk pemerintahan"],
+    "answer": 1,
+    "pembahasan": "Golongan muda ingin proklamasi dilakukan secepat mungkin."
   },
   {
-    text:"Reformasi 1998 di Indonesia dipicu oleh...",
-    options:["Serangan militer dari luar negeri","Krisis ekonomi Asia 1997–1998 dan desakan rakyat","Bencana alam nasional","Perubahan konstitusi secara damai"],
-    answer:1,
-    pembahasan:"Krisis moneter 1997–1998 menyebabkan ekonomi Indonesia kolaps. Desakan mahasiswa dan rakyat memaksa Presiden Soeharto mundur pada 21 Mei 1998, mengakhiri 32 tahun Orde Baru."
+    "text": "Setelah kemerdekaan, Indonesia masih harus berjuang mempertahankan kedaulatan dari Belanda. Salah satu upaya diplomasi yang dilakukan adalah melalui Konferensi Meja Bundar. Hasil dari perundingan ini adalah...",
+    "options": ["Gencatan senjata", "Pengakuan kedaulatan Indonesia", "Pembentukan PBB", "Perjanjian damai"],
+    "answer": 1,
+    "pembahasan": "KMB menghasilkan pengakuan kedaulatan Indonesia oleh Belanda."
   },
   {
-    text:"Boedi Oetomo, organisasi modern pertama Indonesia, didirikan pada...",
-    options:["20 Mei 1908","17 Agustus 1945","28 Oktober 1928","1 Juni 1945"],
-    answer:0,
-    pembahasan:"Boedi Oetomo didirikan pada 20 Mei 1908 oleh para mahasiswa STOVIA di Jakarta. Tanggal ini diperingati sebagai Hari Kebangkitan Nasional."
+    "text": "Dalam perjuangan kemerdekaan, terdapat banyak tokoh nasional yang berperan penting. Salah satu tokoh proklamator Indonesia adalah...",
+    "options": ["Ki Hajar Dewantara", "Soekarno", "Kartini", "Sutan Takdir"],
+    "answer": 1,
+    "pembahasan": "Soekarno adalah proklamator kemerdekaan Indonesia bersama Mohammad Hatta."
   },
   {
-    text:"Perjanjian KMB (Konferensi Meja Bundar) tahun 1949 menghasilkan...",
-    options:["Pengakuan kemerdekaan RI oleh Belanda","Terbentuknya Negara Republik Indonesia Serikat (RIS) dan pengakuan kedaulatan","Gencatan senjata sementara","Masuknya Indonesia ke PBB"],
-    answer:1,
-    pembahasan:"KMB (23 Agustus–2 November 1949) menghasilkan pengakuan kedaulatan Belanda kepada RIS pada 27 Desember 1949, mengakhiri perjuangan kemerdekaan secara diplomatik."
+    "text": "Tokoh lokal juga berperan dalam melawan penjajahan di daerah masing-masing. Salah satu tokoh dari Aceh yang terkenal melawan Belanda adalah...",
+    "options": ["Pattimura", "Teuku Umar", "Sultan Hasanuddin", "Diponegoro"],
+    "answer": 1,
+    "pembahasan": "Teuku Umar adalah pahlawan dari Aceh yang melawan Belanda."
   },
   {
-    text:"Patih Gadjah Mada mengucapkan Sumpah Palapa yang berisi tekad untuk...",
-    options:["Memenangkan perang melawan Mongol","Menyatukan Nusantara di bawah kekuasaan Majapahit","Membangun armada laut terkuat","Mengusir pedagang asing dari Nusantara"],
-    answer:1,
-    pembahasan:"Sumpah Palapa (1334 M) diucapkan Gadjah Mada saat dilantik sebagai Mahapatih Majapahit, berisi tekad untuk tidak menikmati palapa (kenikmatan) sebelum menyatukan Nusantara."
+    "text": "Setelah kemerdekaan, bangsa Indonesia terus berusaha mempertahankan kemerdekaan dari ancaman luar. Perjuangan ini dilakukan melalui berbagai cara, baik militer maupun diplomasi. Hal ini menunjukkan bahwa kemerdekaan harus...",
+    "options": ["Dibiarkan", "Dijual", "Dipertahankan", "Dilupakan"],
+    "answer": 2,
+    "pembahasan": "Kemerdekaan harus dipertahankan oleh seluruh rakyat Indonesia."
   }
 ];
 
@@ -898,13 +911,10 @@ const BUILTIN_QUESTIONS = [
 // ─────────────────────────────────────────
 const USERS = {
   siswa: [
-    { username:'nicky',  password:'nicky123', name:'Nicky' },
-    { username:'budi',   password:'budi123',  name:'Budi' },
-    { username:'sari',   password:'sari123',  name:'Sari' },
-    { username:'dimas',  password:'dimas123', name:'Dimas' },
+    { username:'nicky',  password:'nickyips#!1', name:'Nicky' },
   ],
   admin: [
-    { username:'admin', password:'admin2024', name:'Administrator' },
+    { username:'admin', password:'risku1818', name:'Administrator' },
     { username:'guru',  password:'guru2024',  name:'Guru' },
   ]
 };
