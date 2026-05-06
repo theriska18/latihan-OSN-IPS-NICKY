@@ -1,0 +1,1852 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Latihan OSN IPS Nicky</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --blue:#378ADD;--blue-light:#E6F1FB;--blue-dark:#0C447C;
+  --green:#639922;--green-light:#EAF3DE;--green-dark:#27500A;
+  --amber:#BA7517;--amber-light:#FAEEDA;--amber-dark:#633806;
+  --red:#E24B4A;--red-light:#FCEBEB;--red-dark:#791F1F;
+  --purple:#534AB7;--purple-light:#EEEDFE;--purple-dark:#26215C;
+  --teal:#1D9E75;--teal-light:#E1F5EE;--teal-dark:#085041;
+  --orange:#D9640A;--orange-light:#FEF0E6;--orange-dark:#7A3005;
+  --pink:#C0367B;--pink-light:#FCE8F3;--pink-dark:#6B0D40;
+  --bg:#f5f5f3;--card:#fff;
+  --border:rgba(0,0,0,.08);--border-md:rgba(0,0,0,.13);
+  --text:#1a1a1a;--text-sec:#6b6b6b;--surface:#f1efe8;
+}
+@media(prefers-color-scheme:dark){:root{
+  --bg:#1a1a1a;--card:#242424;--border:rgba(255,255,255,.08);
+  --border-md:rgba(255,255,255,.14);--text:#f0f0f0;
+  --text-sec:#a0a0a0;--surface:#2e2e2e;
+}}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+.wrap{max-width:900px;margin:0 auto;padding:20px 24px}
+
+/* LOGIN */
+#login-screen{min-height:100vh;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#26215C 0%,#0C447C 60%,#085041 100%);padding:20px;}
+.login-box{background:#fff;border-radius:20px;padding:36px 32px;width:100%;max-width:400px;box-shadow:0 20px 60px rgba(0,0,0,.25);}
+@media(prefers-color-scheme:dark){.login-box{background:#1e1e1e}}
+.login-logo{text-align:center;margin-bottom:24px}
+.login-logo-icon{width:64px;height:64px;border-radius:16px;margin:0 auto 12px;background:linear-gradient(135deg,#534AB7,#378ADD);display:flex;align-items:center;justify-content:center;font-size:28px;}
+.login-logo h1{font-size:20px;font-weight:600;color:var(--text);margin-bottom:4px}
+.login-logo p{font-size:12px;color:var(--text-sec)}
+.login-tabs{display:flex;gap:0;margin-bottom:24px;border:1.5px solid var(--border-md);border-radius:10px;overflow:hidden}
+.login-tab{flex:1;padding:9px;font-size:13px;font-weight:500;cursor:pointer;border:none;background:transparent;color:var(--text-sec);transition:all .2s;}
+.login-tab.active{background:var(--purple);color:#fff}
+.login-field{margin-bottom:14px}
+.login-field label{display:block;font-size:12px;font-weight:500;color:var(--text-sec);margin-bottom:6px}
+.login-field input{width:100%;padding:10px 14px;border:1.5px solid var(--border-md);border-radius:9px;font-size:14px;background:var(--card);color:var(--text);transition:border-color .15s;outline:none;}
+.login-field input:focus{border-color:var(--purple)}
+.login-hint{font-size:11px;color:var(--text-sec);margin-top:4px}
+.pw-wrap{position:relative}
+.pw-wrap input{padding-right:40px}
+.pw-toggle{position:absolute;right:12px;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;color:var(--text-sec);font-size:16px;padding:2px;line-height:1;transition:color .15s;}
+.pw-toggle:hover{color:var(--purple)}
+.login-btn{width:100%;padding:11px;border-radius:9px;font-size:14px;font-weight:600;cursor:pointer;border:none;background:linear-gradient(135deg,#534AB7,#378ADD);color:#fff;transition:opacity .15s;margin-top:6px;}
+.login-btn:hover{opacity:.9}
+.login-error{background:var(--red-light);border:1px solid var(--red);border-radius:8px;padding:10px 14px;font-size:12px;color:var(--red-dark);margin-bottom:12px;display:none;}
+.login-error.show{display:block}
+.admin-badge{display:inline-flex;align-items:center;gap:4px;background:var(--amber-light);color:var(--amber-dark);font-size:10px;font-weight:600;padding:3px 8px;border-radius:20px;border:1px solid var(--amber);}
+
+/* USER BAR */
+.user-bar{display:flex;align-items:center;justify-content:space-between;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:10px 16px;margin-bottom:12px;}
+.user-info{display:flex;align-items:center;gap:10px}
+.user-avatar{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:600;color:#fff;flex-shrink:0;}
+.user-avatar.siswa{background:linear-gradient(135deg,#378ADD,#1D9E75)}
+.user-avatar.admin{background:linear-gradient(135deg,#534AB7,#BA7517)}
+.user-name{font-size:13px;font-weight:500;color:var(--text)}
+.user-role{font-size:11px;color:var(--text-sec);margin-top:1px}
+.btn-logout{padding:6px 12px;border-radius:7px;font-size:12px;font-weight:500;cursor:pointer;border:1.5px solid var(--border-md);background:var(--card);color:var(--text-sec);transition:all .15s;}
+.btn-logout:hover{background:var(--red-light);color:var(--red-dark);border-color:var(--red)}
+
+/* LOADING */
+#loading-screen{text-align:center;padding:60px 20px}
+.loading-spinner{width:40px;height:40px;border:3px solid var(--border-md);border-top-color:var(--blue);border-radius:50%;animation:spin .8s linear infinite;margin:0 auto 16px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.loading-text{font-size:14px;color:var(--text-sec)}
+
+/* HEADER */
+.header-bar{display:flex;justify-content:space-between;align-items:center;background:linear-gradient(135deg,#534AB7 0%,#378ADD 100%);border-radius:14px;padding:14px 20px;margin-bottom:14px;}
+.header-bar h2{font-size:15px;font-weight:500;color:#fff;letter-spacing:.3px}
+.header-subtitle{font-size:11px;color:rgba(255,255,255,.7);margin-top:2px}
+.timer-box{background:rgba(255,255,255,.18);border:1.5px solid rgba(255,255,255,.35);border-radius:10px;padding:8px 16px;text-align:center;min-width:90px;}
+.timer-val{font-size:22px;font-weight:500;color:#fff;letter-spacing:3px;font-family:monospace}
+.timer-lbl{font-size:10px;color:rgba(255,255,255,.7);margin-top:1px}
+.timer-box.danger{background:rgba(226,75,74,.3);border-color:rgba(226,75,74,.8)}
+
+/* LAYOUT */
+.layout{display:grid;grid-template-columns:1fr 230px;gap:12px}
+.q-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px}
+.q-meta{display:flex;align-items:center;gap:8px;margin-bottom:10px;flex-wrap:wrap}
+.q-badge{background:var(--purple-light);color:var(--purple-dark);font-size:11px;font-weight:500;padding:4px 10px;border-radius:20px}
+.q-segment-badge{font-size:11px;font-weight:600;padding:4px 10px;border-radius:20px}
+.q-progress-text{font-size:12px;color:var(--text-sec)}
+.q-text{font-size:15px;color:var(--text);line-height:1.7;margin-bottom:18px;font-weight:500}
+.options{display:flex;flex-direction:column;gap:9px;margin-bottom:20px}
+.opt{display:flex;align-items:center;gap:12px;padding:12px 16px;border:1.5px solid var(--border);border-radius:10px;cursor:pointer;background:var(--card);transition:border-color .15s,background .15s;}
+.opt:hover{border-color:var(--blue);background:var(--blue-light)}
+.opt.selected{border-color:var(--blue);background:var(--blue-light)}
+.opt-letter{width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:500;flex-shrink:0;border:1.5px solid currentColor;transition:all .15s;color:var(--text-sec);}
+.opt.selected .opt-letter{background:var(--blue);color:#fff;border-color:var(--blue)}
+.opt-text{font-size:14px;color:var(--text)}
+.q-nav{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.btn{padding:9px 18px;border-radius:8px;font-size:13px;font-weight:500;cursor:pointer;border:1.5px solid var(--border-md);background:var(--card);color:var(--text);transition:all .15s;}
+.btn:hover{background:var(--surface)}
+.btn-blue{background:var(--blue);color:#fff;border-color:var(--blue)}
+.btn-blue:hover{background:var(--blue-dark);border-color:var(--blue-dark)}
+.btn-red{background:var(--red);color:#fff;border-color:var(--red)}
+.btn-red:hover{background:var(--red-dark);border-color:var(--red-dark)}
+.btn-sm{padding:6px 12px;font-size:12px}
+.btn-ghost{background:transparent;border-color:transparent;color:var(--text-sec)}
+.btn-ghost:hover{background:var(--surface);border-color:var(--border)}
+
+/* SIDEBAR */
+.sidebar{display:flex;flex-direction:column;gap:10px}
+.side-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:14px}
+.side-title{font-size:11px;font-weight:600;color:var(--text-sec);text-transform:uppercase;letter-spacing:.6px;margin-bottom:10px}
+
+/* SEGMENT NAV */
+.seg-nav-block{margin-bottom:10px}
+.seg-nav-label{display:flex;align-items:center;gap:6px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px;padding:4px 6px;border-radius:6px;}
+.seg-nav-label .seg-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.seg-nav-label.seg-a{background:rgba(83,74,183,.1);color:var(--purple-dark)}
+.seg-nav-label.seg-b{background:rgba(25,158,117,.1);color:var(--teal-dark)}
+.seg-nav-label.seg-c{background:rgba(186,117,23,.1);color:var(--amber-dark)}
+.seg-nav-label.seg-d{background:rgba(192,54,123,.1);color:var(--pink-dark)}
+.nav-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:4px;margin-bottom:4px}
+.nav-btn{aspect-ratio:1;border-radius:7px;font-size:11px;font-weight:500;cursor:pointer;border:none;display:flex;align-items:center;justify-content:center;transition:all .15s;}
+.nav-btn.unanswered{background:var(--amber-light);color:var(--amber-dark)}
+.nav-btn.answered{background:var(--green-light);color:var(--green-dark)}
+.nav-btn.current{outline:2.5px solid var(--blue);outline-offset:1px}
+/* segment color borders */
+.nav-btn.seg-a-btn{border-bottom:2px solid var(--purple)}
+.nav-btn.seg-b-btn{border-bottom:2px solid var(--teal)}
+.nav-btn.seg-c-btn{border-bottom:2px solid var(--amber)}
+.nav-btn.seg-d-btn{border-bottom:2px solid var(--pink)}
+
+.legend{display:flex;flex-direction:column;gap:5px;margin-top:8px;padding-top:8px;border-top:1px solid var(--border)}
+.legend-row{display:flex;align-items:center;gap:7px;font-size:11px;color:var(--text-sec)}
+.legend-dot{width:12px;height:12px;border-radius:4px;flex-shrink:0}
+.prog-wrap{margin-top:6px}
+.prog-label{display:flex;justify-content:space-between;font-size:11px;color:var(--text-sec);margin-bottom:5px}
+.prog-bar-bg{height:7px;border-radius:100px;background:var(--surface);overflow:hidden}
+.prog-bar-fill{height:100%;border-radius:100px;background:var(--green);transition:width .4s}
+.stat-row{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:10px}
+.stat-box{background:var(--surface);border-radius:8px;padding:9px;text-align:center}
+.stat-val{font-size:18px;font-weight:500}
+.stat-lbl{font-size:10px;color:var(--text-sec);margin-top:1px}
+
+/* SEGMENT PROGRESS IN SIDEBAR */
+.seg-progress-item{margin-bottom:7px}
+.seg-prog-row{display:flex;justify-content:space-between;align-items:center;font-size:10px;margin-bottom:3px}
+.seg-prog-name{font-weight:600;color:var(--text-sec)}
+.seg-prog-count{color:var(--text-sec)}
+.seg-prog-bar-bg{height:5px;border-radius:100px;background:var(--surface);overflow:hidden}
+.seg-prog-bar-fill{height:100%;border-radius:100px;transition:width .4s}
+
+/* RESULT */
+#result-screen{display:none}
+.result-header{background:linear-gradient(135deg,#1D9E75 0%,#378ADD 100%);border-radius:14px;padding:20px;text-align:center;margin-bottom:14px;}
+.rh-title{font-size:16px;font-weight:500;color:#fff;margin-bottom:4px}
+.rh-sub{font-size:12px;color:rgba(255,255,255,.75)}
+.score-ring{width:90px;height:90px;border-radius:50%;border:5px solid rgba(255,255,255,.4);display:flex;flex-direction:column;align-items:center;justify-content:center;margin:14px auto 0;background:rgba(255,255,255,.15);}
+.sr-num{font-size:28px;font-weight:500;color:#fff}
+.sr-lbl{font-size:10px;color:rgba(255,255,255,.75)}
+.res-stats{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:14px}
+.res-stat{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:12px;text-align:center}
+.res-stat .rv{font-size:24px;font-weight:500}
+.res-stat .rl{font-size:11px;color:var(--text-sec);margin-top:2px}
+
+/* SEGMENT RESULT GRID */
+.seg-result-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-bottom:14px}
+.seg-result-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:14px}
+.seg-rc-header{display:flex;align-items:center;gap:8px;margin-bottom:10px}
+.seg-rc-icon{width:30px;height:30px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}
+.seg-rc-name{font-size:11px;font-weight:600;color:var(--text);line-height:1.3}
+.seg-rc-stats{display:flex;gap:6px;flex-wrap:wrap}
+.seg-rc-pill{font-size:11px;font-weight:600;padding:3px 8px;border-radius:20px}
+.seg-rc-score{font-size:18px;font-weight:700;margin-top:6px}
+
+.review-section{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:16px}
+.review-section h3{font-size:14px;font-weight:500;color:var(--text);margin-bottom:12px}
+.review-item{border-radius:10px;padding:12px 14px;margin-bottom:9px;border-left:4px solid transparent}
+.review-item.correct{background:var(--green-light);border-color:var(--green)}
+.review-item.wrong{background:var(--red-light);border-color:var(--red)}
+.review-item.skip{background:var(--surface);border-color:var(--border-md)}
+.ri-q{font-size:13px;font-weight:500;color:var(--text);margin-bottom:6px}
+.ri-ans{font-size:12px;margin-bottom:3px}
+.ri-correct-ans{color:var(--green-dark)}
+.ri-wrong-ans{color:var(--red-dark)}
+.ri-skip-ans{color:var(--text-sec)}
+.ri-pembahasan{font-size:12px;color:var(--text-sec);background:rgba(255,255,255,.6);padding:7px 10px;border-radius:7px;margin-top:7px;line-height:1.5}
+.ri-seg-tag{display:inline-block;font-size:10px;font-weight:600;padding:2px 7px;border-radius:20px;margin-bottom:6px}
+.result-actions{display:flex;gap:8px;justify-content:center;margin-top:14px;flex-wrap:wrap}
+
+/* HISTORY */
+#history-screen{display:none}
+.history-header{display:flex;align-items:center;justify-content:space-between;background:linear-gradient(135deg,#534AB7 0%,#378ADD 100%);border-radius:14px;padding:14px 20px;margin-bottom:14px;}
+.history-header h2{font-size:15px;font-weight:500;color:#fff}
+.history-list{display:flex;flex-direction:column;gap:10px}
+.history-item{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:16px 18px;}
+.hi-top{display:flex;align-items:center;gap:14px}
+.hi-score-ring{width:54px;height:54px;border-radius:50%;flex-shrink:0;display:flex;flex-direction:column;align-items:center;justify-content:center;font-weight:600;font-size:18px;border:3px solid;}
+.hi-score-ring.excellent{color:var(--green);border-color:var(--green);background:var(--green-light)}
+.hi-score-ring.good{color:var(--blue);border-color:var(--blue);background:var(--blue-light)}
+.hi-score-ring.poor{color:var(--red);border-color:var(--red);background:var(--red-light)}
+.hi-body{flex:1;min-width:0}
+.hi-title{font-size:13px;font-weight:500;color:var(--text);margin-bottom:3px}
+.hi-meta{font-size:11px;color:var(--text-sec)}
+.hi-pills{display:flex;gap:6px;margin-top:6px;flex-wrap:wrap}
+.pill{font-size:11px;padding:3px 8px;border-radius:20px;font-weight:500}
+.pill-green{background:var(--green-light);color:var(--green-dark)}
+.pill-red{background:var(--red-light);color:var(--red-dark)}
+.pill-amber{background:var(--amber-light);color:var(--amber-dark)}
+.hi-actions{display:flex;flex-direction:column;gap:5px;align-items:flex-end}
+.hi-empty{text-align:center;padding:40px;color:var(--text-sec);font-size:14px}
+.hi-user-tag{font-size:10px;color:var(--text-sec);margin-top:2px}
+
+/* SEGMENT BREAKDOWN IN HISTORY ITEM */
+.hi-seg-breakdown{margin-top:10px;padding-top:10px;border-top:1px solid var(--border);display:grid;grid-template-columns:repeat(2,1fr);gap:6px}
+.hi-seg-item{background:var(--surface);border-radius:8px;padding:8px 10px;display:flex;align-items:center;gap:8px}
+.hi-seg-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.hi-seg-info{flex:1;min-width:0}
+.hi-seg-name{font-size:10px;font-weight:600;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.hi-seg-score{font-size:10px;color:var(--text-sec);margin-top:1px}
+
+.admin-only-notice{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--amber-dark);background:var(--amber-light);border:1px solid var(--amber);border-radius:8px;padding:8px 12px;margin-bottom:12px;}
+
+/* TOP NAV */
+.top-nav{display:flex;gap:8px;margin-bottom:14px}
+.top-nav-btn{padding:8px 14px;border-radius:8px;font-size:12px;font-weight:500;cursor:pointer;border:1.5px solid var(--border-md);background:var(--card);color:var(--text-sec);transition:all .15s;}
+.top-nav-btn:hover{background:var(--surface)}
+.top-nav-btn.active{background:var(--purple-light);color:var(--purple-dark);border-color:var(--purple)}
+
+/* LOG */
+.log-header{display:flex;align-items:center;justify-content:space-between;background:linear-gradient(135deg,#085041 0%,#1D9E75 100%);border-radius:14px;padding:14px 20px;margin-bottom:12px;}
+.log-header h2{font-size:15px;font-weight:500;color:#fff}
+.log-table-wrap{background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden}
+.log-table{width:100%;border-collapse:collapse;font-size:12px}
+.log-table thead{background:var(--surface)}
+.log-table th{padding:10px 14px;text-align:left;font-size:11px;font-weight:600;color:var(--text-sec);text-transform:uppercase;letter-spacing:.5px;border-bottom:1px solid var(--border)}
+.log-table td{padding:10px 14px;border-bottom:1px solid var(--border);color:var(--text);vertical-align:middle}
+.log-table tr:last-child td{border-bottom:none}
+.log-table tr:hover td{background:var(--surface)}
+.log-badge{display:inline-flex;align-items:center;padding:3px 8px;border-radius:20px;font-size:11px;font-weight:600}
+.log-badge.excellent{background:var(--green-light);color:var(--green-dark)}
+.log-badge.good{background:var(--blue-light);color:var(--blue-dark)}
+.log-badge.poor{background:var(--red-light);color:var(--red-dark)}
+.log-empty{text-align:center;padding:30px;color:var(--text-sec);font-size:13px}
+.log-stat-row{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:14px}
+.log-stat-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:12px;text-align:center}
+.log-stat-card .lsv{font-size:22px;font-weight:600;color:var(--purple)}
+.log-stat-card .lsl{font-size:10px;color:var(--text-sec);margin-top:2px}
+
+@media(max-width:640px){
+  .wrap{padding:12px 14px}
+  .layout{grid-template-columns:1fr}
+  .sidebar{display:none}
+  .res-stats{grid-template-columns:1fr 1fr}
+  .seg-result-grid{grid-template-columns:1fr}
+  .history-item .hi-top{flex-direction:column;align-items:flex-start}
+  .hi-actions{flex-direction:row;width:100%}
+  .hi-seg-breakdown{grid-template-columns:1fr}
+  .log-stat-row{grid-template-columns:1fr 1fr}
+  .log-table th:nth-child(5),.log-table td:nth-child(5),.log-table th:nth-child(6),.log-table td:nth-child(6){display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- LOGIN SCREEN -->
+<div id="login-screen">
+  <div class="login-box">
+    <div class="login-logo">
+      <div class="login-logo-icon">📝</div>
+      <h1>Latihan OSN IPS Nicky</h1>
+      <p>Masuk untuk mengakses latihan</p>
+    </div>
+    <div class="login-tabs">
+      <button class="login-tab active" id="tab-siswa" onclick="switchTab('siswa')">👨‍🎓 Siswa</button>
+      <button class="login-tab" id="tab-admin" onclick="switchTab('admin')">🔐 Admin</button>
+    </div>
+    <div id="login-error" class="login-error">Username atau password salah.</div>
+    <div id="form-siswa">
+      <div class="login-field">
+        <label>Username Siswa</label>
+        <input type="text" id="siswa-username" placeholder="Masukkan username" autocomplete="username">
+        <div class="login-hint">Contoh: nicky, budi, sari</div>
+      </div>
+      <div class="login-field">
+        <label>Password</label>
+        <div class="pw-wrap">
+          <input type="password" id="siswa-password" placeholder="Masukkan password" autocomplete="current-password">
+          <button type="button" class="pw-toggle" onclick="togglePw('siswa-password',this)">👁</button>
+        </div>
+      </div>
+      <button class="login-btn" onclick="doLogin('siswa')">Masuk sebagai Siswa</button>
+    </div>
+    <div id="form-admin" style="display:none">
+      <div class="login-field">
+        <label>Username Admin</label>
+        <input type="text" id="admin-username" placeholder="Masukkan username admin" autocomplete="username">
+      </div>
+      <div class="login-field">
+        <label>Password Admin</label>
+        <div class="pw-wrap">
+          <input type="password" id="admin-password" placeholder="Masukkan password admin" autocomplete="current-password">
+          <button type="button" class="pw-toggle" onclick="togglePw('admin-password',this)">👁</button>
+        </div>
+      </div>
+      <button class="login-btn" onclick="doLogin('admin')">Masuk sebagai Admin</button>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN APP -->
+<div id="main-app" style="display:none">
+<div class="wrap">
+
+  <div class="user-bar">
+    <div class="user-info">
+      <div class="user-avatar" id="user-avatar">?</div>
+      <div>
+        <div class="user-name" id="user-name-display">–</div>
+        <div class="user-role" id="user-role-display">–</div>
+      </div>
+    </div>
+    <button class="btn-logout" onclick="doLogout()">Keluar</button>
+  </div>
+
+  <div class="top-nav">
+    <button class="top-nav-btn active" id="nav-tryout" onclick="showScreen('tryout')">📝 Tryout</button>
+    <button class="top-nav-btn" id="nav-history" onclick="showScreen('history')">📋 Riwayat Tryout</button>
+    <button class="top-nav-btn" id="nav-log" onclick="showScreen('log')">📊 Log Aktivitas</button>
+  </div>
+
+  <div id="loading-screen" style="display:none">
+    <div class="loading-spinner"></div>
+    <div class="loading-text">Memuat soal...</div>
+  </div>
+
+  <!-- CBT APP -->
+  <div id="cbt-app" style="display:none">
+    <div class="header-bar">
+      <div>
+        <h2 id="header-title">LATIHAN OSN IPS NICKY</h2>
+        <div class="header-subtitle" id="header-subtitle">Memuat...</div>
+      </div>
+      <div class="timer-box" id="timer-box">
+        <div class="timer-val" id="timer">90:00</div>
+        <div class="timer-lbl">Sisa waktu</div>
+      </div>
+    </div>
+    <div class="layout">
+      <div class="q-card">
+        <div class="q-meta">
+          <span class="q-badge" id="q-badge">Soal 1</span>
+          <span class="q-segment-badge" id="q-seg-badge">Segmen A</span>
+          <span class="q-progress-text" id="q-progress">dari 60 soal</span>
+        </div>
+        <div class="q-text" id="q-text"></div>
+        <div class="options" id="options"></div>
+        <div class="q-nav">
+          <button class="btn" onclick="prevQ()">← Sebelumnya</button>
+          <button class="btn btn-red" onclick="confirmSubmit()">Selesai &amp; Kirim</button>
+          <button class="btn btn-blue" onclick="nextQ()">Selanjutnya →</button>
+        </div>
+      </div>
+      <div class="sidebar">
+        <div class="side-card">
+          <div class="side-title">Navigasi Soal</div>
+          <div id="seg-nav-container"></div>
+          <div class="legend">
+            <div class="legend-row"><div class="legend-dot" style="background:var(--green-light);border:1px solid var(--green)"></div>Sudah dijawab</div>
+            <div class="legend-row"><div class="legend-dot" style="background:var(--amber-light);border:1px solid var(--amber)"></div>Belum dijawab</div>
+          </div>
+        </div>
+        <div class="side-card">
+          <div class="side-title">Progress</div>
+          <div class="prog-wrap">
+            <div class="prog-label"><span id="prog-text">0 terjawab</span><span id="prog-pct">0%</span></div>
+            <div class="prog-bar-bg"><div class="prog-bar-fill" id="prog-bar" style="width:0%"></div></div>
+          </div>
+          <div class="stat-row">
+            <div class="stat-box"><div class="stat-val" style="color:var(--green)" id="stat-ans">0</div><div class="stat-lbl">Dijawab</div></div>
+            <div class="stat-box"><div class="stat-val" style="color:var(--amber)" id="stat-skip">0</div><div class="stat-lbl">Belum</div></div>
+          </div>
+        </div>
+        <div class="side-card">
+          <div class="side-title">Per Segmen</div>
+          <div id="seg-progress-sidebar"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RESULT -->
+  <div id="result-screen" style="display:none">
+    <div class="result-header">
+      <div class="rh-title">Hasil Latihan OSN IPS Nicky</div>
+      <div class="rh-sub">Ujian selesai — lihat hasil dan pembahasan di bawah</div>
+      <div class="score-ring">
+        <div class="sr-num" id="res-score">0</div>
+        <div class="sr-lbl">NILAI</div>
+      </div>
+    </div>
+    <div class="res-stats">
+      <div class="res-stat"><div class="rv" style="color:var(--green)" id="res-benar">0</div><div class="rl">Benar</div></div>
+      <div class="res-stat"><div class="rv" style="color:var(--red)" id="res-salah">0</div><div class="rl">Salah</div></div>
+      <div class="res-stat"><div class="rv" style="color:var(--text-sec)" id="res-skip">0</div><div class="rl">Tidak dijawab</div></div>
+    </div>
+    <!-- Segment result cards -->
+    <div class="seg-result-grid" id="seg-result-grid"></div>
+    <div class="review-section">
+      <h3>Pembahasan Per Soal</h3>
+      <div id="review-list"></div>
+      <div class="result-actions" id="result-actions"></div>
+    </div>
+  </div>
+
+  <!-- HISTORY -->
+  <div id="history-screen" style="display:none">
+    <div class="history-header">
+      <h2>📋 Riwayat Tryout</h2>
+      <div style="display:flex;gap:8px;align-items:center">
+        <button class="btn btn-sm" style="background:rgba(255,255,255,.15);border-color:rgba(255,255,255,.3);color:#fff" onclick="downloadPDF()">📥 Unduh PDF</button>
+        <div id="admin-clear-btn" style="display:none">
+          <button class="btn btn-sm" style="background:rgba(255,255,255,.15);border-color:rgba(255,255,255,.3);color:#fff" onclick="clearAllHistory()">🗑 Hapus Semua</button>
+        </div>
+      </div>
+    </div>
+    <div id="admin-only-notice" class="admin-only-notice" style="display:none">
+      🔒 Anda login sebagai Admin — dapat melihat semua riwayat dan menghapus data.
+    </div>
+    <div class="history-list" id="history-list"></div>
+  </div>
+
+  <!-- LOG -->
+  <div id="log-screen" style="display:none">
+    <div class="log-header">
+      <h2>📊 Log Aktivitas Tryout</h2>
+      <div id="log-admin-controls" style="display:none">
+        <button class="btn btn-sm" style="background:rgba(255,255,255,.15);border-color:rgba(255,255,255,.3);color:#fff" onclick="clearLog()">🗑 Hapus Log</button>
+      </div>
+    </div>
+    <div id="log-stat-row" class="log-stat-row"></div>
+    <div class="log-table-wrap">
+      <table class="log-table">
+        <thead><tr>
+          <th>#</th><th>Waktu</th>
+          <th id="log-th-user" style="display:none">Pengguna</th>
+          <th>Aksi</th><th>Nilai</th><th>Detail</th>
+        </tr></thead>
+        <tbody id="log-tbody"></tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<script>
+// ─────────────────────────────────────────
+// SEGMEN
+// ─────────────────────────────────────────
+const SEGMENTS = [
+  {
+    id:'A', key:'fenomena',
+    name:'Penampakan Fenomena Alam, Sosial & Budaya',
+    short:'Fenomena Alam',
+    color:'var(--purple)', colorLight:'var(--purple-light)', colorDark:'var(--purple-dark)',
+    cls:'seg-a', btnCls:'seg-a-btn', icon:'🌍',
+    start:0, end:14   // indeks soal 1–15
+  },
+  {
+    id:'B', key:'keragaman',
+    name:'Keragaman, Interaksi & Perubahan Sosial',
+    short:'Perubahan Sosial',
+    color:'var(--teal)', colorLight:'var(--teal-light)', colorDark:'var(--teal-dark)',
+    cls:'seg-b', btnCls:'seg-b-btn', icon:'🤝',
+    start:15, end:29  // indeks soal 16–30
+  },
+  {
+    id:'C', key:'ekonomi',
+    name:'Kegiatan Ekonomi & Peran Indonesia dalam Ekonomi Global',
+    short:'Ekonomi Global',
+    color:'var(--amber)', colorLight:'var(--amber-light)', colorDark:'var(--amber-dark)',
+    cls:'seg-c', btnCls:'seg-c-btn', icon:'📈',
+    start:30, end:44  // indeks soal 31–45
+  },
+  {
+    id:'D', key:'sejarah',
+    name:'Perkembangan Sejarah Indonesia',
+    short:'Sejarah Indonesia',
+    color:'var(--pink)', colorLight:'var(--pink-light)', colorDark:'var(--pink-dark)',
+    cls:'seg-d', btnCls:'seg-d-btn', icon:'🏛️',
+    start:45, end:59  // indeks soal 46–60
+  }
+];
+
+function getSegment(idx){
+  return SEGMENTS.find(s => idx >= s.start && idx <= s.end) || SEGMENTS[0];
+}
+
+// ─────────────────────────────────────────
+// KONFIGURASI
+// ─────────────────────────────────────────
+const CONFIG = {
+  subject: 'IPS',
+  duration: 90 * 60,  // 90 menit untuk 60 soal
+
+  // ── UPDATE SOAL DARI GITHUB ──────────────────────────────────────────────
+  // Ganti URL di bawah dengan raw URL file JSON di GitHub Anda.
+  // Format URL raw GitHub:
+  //   https://raw.githubusercontent.com/<username>/<repo>/<branch>/<namafile>.json
+  //
+  // Contoh:
+  //   https://raw.githubusercontent.com/nicky/osn-ips/main/soal_osn_ips.json
+  //
+  // Jika URL kosong ("") atau fetch gagal, soal bawaan (BUILTIN_QUESTIONS) otomatis dipakai.
+  // ────────────────────────────────────────────────────────────────────────
+  jsonUrl: ''   // ← isi URL raw GitHub JSON di sini
+};
+
+const HISTORY_KEY = 'tryout_history_osn_ips';
+const SESSION_KEY = 'tryout_session';
+const LOG_KEY     = 'tryout_activity_log';
+
+// ─────────────────────────────────────────
+// 60 SOAL — 4 SEGMEN × 15 SOAL
+// ─────────────────────────────────────────
+const BUILTIN_QUESTIONS = [
+  // ═══ SEGMEN A: Penampakan Fenomena Alam, Sosial & Budaya (Soal 1–15) ═══
+  {
+    text:"Lapisan atmosfer yang berfungsi melindungi bumi dari radiasi ultraviolet adalah...",
+    options:["Troposfer","Stratosfer","Mesosfer","Termosfer"],
+    answer:1,
+    pembahasan:"Stratosfer mengandung lapisan ozon (O₃) yang menyerap sebagian besar radiasi ultraviolet dari matahari sehingga melindungi kehidupan di Bumi."
+  },
+  {
+    text:"Fenomena angin yang bertiup dari darat ke laut pada malam hari disebut...",
+    options:["Angin laut","Angin darat","Angin fohn","Angin muson"],
+    answer:1,
+    pembahasan:"Pada malam hari, daratan lebih cepat dingin daripada lautan sehingga tekanan udara di darat lebih tinggi. Udara bergerak dari darat ke laut — inilah angin darat."
+  },
+  {
+    text:"Garis khayal yang menghubungkan tempat-tempat yang memiliki tekanan udara sama disebut...",
+    options:["Isohyet","Isotherm","Isobar","Isohips"],
+    answer:2,
+    pembahasan:"Isobar adalah garis pada peta yang menghubungkan titik-titik dengan tekanan udara yang sama, digunakan untuk membaca pola cuaca."
+  },
+  {
+    text:"Proses pembentukan tanah dari pelapukan batuan induk disebut...",
+    options:["Erosi","Sedimentasi","Pedogenesis","Deflasi"],
+    answer:2,
+    pembahasan:"Pedogenesis adalah proses alami pembentukan tanah yang melibatkan pelapukan fisik, kimia, dan biologis dari batuan induk serta penambahan bahan organik."
+  },
+  {
+    text:"Teori yang menyatakan bahwa benua-benua pernah menyatu dalam satu daratan besar disebut teori...",
+    options:["Lempeng tektonik","Kontraksi","Pergeseran Benua (Pangaea)","Isostasi"],
+    answer:2,
+    pembahasan:"Alfred Wegener mengemukakan teori Pergeseran Benua bahwa semua benua pernah bergabung menjadi superbenua Pangaea, kemudian terpisah hingga posisi sekarang."
+  },
+  {
+    text:"Iklim yang ditandai dengan suhu tinggi sepanjang tahun dan curah hujan merata setiap bulan adalah iklim...",
+    options:["Subtropis","Tropis","Sedang","Kutub"],
+    answer:1,
+    pembahasan:"Iklim tropis (ekuatorial) dicirikan suhu rata-rata >18°C sepanjang tahun dan curah hujan tinggi >2000 mm/tahun."
+  },
+  {
+    text:"Fenomena El Niño menyebabkan Indonesia mengalami...",
+    options:["Musim hujan lebih panjang","Kenaikan muka air laut","Kekeringan dan berkurangnya curah hujan","Peningkatan curah hujan ekstrem"],
+    answer:2,
+    pembahasan:"El Niño adalah pemanasan permukaan Samudra Pasifik tengah-timur yang menyebabkan Indonesia bagian barat Pasifik mengalami kekeringan."
+  },
+  {
+    text:"Jenis batuan yang terbentuk dari pembekuan magma di dalam kerak bumi disebut...",
+    options:["Batuan sedimen","Batuan metamorf","Batuan beku dalam (intrusi)","Batuan beku luar (ekstrusi)"],
+    answer:2,
+    pembahasan:"Batuan beku dalam (intrusi/plutonik) terbentuk dari magma yang membeku perlahan di bawah permukaan bumi, menghasilkan kristal besar seperti granit."
+  },
+  {
+    text:"Gerakan air laut yang disebabkan oleh perbedaan suhu dan salinitas disebut...",
+    options:["Arus turbulensi","Arus termohalin","Arus pasang surut","Arus pantai"],
+    answer:1,
+    pembahasan:"Arus termohalin (thermohaline circulation) digerakkan oleh perbedaan suhu (thermos) dan kadar garam (haline) yang memengaruhi densitas air laut."
+  },
+  {
+    text:"Gunung berapi berbentuk kerucut sempurna dengan lereng curam hasil letusan eksplosif disebut...",
+    options:["Gunung perisai","Gunung maar","Gunung strato (komposit)","Gunung kaldera"],
+    answer:2,
+    pembahasan:"Gunung strato/komposit terbentuk dari material lava dan piroklastik yang berlapis-lapis sehingga membentuk kerucut simetris dengan lereng curam."
+  },
+  {
+    text:"Angin muson barat di Indonesia membawa musim...",
+    options:["Kemarau","Hujan","Pancaroba","Dingin"],
+    answer:1,
+    pembahasan:"Angin muson barat (November–Maret) bertiup dari Asia membawa banyak uap air melewati Samudra Hindia dan menyebabkan musim hujan di Indonesia."
+  },
+  {
+    text:"Daerah bayangan hujan (rain shadow) terbentuk di sisi mana dari pegunungan?",
+    options:["Sisi windward (menghadap angin)","Sisi leeward (membelakangi angin)","Di puncak pegunungan","Di kaki pegunungan windward"],
+    answer:1,
+    pembahasan:"Sisi leeward (belakang angin) mendapat lebih sedikit hujan karena udara yang turun sudah kehilangan kelembabannya di sisi windward — disebut daerah bayangan hujan."
+  },
+  {
+    text:"Proses pengikisan pantai oleh gelombang laut disebut...",
+    options:["Ablasi","Abrasi","Korasi","Atrisi"],
+    answer:1,
+    pembahasan:"Abrasi adalah proses pengikisan pantai atau dasar laut oleh kekuatan gelombang dan materi yang dibawa gelombang tersebut."
+  },
+  {
+    text:"Fenomena sosial yang terjadi ketika seseorang berpindah tempat tinggal dari desa ke kota disebut...",
+    options:["Transmigrasi","Urbanisasi","Ruralisasi","Imigrasi"],
+    answer:1,
+    pembahasan:"Urbanisasi adalah perpindahan penduduk dari desa ke kota, biasanya didorong oleh faktor pull (daya tarik kota) dan push (pendorong dari desa)."
+  },
+  {
+    text:"Upacara adat yang menandai perpindahan seseorang dari satu status sosial ke status lainnya disebut...",
+    options:["Ritual agraris","Ritual siklus hidup (rites of passage)","Ritual kosmologi","Ritual penyembuhan"],
+    answer:1,
+    pembahasan:"Rites of passage adalah upacara yang menandai transisi sosial penting seperti kelahiran, khitanan, pernikahan, dan kematian."
+  },
+
+  // ═══ SEGMEN B: Keragaman, Interaksi & Perubahan Sosial (Soal 16–30) ═══
+  {
+    text:"Teori difusi budaya menyatakan bahwa kebudayaan dapat menyebar melalui...",
+    options:["Evolusi biologis","Kontak antara kelompok masyarakat","Mutasi genetik","Isolasi geografis"],
+    answer:1,
+    pembahasan:"Difusi budaya adalah penyebaran unsur budaya dari satu kelompok ke kelompok lain melalui kontak langsung, perdagangan, migrasi, atau media."
+  },
+  {
+    text:"Proses di mana individu belajar dan menginternalisasi norma serta nilai budayanya disebut...",
+    options:["Sosialisasi","Akulturasi","Asimilasi","Enkulturasi"],
+    answer:0,
+    pembahasan:"Sosialisasi adalah proses seumur hidup di mana individu belajar nilai, norma, dan peran sosial yang dibutuhkan untuk berpartisipasi dalam masyarakat."
+  },
+  {
+    text:"Kondisi masyarakat yang memiliki banyak perbedaan suku, agama, ras, dan antargolongan disebut...",
+    options:["Masyarakat majemuk","Masyarakat homogen","Masyarakat tertutup","Masyarakat tradisional"],
+    answer:0,
+    pembahasan:"Masyarakat majemuk (plural society) ditandai oleh keberagaman etnis, agama, dan budaya yang hidup berdampingan dalam satu wilayah."
+  },
+  {
+    text:"Integrasi dua kebudayaan yang menghasilkan budaya baru tanpa menghilangkan kebudayaan asli disebut...",
+    options:["Asimilasi","Akulturasi","Amalgamasi","Segregasi"],
+    answer:1,
+    pembahasan:"Akulturasi adalah perpaduan dua budaya yang berbeda namun unsur budaya asli masih tetap ada, contohnya wayang yang mendapat pengaruh Hindu-Buddha."
+  },
+  {
+    text:"Konflik sosial yang terjadi antara kelompok dengan status sosial berbeda disebut konflik...",
+    options:["Horizontal","Vertikal","Diagonal","Lateral"],
+    answer:1,
+    pembahasan:"Konflik vertikal terjadi antara kelompok dengan hierarki berbeda, seperti antara buruh dengan pengusaha atau rakyat dengan pemerintah."
+  },
+  {
+    text:"Mobilitas sosial yang terjadi ketika seseorang berpindah dari kelas sosial rendah ke kelas lebih tinggi disebut...",
+    options:["Mobilitas horizontal","Mobilitas vertikal ke bawah","Mobilitas vertikal ke atas","Mobilitas antargenerasi"],
+    answer:2,
+    pembahasan:"Mobilitas vertikal ke atas (social climbing) adalah perpindahan status sosial dari lapisan lebih rendah ke lapisan lebih tinggi, misalnya petani menjadi pengusaha."
+  },
+  {
+    text:"Lembaga sosial yang berfungsi sebagai agen sosialisasi pertama bagi individu adalah...",
+    options:["Sekolah","Media massa","Keluarga","Teman sebaya"],
+    answer:2,
+    pembahasan:"Keluarga adalah agen sosialisasi primer pertama yang mengajarkan nilai, norma, bahasa, dan perilaku dasar kepada anak sejak lahir."
+  },
+  {
+    text:"Perubahan sosial yang berlangsung lambat dan bertahap dalam jangka panjang disebut...",
+    options:["Revolusi","Evolusi","Reformasi","Inovasi"],
+    answer:1,
+    pembahasan:"Evolusi sosial adalah perubahan yang terjadi secara perlahan dan bertahap tanpa guncangan besar, sebaliknya revolusi adalah perubahan cepat dan mendasar."
+  },
+  {
+    text:"Norma yang paling kuat dan pelanggarannya dianggap dosa atau kejahatan besar adalah...",
+    options:["Folkways","Mores","Taboo (tabu)","Hukum formal"],
+    answer:2,
+    pembahasan:"Tabu (taboo) adalah larangan kuat yang dianggap sangat serius oleh masyarakat. Pelanggarannya dianggap sangat memalukan atau berdosa, seperti larangan inses."
+  },
+  {
+    text:"Organisasi sosial yang mengatur hubungan antara anggota berdasarkan garis keturunan disebut...",
+    options:["Klan","Komunitas","Asosiasi","Institusi"],
+    answer:0,
+    pembahasan:"Klan adalah kelompok kekerabatan yang anggotanya meyakini memiliki nenek moyang yang sama, baik berdasarkan garis ayah (patrilineal) atau ibu (matrilineal)."
+  },
+  {
+    text:"Keberagaman suku bangsa di Indonesia salah satunya disebabkan oleh...",
+    options:["Faktor iklim yang homogen","Isolasi geografis antar pulau","Keseragaman bahasa","Sistem pemerintahan sentralistis"],
+    answer:1,
+    pembahasan:"Indonesia terdiri dari ribuan pulau yang menyebabkan kelompok manusia hidup terpisah, berkembang sendiri, dan membentuk budaya, bahasa, serta adat istiadat yang beragam."
+  },
+  {
+    text:"Proses penyesuaian diri individu terhadap norma kelompok baru setelah meninggalkan kelompok lama disebut...",
+    options:["Sosialisasi primer","Sosialisasi sekunder","Resosialisasi","Desabilisasi"],
+    answer:2,
+    pembahasan:"Resosialisasi adalah proses belajar norma dan nilai baru untuk menggantikan yang lama, seperti saat seseorang masuk penjara, pesantren, atau pindah ke budaya baru."
+  },
+  {
+    text:"Kelompok sosial yang terbentuk berdasarkan kesamaan kepentingan dan tujuan adalah...",
+    options:["Kelompok primer","Kelompok sekunder","Paguyuban (gemeinschaft)","Patembayan (gesellschaft)"],
+    answer:3,
+    pembahasan:"Patembayan (gesellschaft) adalah kelompok sosial yang terbentuk atas dasar kepentingan bersama dan bersifat formal, tidak berdasarkan kekerabatan atau perasaan batin."
+  },
+  {
+    text:"Sikap menganggap kebudayaan sendiri lebih baik dari kebudayaan lain disebut...",
+    options:["Relativisme budaya","Etnosentrisme","Xenosentrisme","Primordialisme"],
+    answer:1,
+    pembahasan:"Etnosentrisme adalah kecenderungan menilai kebudayaan lain berdasarkan standar budayanya sendiri dan menganggap budayanya superior. Ini dapat menghambat integrasi sosial."
+  },
+  {
+    text:"Perubahan sosial yang terjadi akibat adopsi teknologi baru dalam masyarakat disebut...",
+    options:["Perubahan struktural","Perubahan budaya","Modernisasi","Globalisasi"],
+    answer:2,
+    pembahasan:"Modernisasi adalah proses perubahan dari masyarakat tradisional ke modern yang ditandai adopsi teknologi, ilmu pengetahuan, dan sistem nilai rasional."
+  },
+
+  // ═══ SEGMEN C: Kegiatan Ekonomi & Peran Indonesia dalam Ekonomi Global (Soal 31–45) ═══
+  {
+    text:"Kegiatan ekonomi yang mengolah bahan mentah menjadi barang jadi termasuk sektor...",
+    options:["Primer","Sekunder","Tersier","Kuarter"],
+    answer:1,
+    pembahasan:"Sektor sekunder mencakup kegiatan industri pengolahan yang mengubah bahan mentah menjadi produk siap pakai, seperti pabrik tekstil dan manufaktur otomotif."
+  },
+  {
+    text:"Hukum permintaan menyatakan bahwa jika harga naik maka permintaan akan...",
+    options:["Naik","Tetap","Turun","Tidak menentu"],
+    answer:2,
+    pembahasan:"Hukum permintaan: ceteris paribus, kenaikan harga suatu barang akan menyebabkan penurunan jumlah barang yang diminta konsumen."
+  },
+  {
+    text:"Indonesia termasuk negara berkembang. Salah satu ciri negara berkembang adalah...",
+    options:["Pendapatan per kapita tinggi","Sektor jasa mendominasi ekonomi","Ketergantungan pada sektor primer","Angka harapan hidup sangat tinggi"],
+    answer:2,
+    pembahasan:"Negara berkembang umumnya bergantung pada sektor primer (pertanian, pertambangan), memiliki pendapatan per kapita rendah-menengah, dan infrastruktur belum merata."
+  },
+  {
+    text:"Komoditas ekspor utama Indonesia yang menjadi andalan di pasar global adalah...",
+    options:["Produk elektronik","Minyak kelapa sawit (CPO)","Kendaraan bermotor","Produk farmasi"],
+    answer:1,
+    pembahasan:"Minyak kelapa sawit (Crude Palm Oil/CPO) adalah salah satu komoditas ekspor terbesar Indonesia, menempatkan Indonesia sebagai produsen sawit terbesar di dunia."
+  },
+  {
+    text:"Organisasi internasional yang mengatur perdagangan antarnegara adalah...",
+    options:["IMF","World Bank","WTO","OECD"],
+    answer:2,
+    pembahasan:"WTO (World Trade Organization) adalah organisasi internasional yang mengatur aturan perdagangan antarnegara, memfasilitasi negosiasi, dan menyelesaikan sengketa dagang."
+  },
+  {
+    text:"Kondisi di mana suatu negara memiliki kemampuan memproduksi barang dengan biaya lebih rendah dari negara lain disebut...",
+    options:["Keunggulan komparatif","Keunggulan absolut","Keunggulan kompetitif","Keunggulan relatif"],
+    answer:1,
+    pembahasan:"Keunggulan absolut (absolute advantage) terjadi ketika suatu negara dapat memproduksi barang dengan lebih efisien (biaya lebih rendah atau output lebih tinggi) dibanding negara lain."
+  },
+  {
+    text:"Inflasi yang disebabkan oleh kenaikan biaya produksi disebut...",
+    options:["Demand pull inflation","Cost push inflation","Built-in inflation","Hyperinflation"],
+    answer:1,
+    pembahasan:"Cost push inflation terjadi ketika biaya produksi naik (misalnya upah atau harga bahan baku) sehingga produsen menaikkan harga jual, mendorong kenaikan harga umum."
+  },
+  {
+    text:"ASEAN Free Trade Area (AFTA) bertujuan untuk...",
+    options:["Membatasi perdagangan antar negara ASEAN","Menciptakan kawasan perdagangan bebas di ASEAN","Menyatukan mata uang negara ASEAN","Membentuk angkatan bersenjata bersama ASEAN"],
+    answer:1,
+    pembahasan:"AFTA bertujuan menciptakan kawasan perdagangan bebas di ASEAN dengan mengurangi atau menghapus tarif dan hambatan non-tarif untuk meningkatkan daya saing regional."
+  },
+  {
+    text:"Gross Domestic Product (GDP) mengukur...",
+    options:["Total pendapatan warga negara di luar negeri","Nilai barang dan jasa yang diproduksi dalam wilayah suatu negara dalam satu tahun","Total kekayaan negara","Nilai ekspor dikurangi impor"],
+    answer:1,
+    pembahasan:"GDP adalah nilai total semua barang dan jasa akhir yang diproduksi di dalam batas wilayah suatu negara selama satu tahun, tanpa memandang kewarganegaraan produsen."
+  },
+  {
+    text:"Kebijakan pemerintah yang mengurangi pajak dan meningkatkan belanja untuk merangsang ekonomi disebut...",
+    options:["Kebijakan moneter ekspansif","Kebijakan fiskal ekspansif","Kebijakan fiskal kontraktif","Kebijakan devaluasi"],
+    answer:1,
+    pembahasan:"Kebijakan fiskal ekspansif dilakukan dengan menurunkan pajak dan meningkatkan belanja pemerintah untuk merangsang pertumbuhan ekonomi, terutama saat resesi."
+  },
+  {
+    text:"Indonesia merupakan anggota G20. G20 adalah forum yang mempertemukan...",
+    options:["20 negara termiskin di dunia","20 negara dengan ekonomi terbesar di dunia","20 negara anggota ASEAN","20 negara produsen minyak terbesar"],
+    answer:1,
+    pembahasan:"G20 adalah forum internasional yang mempertemukan 19 negara dengan ekonomi terbesar di dunia plus Uni Eropa untuk membahas isu-isu ekonomi global."
+  },
+  {
+    text:"Sistem ekonomi yang menggabungkan mekanisme pasar dengan intervensi pemerintah disebut...",
+    options:["Ekonomi komando","Ekonomi pasar bebas","Ekonomi campuran","Ekonomi tradisional"],
+    answer:2,
+    pembahasan:"Ekonomi campuran menggabungkan elemen pasar bebas (swasta bebas bersaing) dengan perencanaan pemerintah untuk mengoreksi kegagalan pasar dan melindungi kepentingan publik."
+  },
+  {
+    text:"Devaluasi mata uang suatu negara bertujuan untuk...",
+    options:["Meningkatkan nilai impor","Mendorong ekspor menjadi lebih kompetitif","Mengurangi utang luar negeri","Menurunkan tingkat inflasi"],
+    answer:1,
+    pembahasan:"Devaluasi menurunkan nilai mata uang domestik sehingga harga ekspor menjadi lebih murah bagi pembeli asing, meningkatkan daya saing produk domestik di pasar global."
+  },
+  {
+    text:"Maquiladora di Meksiko merupakan contoh praktik...",
+    options:["Autarki ekonomi","Zona ekonomi khusus untuk manufaktur ekspor","Proteksionisme perdagangan","Nasionalisasi industri"],
+    answer:1,
+    pembahasan:"Maquiladora adalah pabrik di kawasan perbatasan Meksiko yang mengimpor bahan baku bebas bea untuk diolah dan diekspor, contoh zona ekonomi khusus berorientasi ekspor."
+  },
+  {
+    text:"Bonus demografi yang dialami Indonesia berarti...",
+    options:["Jumlah penduduk lansia lebih banyak","Jumlah penduduk usia produktif lebih besar dari non-produktif","Tingkat kelahiran sangat tinggi","Jumlah penduduk menurun drastis"],
+    answer:1,
+    pembahasan:"Bonus demografi terjadi ketika proporsi penduduk usia produktif (15–64 tahun) lebih besar dari non-produktif, memberikan peluang percepatan pertumbuhan ekonomi."
+  },
+
+  // ═══ SEGMEN D: Perkembangan Sejarah Indonesia (Soal 46–60) ═══
+  {
+    text:"Kerajaan Hindu pertama di Indonesia yang diketahui berdasarkan prasasti Yupa adalah...",
+    options:["Sriwijaya","Majapahit","Kutai","Tarumanegara"],
+    answer:2,
+    pembahasan:"Kerajaan Kutai di Kalimantan Timur adalah kerajaan Hindu tertua di Indonesia yang diketahui melalui prasasti Yupa (abad ke-4 M) yang menggunakan aksara Pallawa."
+  },
+  {
+    text:"Sumpah Pemuda tahun 1928 menghasilkan ikrar bertanah air, berbangsa, dan berbahasa satu, yaitu...",
+    options:["Jawa","Melayu","Indonesia","Nusantara"],
+    answer:2,
+    pembahasan:"Sumpah Pemuda 28 Oktober 1928 menegaskan satu tanah air, satu bangsa, dan satu bahasa: Indonesia. Ini menjadi titik tonggak nasionalisme Indonesia."
+  },
+  {
+    text:"Perjanjian Renville (1948) mengakibatkan...",
+    options:["Pengakuan kemerdekaan Indonesia oleh Belanda","Wilayah RI menyusut dan terkepung Belanda","Terbentuknya Republik Indonesia Serikat","Berakhirnya Perang Kemerdekaan Indonesia"],
+    answer:1,
+    pembahasan:"Perjanjian Renville merugikan Indonesia karena wilayah RI menyusut hanya mencakup sebagian Jawa dan Madura, sementara Belanda menguasai wilayah yang lebih luas."
+  },
+  {
+    text:"Sistem Tanam Paksa (Cultuurstelsel) yang diterapkan Belanda mewajibkan rakyat...",
+    options:["Membayar pajak dalam bentuk uang","Menyerahkan 1/5 tanah atau 66 hari kerja per tahun untuk tanaman ekspor","Bekerja di tambang milik Belanda","Menjual hasil bumi dengan harga tetap"],
+    answer:1,
+    pembahasan:"Cultuurstelsel (1830–1870) mewajibkan petani menyerahkan 1/5 tanahnya untuk tanaman ekspor atau bekerja 66 hari per tahun. Ini sangat memberatkan rakyat Indonesia."
+  },
+  {
+    text:"Proklamasi Kemerdekaan Indonesia dibacakan oleh Soekarno–Hatta pada tanggal...",
+    options:["17 Agustus 1944","17 Agustus 1945","18 Agustus 1945","1 Juni 1945"],
+    answer:1,
+    pembahasan:"Proklamasi Kemerdekaan Indonesia dibacakan pada 17 Agustus 1945 pukul 10.00 WIB di Jalan Pegangsaan Timur No. 56, Jakarta oleh Soekarno didampingi Hatta."
+  },
+  {
+    text:"Peristiwa Rengasdengklok terjadi karena...",
+    options:["Jepang menyerang Indonesia","Golongan muda mendesak Soekarno-Hatta segera memproklamasikan kemerdekaan","Belanda melancarkan Agresi Militer","Terjadi pemberontakan di Jawa Barat"],
+    answer:1,
+    pembahasan:"Pada 16 Agustus 1945, golongan muda mengamankan Soekarno-Hatta ke Rengasdengklok untuk mendesak proklamasi segera, tanpa menunggu persetujuan Jepang atau PPKI."
+  },
+  {
+    text:"Kerajaan Sriwijaya berkembang menjadi kerajaan maritim besar karena...",
+    options:["Memiliki pasukan darat terkuat","Menguasai jalur perdagangan Selat Malaka","Memiliki teknologi pertanian maju","Memperoleh dukungan Kerajaan Majapahit"],
+    answer:1,
+    pembahasan:"Sriwijaya (abad 7–13 M) menguasai Selat Malaka yang merupakan jalur perdagangan penting antara India dan China, sehingga menjadi pusat perdagangan dan pusat Buddha di Asia Tenggara."
+  },
+  {
+    text:"Kongres Perempuan Indonesia pertama diadakan pada tahun...",
+    options:["1908","1928","1938","1945"],
+    answer:1,
+    pembahasan:"Kongres Perempuan Indonesia pertama diselenggarakan pada 22–25 Desember 1928 di Yogyakarta, membahas hak perempuan, pendidikan, dan peran perempuan dalam pergerakan nasional."
+  },
+  {
+    text:"Apa tujuan utama dibentuknya BPUPKI (Badan Penyelidik Usaha-usaha Persiapan Kemerdekaan Indonesia)?",
+    options:["Memimpin perjuangan kemerdekaan secara militer","Menyelidiki hal-hal penting terkait kemerdekaan Indonesia","Mengatur hubungan diplomatik dengan negara lain","Menyusun anggaran negara Indonesia merdeka"],
+    answer:1,
+    pembahasan:"BPUPKI dibentuk Jepang pada April 1945 untuk menyelidiki hal-hal penting terkait persiapan kemerdekaan Indonesia, termasuk merumuskan dasar negara (Pancasila) dan rancangan UUD."
+  },
+  {
+    text:"Perang Diponegoro (1825–1830) merupakan perlawanan terhadap...",
+    options:["VOC Belanda","Pemerintah Kolonial Belanda","Kerajaan Mataram","Pasukan Inggris"],
+    answer:1,
+    pembahasan:"Perang Diponegoro (Perang Jawa) adalah perlawanan Pangeran Diponegoro terhadap pemerintah kolonial Belanda yang merupakan perang terbesar dan termahal bagi Belanda di Indonesia."
+  },
+  {
+    text:"Masa Orde Baru di Indonesia berlangsung di bawah kepemimpinan...",
+    options:["Soekarno","Soeharto","B.J. Habibie","Megawati Soekarnoputri"],
+    answer:1,
+    pembahasan:"Orde Baru adalah periode pemerintahan Presiden Soeharto (1966–1998) yang ditandai pembangunan ekonomi (REPELITA), stabilitas politik, namun juga otoriter dan korupsi."
+  },
+  {
+    text:"Reformasi 1998 di Indonesia dipicu oleh...",
+    options:["Serangan militer dari luar negeri","Krisis ekonomi Asia 1997–1998 dan desakan rakyat","Bencana alam nasional","Perubahan konstitusi secara damai"],
+    answer:1,
+    pembahasan:"Krisis moneter 1997–1998 menyebabkan ekonomi Indonesia kolaps. Desakan mahasiswa dan rakyat memaksa Presiden Soeharto mundur pada 21 Mei 1998, mengakhiri 32 tahun Orde Baru."
+  },
+  {
+    text:"Boedi Oetomo, organisasi modern pertama Indonesia, didirikan pada...",
+    options:["20 Mei 1908","17 Agustus 1945","28 Oktober 1928","1 Juni 1945"],
+    answer:0,
+    pembahasan:"Boedi Oetomo didirikan pada 20 Mei 1908 oleh para mahasiswa STOVIA di Jakarta. Tanggal ini diperingati sebagai Hari Kebangkitan Nasional."
+  },
+  {
+    text:"Perjanjian KMB (Konferensi Meja Bundar) tahun 1949 menghasilkan...",
+    options:["Pengakuan kemerdekaan RI oleh Belanda","Terbentuknya Negara Republik Indonesia Serikat (RIS) dan pengakuan kedaulatan","Gencatan senjata sementara","Masuknya Indonesia ke PBB"],
+    answer:1,
+    pembahasan:"KMB (23 Agustus–2 November 1949) menghasilkan pengakuan kedaulatan Belanda kepada RIS pada 27 Desember 1949, mengakhiri perjuangan kemerdekaan secara diplomatik."
+  },
+  {
+    text:"Patih Gadjah Mada mengucapkan Sumpah Palapa yang berisi tekad untuk...",
+    options:["Memenangkan perang melawan Mongol","Menyatukan Nusantara di bawah kekuasaan Majapahit","Membangun armada laut terkuat","Mengusir pedagang asing dari Nusantara"],
+    answer:1,
+    pembahasan:"Sumpah Palapa (1334 M) diucapkan Gadjah Mada saat dilantik sebagai Mahapatih Majapahit, berisi tekad untuk tidak menikmati palapa (kenikmatan) sebelum menyatukan Nusantara."
+  }
+];
+
+// ─────────────────────────────────────────
+// AKUN PENGGUNA
+// ─────────────────────────────────────────
+const USERS = {
+  siswa: [
+    { username:'nicky',  password:'nicky123', name:'Nicky' },
+    { username:'budi',   password:'budi123',  name:'Budi' },
+    { username:'sari',   password:'sari123',  name:'Sari' },
+    { username:'dimas',  password:'dimas123', name:'Dimas' },
+  ],
+  admin: [
+    { username:'admin', password:'admin2024', name:'Administrator' },
+    { username:'guru',  password:'guru2024',  name:'Guru' },
+  ]
+};
+
+// ─────────────────────────────────────────
+// STATE
+// ─────────────────────────────────────────
+let questions=[], cur=0, answers=[], timeLeft=CONFIG.duration, timerInterval=null;
+let currentUser=null;
+let activeTab='siswa';
+
+// ─────────────────────────────────────────
+// AUTH
+// ─────────────────────────────────────────
+function togglePw(id,btn){
+  const el=document.getElementById(id);
+  const show=el.type==='password';
+  el.type=show?'text':'password';
+  btn.textContent=show?'🙈':'👁';
+}
+
+function switchTab(tab){
+  activeTab=tab;
+  document.getElementById('tab-siswa').classList.toggle('active',tab==='siswa');
+  document.getElementById('tab-admin').classList.toggle('active',tab==='admin');
+  document.getElementById('form-siswa').style.display=tab==='siswa'?'block':'none';
+  document.getElementById('form-admin').style.display=tab==='admin'?'block':'none';
+  document.getElementById('login-error').classList.remove('show');
+}
+
+function doLogin(role){
+  const u=document.getElementById(role+'-username').value.trim().toLowerCase();
+  const p=document.getElementById(role+'-password').value;
+  const match=USERS[role].find(x=>x.username===u&&x.password===p);
+  if(!match){
+    document.getElementById('login-error').textContent='Username atau password salah.';
+    document.getElementById('login-error').classList.add('show');
+    return;
+  }
+  currentUser={username:match.username,name:match.name,role};
+  sessionStorage.setItem(SESSION_KEY,JSON.stringify(currentUser));
+  addLog({action:'Login',detail:'Berhasil masuk sebagai '+role});
+  startApp();
+}
+
+function doLogout(){
+  if(!confirm('Yakin ingin keluar?')) return;
+  clearInterval(timerInterval);
+  addLog({action:'Logout',detail:'Keluar dari aplikasi'});
+  currentUser=null;
+  sessionStorage.removeItem(SESSION_KEY);
+  document.getElementById('main-app').style.display='none';
+  document.getElementById('login-screen').style.display='flex';
+  ['siswa-username','siswa-password','admin-username','admin-password'].forEach(id=>{
+    const el=document.getElementById(id); if(el) el.value='';
+  });
+  document.getElementById('login-error').classList.remove('show');
+  switchTab('siswa');
+}
+
+function restoreSession(){
+  try{const s=sessionStorage.getItem(SESSION_KEY); if(s){currentUser=JSON.parse(s);return true;}}catch(e){}
+  return false;
+}
+
+function startApp(){
+  document.getElementById('login-screen').style.display='none';
+  document.getElementById('main-app').style.display='block';
+  const av=document.getElementById('user-avatar');
+  av.textContent=currentUser.name.charAt(0).toUpperCase();
+  av.className='user-avatar '+currentUser.role;
+  document.getElementById('user-name-display').textContent=currentUser.name;
+  document.getElementById('user-role-display').innerHTML=
+    currentUser.role==='admin'?'<span class="admin-badge">⚡ Admin</span>':'👨‍🎓 Siswa';
+  const isAdmin=currentUser.role==='admin';
+  document.getElementById('admin-clear-btn').style.display=isAdmin?'block':'none';
+  document.getElementById('admin-only-notice').style.display=isAdmin?'flex':'none';
+  document.getElementById('log-admin-controls').style.display=isAdmin?'block':'none';
+  showScreen('tryout');
+  init();
+}
+
+// ─────────────────────────────────────────
+// INIT
+// ─────────────────────────────────────────
+// ─────────────────────────────────────────
+// INIT — coba ambil JSON dari GitHub, fallback ke soal bawaan
+// ─────────────────────────────────────────
+const QUESTIONS_CACHE_KEY = 'osn_ips_questions_cache';
+const QUESTIONS_CACHE_TS  = 'osn_ips_questions_cache_ts';
+const CACHE_TTL_MS = 6 * 60 * 60 * 1000; // cache 6 jam
+
+function setLoadingState(msg, sub){
+  document.getElementById('loading-screen').style.display = 'block';
+  document.getElementById('cbt-app').style.display = 'none';
+  document.querySelector('.loading-text').innerHTML = msg + (sub ? '<br><span style="font-size:11px;color:var(--text-sec)">'+sub+'</span>' : '');
+}
+
+function launchWithQuestions(qs, source){
+  questions = qs;
+  answers = new Array(questions.length).fill(null);
+  const srcTag = source === 'remote'
+    ? ' <span style="font-size:10px;background:var(--green-light);color:var(--green-dark);padding:2px 6px;border-radius:20px;font-weight:600">🔄 Diperbarui</span>'
+    : source === 'cache'
+    ? ' <span style="font-size:10px;background:var(--amber-light);color:var(--amber-dark);padding:2px 6px;border-radius:20px;font-weight:600">📦 Cache</span>'
+    : '';
+  document.getElementById('header-title').innerHTML = 'LATIHAN OSN IPS NICKY' + srcTag;
+  document.getElementById('header-subtitle').textContent =
+    'Ujian Online — ' + questions.length + ' Soal Pilihan Ganda · 4 Segmen Materi';
+  document.getElementById('loading-screen').style.display = 'none';
+  document.getElementById('cbt-app').style.display = 'block';
+  render();
+  startTimer();
+}
+
+function validateQuestions(data){
+  // Terima array langsung atau objek {questions:[...]}
+  const arr = Array.isArray(data) ? data : (data && Array.isArray(data.questions) ? data.questions : null);
+  if(!arr || arr.length === 0) return null;
+  // Validasi minimal setiap soal
+  for(const q of arr){
+    if(!q.text || !Array.isArray(q.options) || q.options.length < 2 ||
+       typeof q.answer !== 'number' || !q.pembahasan) return null;
+  }
+  return arr;
+}
+
+async function init(){
+  setLoadingState('⏳ Memuat soal...', '');
+
+  // Jika ada URL JSON yang dikonfigurasi
+  if(CONFIG.jsonUrl && CONFIG.jsonUrl.trim() !== ''){
+    // Cek cache dulu
+    try {
+      const cachedTs = parseInt(localStorage.getItem(QUESTIONS_CACHE_TS) || '0');
+      const now = Date.now();
+      if(now - cachedTs < CACHE_TTL_MS){
+        const cached = JSON.parse(localStorage.getItem(QUESTIONS_CACHE_KEY));
+        const valid = validateQuestions(cached);
+        if(valid){
+          // Ada cache valid, coba update di background
+          launchWithQuestions(valid, 'cache');
+          fetchAndCacheQuestions(); // update cache tanpa blokir UI
+          return;
+        }
+      }
+    } catch(e){}
+
+    // Tidak ada cache valid, fetch langsung
+    setLoadingState('🌐 Mengambil soal terbaru dari server...', 'Mohon tunggu sebentar');
+    try {
+      await fetchAndCacheQuestions(true);
+      return;
+    } catch(e){
+      // Fetch gagal, coba pakai cache lama
+      try {
+        const cached = JSON.parse(localStorage.getItem(QUESTIONS_CACHE_KEY));
+        const valid = validateQuestions(cached);
+        if(valid){
+          showBanner('⚠️ Gagal mengambil soal terbaru. Menggunakan soal tersimpan (cache).', 'amber');
+          launchWithQuestions(valid, 'cache');
+          return;
+        }
+      } catch(e2){}
+      // Fallback ke soal bawaan
+      showBanner('⚠️ Koneksi gagal. Menggunakan soal bawaan.', 'amber');
+      launchWithQuestions(BUILTIN_QUESTIONS, 'builtin');
+    }
+  } else {
+    // Tidak ada URL dikonfigurasi, pakai soal bawaan
+    launchWithQuestions(BUILTIN_QUESTIONS, 'builtin');
+  }
+}
+
+async function fetchAndCacheQuestions(shouldLaunch){
+  const url = CONFIG.jsonUrl.trim();
+  const res = await fetch(url, { cache: 'no-cache' });
+  if(!res.ok) throw new Error('HTTP ' + res.status);
+  const data = await res.json();
+  const valid = validateQuestions(data);
+  if(!valid) throw new Error('Format JSON tidak valid');
+
+  // Simpan ke cache
+  localStorage.setItem(QUESTIONS_CACHE_KEY, JSON.stringify(valid));
+  localStorage.setItem(QUESTIONS_CACHE_TS, String(Date.now()));
+
+  if(shouldLaunch) launchWithQuestions(valid, 'remote');
+}
+
+function showBanner(msg, type){
+  const colors = {
+    amber: {bg:'var(--amber-light)', border:'var(--amber)', color:'var(--amber-dark)'},
+    red:   {bg:'var(--red-light)',   border:'var(--red)',   color:'var(--red-dark)'},
+    green: {bg:'var(--green-light)', border:'var(--green)', color:'var(--green-dark)'},
+  };
+  const c = colors[type] || colors.amber;
+  const banner = document.createElement('div');
+  banner.style.cssText = 'background:'+c.bg+';border:1px solid '+c.border+';color:'+c.color+
+    ';font-size:12px;padding:10px 16px;border-radius:9px;margin-bottom:10px;display:flex;align-items:center;justify-content:space-between;gap:8px';
+  banner.innerHTML = '<span>'+msg+'</span><button onclick="this.parentElement.remove()" style="background:none;border:none;cursor:pointer;font-size:14px;color:inherit;line-height:1">✕</button>';
+  const wrap = document.querySelector('.wrap');
+  const nav = document.querySelector('.top-nav');
+  if(nav) nav.after(banner); else wrap.prepend(banner);
+}
+
+// Tombol admin: paksa refresh soal dari server
+function forceRefreshQuestions(){
+  if(!CONFIG.jsonUrl || CONFIG.jsonUrl.trim() === ''){
+    alert('URL JSON belum dikonfigurasi di CONFIG.jsonUrl.'); return;
+  }
+  localStorage.removeItem(QUESTIONS_CACHE_KEY);
+  localStorage.removeItem(QUESTIONS_CACHE_TS);
+  setLoadingState('🔄 Memperbarui soal dari server...', '');
+  document.getElementById('cbt-app').style.display = 'none';
+  document.getElementById('result-screen').style.display = 'none';
+  clearInterval(timerInterval);
+  init();
+}
+
+// ─────────────────────────────────────────
+// TIMER
+// ─────────────────────────────────────────
+function pad(n){return String(n).padStart(2,'0')}
+function startTimer(){
+  clearInterval(timerInterval);
+  timeLeft=CONFIG.duration;
+  timerInterval=setInterval(()=>{
+    timeLeft--;
+    const m=Math.floor(timeLeft/60),s=timeLeft%60;
+    document.getElementById('timer').textContent=pad(m)+':'+pad(s);
+    if(timeLeft<=300) document.getElementById('timer-box').classList.add('danger');
+    if(timeLeft<=0){clearInterval(timerInterval);submitTest();}
+  },1000);
+}
+
+// ─────────────────────────────────────────
+// RENDER
+// ─────────────────────────────────────────
+const SEG_BADGE_STYLES=[
+  {bg:'var(--purple-light)',color:'var(--purple-dark)'},
+  {bg:'var(--teal-light)',color:'var(--teal-dark)'},
+  {bg:'var(--amber-light)',color:'var(--amber-dark)'},
+  {bg:'var(--pink-light)',color:'var(--pink-dark)'}
+];
+
+function render(){
+  const q=questions[cur];
+  const seg=getSegment(cur);
+  const si=SEGMENTS.indexOf(seg);
+  const sStyle=SEG_BADGE_STYLES[si];
+
+  document.getElementById('q-badge').textContent='Soal '+(cur+1);
+  document.getElementById('q-progress').textContent='dari '+questions.length+' soal';
+
+  const segBadge=document.getElementById('q-seg-badge');
+  segBadge.textContent=seg.icon+' '+seg.short;
+  segBadge.style.background=sStyle.bg;
+  segBadge.style.color=sStyle.color;
+
+  document.getElementById('q-text').textContent=q.text;
+  const opts=document.getElementById('options');
+  opts.innerHTML='';
+  ['A','B','C','D'].forEach((L,i)=>{
+    const d=document.createElement('div');
+    d.className='opt'+(answers[cur]===i?' selected':'');
+    d.innerHTML='<span class="opt-letter">'+L+'</span><span class="opt-text">'+q.options[i]+'</span>';
+    d.onclick=()=>{answers[cur]=i;render();};
+    opts.appendChild(d);
+  });
+  renderSegNav();
+  renderStats();
+}
+
+function renderSegNav(){
+  const container=document.getElementById('seg-nav-container');
+  container.innerHTML='';
+  SEGMENTS.forEach((seg,si)=>{
+    const block=document.createElement('div');
+    block.className='seg-nav-block';
+    const sStyle=SEG_BADGE_STYLES[si];
+
+    const label=document.createElement('div');
+    label.className='seg-nav-label '+seg.cls;
+    label.innerHTML='<div class="seg-dot" style="background:'+seg.color+'"></div>'+
+      seg.icon+' Seg '+seg.id+' · '+seg.short;
+    block.appendChild(label);
+
+    const grid=document.createElement('div');
+    grid.className='nav-grid';
+    for(let i=seg.start;i<=seg.end;i++){
+      const b=document.createElement('button');
+      b.className='nav-btn '+seg.btnCls+' '+(answers[i]!==null?'answered':'unanswered')+(i===cur?' current':'');
+      b.textContent=i+1;
+      b.onclick=(()=>{const idx=i;return()=>{cur=idx;render();};})();
+      grid.appendChild(b);
+    }
+    block.appendChild(grid);
+    container.appendChild(block);
+  });
+}
+
+function renderStats(){
+  const done=answers.filter(a=>a!==null).length;
+  const pct=Math.round(done/questions.length*100);
+  document.getElementById('prog-text').textContent=done+' terjawab';
+  document.getElementById('prog-pct').textContent=pct+'%';
+  document.getElementById('prog-bar').style.width=pct+'%';
+  document.getElementById('stat-ans').textContent=done;
+  document.getElementById('stat-skip').textContent=questions.length-done;
+
+  // Per-segment progress
+  const sb=document.getElementById('seg-progress-sidebar');
+  sb.innerHTML='';
+  SEGMENTS.forEach((seg,si)=>{
+    const total=seg.end-seg.start+1;
+    const answered=answers.slice(seg.start,seg.end+1).filter(a=>a!==null).length;
+    const spct=Math.round(answered/total*100);
+    const sStyle=SEG_BADGE_STYLES[si];
+    sb.innerHTML+=
+      '<div class="seg-progress-item">'+
+        '<div class="seg-prog-row">'+
+          '<span class="seg-prog-name" style="color:'+sStyle.color+'">'+seg.icon+' '+seg.short+'</span>'+
+          '<span class="seg-prog-count">'+answered+'/'+total+'</span>'+
+        '</div>'+
+        '<div class="seg-prog-bar-bg"><div class="seg-prog-bar-fill" style="width:'+spct+'%;background:'+seg.color+'"></div></div>'+
+      '</div>';
+  });
+}
+
+function nextQ(){if(cur<questions.length-1){cur++;render();}}
+function prevQ(){if(cur>0){cur--;render();}}
+
+function confirmSubmit(){
+  const unanswered=answers.filter(a=>a===null).length;
+  if(unanswered>0){
+    if(!confirm('Masih ada '+unanswered+' soal belum dijawab. Yakin ingin mengumpulkan?')) return;
+  }
+  submitTest();
+}
+
+// ─────────────────────────────────────────
+// SUBMIT
+// ─────────────────────────────────────────
+function computeSegmentScores(){
+  return SEGMENTS.map(seg=>{
+    let benar=0,salah=0,skip=0;
+    for(let i=seg.start;i<=seg.end;i++){
+      if(answers[i]===null) skip++;
+      else if(answers[i]===questions[i].answer) benar++;
+      else salah++;
+    }
+    const total=seg.end-seg.start+1;
+    return {segId:seg.id,segName:seg.name,segShort:seg.short,segIcon:seg.icon,benar,salah,skip,total,nilai:Math.round(benar/total*100)};
+  });
+}
+
+function submitTest(){
+  clearInterval(timerInterval);
+  let benar=0,salah=0,skip=0;
+  questions.forEach((q,i)=>{
+    if(answers[i]===null) skip++;
+    else if(answers[i]===q.answer) benar++;
+    else salah++;
+  });
+  const nilai=Math.round(benar/questions.length*100);
+  const timeUsed=CONFIG.duration-timeLeft;
+  const segScores=computeSegmentScores();
+
+  document.getElementById('res-score').textContent=nilai;
+  document.getElementById('res-benar').textContent=benar;
+  document.getElementById('res-salah').textContent=salah;
+  document.getElementById('res-skip').textContent=skip;
+
+  // Render segment result cards
+  const sgGrid=document.getElementById('seg-result-grid');
+  sgGrid.innerHTML='';
+  segScores.forEach((sc,si)=>{
+    const sStyle=SEG_BADGE_STYLES[si];
+    const seg=SEGMENTS[si];
+    const card=document.createElement('div');
+    card.className='seg-result-card';
+    card.style.borderTop='3px solid '+seg.color;
+    card.innerHTML=
+      '<div class="seg-rc-header">'+
+        '<div class="seg-rc-icon" style="background:'+sStyle.bg+'">'+sc.segIcon+'</div>'+
+        '<div class="seg-rc-name">'+sc.segName+'</div>'+
+      '</div>'+
+      '<div class="seg-rc-stats">'+
+        '<span class="seg-rc-pill pill-green">✓ '+sc.benar+' benar</span>'+
+        '<span class="seg-rc-pill pill-red">✗ '+sc.salah+' salah</span>'+
+        '<span class="seg-rc-pill pill-amber">— '+sc.skip+' skip</span>'+
+      '</div>'+
+      '<div class="seg-rc-score" style="color:'+seg.color+'">'+sc.nilai+' / 100</div>';
+    sgGrid.appendChild(card);
+  });
+
+  // Review list
+  const L=['A','B','C','D'];
+  const rl=document.getElementById('review-list');
+  rl.innerHTML='';
+  questions.forEach((q,i)=>{
+    const ua=answers[i];
+    const cls=ua===null?'skip':ua===q.answer?'correct':'wrong';
+    const seg=getSegment(i);
+    const si=SEGMENTS.indexOf(seg);
+    const sStyle=SEG_BADGE_STYLES[si];
+    const div=document.createElement('div');
+    div.className='review-item '+cls;
+    let ansHtml='';
+    if(ua===null){
+      ansHtml='<div class="ri-ans ri-skip-ans">Tidak dijawab</div>';
+    } else if(ua===q.answer){
+      ansHtml='<div class="ri-ans ri-correct-ans">Jawaban Anda: '+L[ua]+'. '+q.options[ua]+' ✓</div>';
+    } else {
+      ansHtml='<div class="ri-ans ri-wrong-ans">Jawaban Anda: '+L[ua]+'. '+q.options[ua]+' ✗</div>'
+        +'<div class="ri-ans ri-correct-ans">Jawaban benar: '+L[q.answer]+'. '+q.options[q.answer]+'</div>';
+    }
+    div.innerHTML=
+      '<span class="ri-seg-tag" style="background:'+sStyle.bg+';color:'+sStyle.color+'">'+seg.icon+' '+seg.short+'</span>'+
+      '<div class="ri-q">Soal '+(i+1)+': '+q.text+'</div>'+ansHtml+
+      '<div class="ri-pembahasan">Pembahasan: '+q.pembahasan+'</div>';
+    rl.appendChild(div);
+  });
+
+  // Simpan riwayat
+  saveHistory({
+    id:Date.now(),
+    date:new Date().toISOString(),
+    subject:CONFIG.subject,
+    totalQ:questions.length,
+    benar,salah,skip,nilai,timeUsed,
+    segScores,
+    username:currentUser.username,
+    userName:currentUser.name,
+    snapshot:questions.map((q,i)=>({
+      text:q.text,options:q.options,answer:q.answer,
+      userAnswer:answers[i],pembahasan:q.pembahasan,
+      segId:getSegment(i).id,segShort:getSegment(i).short,segIcon:getSegment(i).icon
+    }))
+  });
+
+  addLog({action:'Tryout Selesai',nilai,
+    detail:benar+' benar, '+salah+' salah, '+skip+' skip · Waktu: '+formatTime(timeUsed)});
+
+  document.getElementById('result-actions').innerHTML=
+    '<button class="btn" onclick="showScreen(\'history\')">📋 Lihat Riwayat</button>'+
+    '<button class="btn" onclick="showScreen(\'log\')">📊 Log Aktivitas</button>'+
+    '<button class="btn btn-blue" onclick="resetTest()">🔄 Ulangi Tryout</button>';
+
+  document.getElementById('cbt-app').style.display='none';
+  document.getElementById('result-screen').style.display='block';
+}
+
+// ─────────────────────────────────────────
+// HISTORY
+// ─────────────────────────────────────────
+function loadHistory(){try{return JSON.parse(localStorage.getItem(HISTORY_KEY))||[];}catch(e){return[];}}
+function saveHistory(r){const h=loadHistory();h.unshift(r);localStorage.setItem(HISTORY_KEY,JSON.stringify(h));}
+
+function deleteHistory(id){
+  if(currentUser?.role!=='admin'){alert('Hanya admin yang dapat menghapus riwayat.');return;}
+  if(!confirm('Hapus riwayat ini?')) return;
+  const h=loadHistory().filter(r=>r.id!==id);
+  localStorage.setItem(HISTORY_KEY,JSON.stringify(h));
+  addLog({action:'Hapus Riwayat',detail:'ID: '+id});
+  renderHistory();
+}
+
+function clearAllHistory(){
+  if(currentUser?.role!=='admin'){alert('Hanya admin yang dapat menghapus riwayat.');return;}
+  if(!confirm('Hapus SEMUA riwayat tryout?')) return;
+  localStorage.removeItem(HISTORY_KEY);
+  addLog({action:'Hapus Semua Riwayat',detail:'Semua data riwayat dihapus oleh admin'});
+  renderHistory();
+}
+
+function formatTime(sec){const m=Math.floor(sec/60),s=sec%60;return pad(m)+'m '+pad(s)+'s';}
+function formatDate(iso){return new Date(iso).toLocaleString('id-ID',{day:'numeric',month:'short',year:'numeric',hour:'2-digit',minute:'2-digit'});}
+
+function renderHistory(){
+  const container=document.getElementById('history-list');
+  const isAdminView=currentUser?.role==='admin';
+  let hist=loadHistory();
+  if(!isAdminView) hist=hist.filter(r=>r.username===currentUser.username);
+
+  if(hist.length===0){
+    container.innerHTML='<div class="hi-empty">Belum ada riwayat tryout.<br>Selesaikan tryout untuk menyimpan hasil.</div>';
+    return;
+  }
+
+  container.innerHTML='';
+  hist.forEach(r=>{
+    const ringClass=r.nilai>=80?'excellent':r.nilai>=60?'good':'poor';
+    const item=document.createElement('div');
+    item.className='history-item';
+
+    const deleteBtn=isAdminView
+      ?'<button class="btn btn-sm btn-ghost" style="color:var(--red)" onclick="deleteHistory('+r.id+')">Hapus</button>':'' ;
+    const userTag=isAdminView&&r.userName
+      ?'<div class="hi-user-tag">👤 '+r.userName+' ('+r.username+')</div>':'';
+
+    // Segment breakdown
+    let segBreakdown='';
+    if(r.segScores && r.segScores.length){
+      segBreakdown='<div class="hi-seg-breakdown">';
+      r.segScores.forEach((sc,si)=>{
+        const seg=SEGMENTS[si]||SEGMENTS[0];
+        const scoreColor=sc.nilai>=80?'var(--green)':sc.nilai>=60?'var(--blue)':'var(--red)';
+        segBreakdown+=
+          '<div class="hi-seg-item">'+
+            '<div class="hi-seg-dot" style="background:'+seg.color+'"></div>'+
+            '<div class="hi-seg-info">'+
+              '<div class="hi-seg-name">'+sc.segIcon+' '+sc.segShort+'</div>'+
+              '<div class="hi-seg-score" style="color:'+scoreColor+'">'+sc.benar+'/'+sc.total+' benar ('+sc.nilai+')</div>'+
+            '</div>'+
+          '</div>';
+      });
+      segBreakdown+='</div>';
+    }
+
+    item.innerHTML=
+      '<div class="hi-top">'+
+        '<div class="hi-score-ring '+ringClass+'">'+r.nilai+'</div>'+
+        '<div class="hi-body">'+
+          '<div class="hi-title">Tryout OSN IPS</div>'+
+          userTag+
+          '<div class="hi-meta">'+formatDate(r.date)+' · '+r.totalQ+' soal · '+formatTime(r.timeUsed)+'</div>'+
+          '<div class="hi-pills">'+
+            '<span class="pill pill-green">✓ '+r.benar+' benar</span>'+
+            '<span class="pill pill-red">✗ '+r.salah+' salah</span>'+
+            '<span class="pill pill-amber">— '+r.skip+' skip</span>'+
+          '</div>'+
+        '</div>'+
+        '<div class="hi-actions">'+
+          '<button class="btn btn-sm btn-ghost" onclick="viewHistoryDetail('+r.id+')">Detail</button>'+
+          '<button class="btn btn-sm btn-ghost" style="color:var(--blue)" onclick="downloadSinglePDF('+r.id+')">📄 PDF</button>'+
+          deleteBtn+
+        '</div>'+
+      '</div>'+
+      segBreakdown;
+    container.appendChild(item);
+  });
+}
+
+function viewHistoryDetail(id){
+  const record=loadHistory().find(r=>r.id==id);
+  if(!record) return;
+  if(currentUser.role!=='admin'&&record.username!==currentUser.username){alert('Akses ditolak.');return;}
+
+  document.getElementById('res-score').textContent=record.nilai;
+  document.getElementById('res-benar').textContent=record.benar;
+  document.getElementById('res-salah').textContent=record.salah;
+  document.getElementById('res-skip').textContent=record.skip;
+
+  // Segment cards
+  const sgGrid=document.getElementById('seg-result-grid');
+  sgGrid.innerHTML='';
+  if(record.segScores){
+    record.segScores.forEach((sc,si)=>{
+      const sStyle=SEG_BADGE_STYLES[si];
+      const seg=SEGMENTS[si];
+      const card=document.createElement('div');
+      card.className='seg-result-card';
+      card.style.borderTop='3px solid '+seg.color;
+      card.innerHTML=
+        '<div class="seg-rc-header">'+
+          '<div class="seg-rc-icon" style="background:'+sStyle.bg+'">'+sc.segIcon+'</div>'+
+          '<div class="seg-rc-name">'+sc.segName+'</div>'+
+        '</div>'+
+        '<div class="seg-rc-stats">'+
+          '<span class="seg-rc-pill pill-green">✓ '+sc.benar+' benar</span>'+
+          '<span class="seg-rc-pill pill-red">✗ '+sc.salah+' salah</span>'+
+          '<span class="seg-rc-pill pill-amber">— '+sc.skip+' skip</span>'+
+        '</div>'+
+        '<div class="seg-rc-score" style="color:'+seg.color+'">'+sc.nilai+' / 100</div>';
+      sgGrid.appendChild(card);
+    });
+  }
+
+  const L=['A','B','C','D'];
+  const rl=document.getElementById('review-list');
+  rl.innerHTML='';
+  record.snapshot.forEach((q,i)=>{
+    const ua=q.userAnswer;
+    const cls=ua===null?'skip':ua===q.answer?'correct':'wrong';
+    const segId=q.segId||'A';
+    const si=SEGMENTS.findIndex(s=>s.id===segId);
+    const seg=SEGMENTS[Math.max(0,si)];
+    const sStyle=SEG_BADGE_STYLES[Math.max(0,si)];
+    const div=document.createElement('div');
+    div.className='review-item '+cls;
+    let ansHtml='';
+    if(ua===null) ansHtml='<div class="ri-ans ri-skip-ans">Tidak dijawab</div>';
+    else if(ua===q.answer) ansHtml='<div class="ri-ans ri-correct-ans">Jawaban Anda: '+L[ua]+'. '+q.options[ua]+' ✓</div>';
+    else ansHtml='<div class="ri-ans ri-wrong-ans">Jawaban Anda: '+L[ua]+'. '+q.options[ua]+' ✗</div>'
+      +'<div class="ri-ans ri-correct-ans">Jawaban benar: '+L[q.answer]+'. '+q.options[q.answer]+'</div>';
+    div.innerHTML=
+      '<span class="ri-seg-tag" style="background:'+sStyle.bg+';color:'+sStyle.color+'">'+(q.segIcon||'📌')+' '+(q.segShort||'Segmen')+'</span>'+
+      '<div class="ri-q">Soal '+(i+1)+': '+q.text+'</div>'+ansHtml+
+      '<div class="ri-pembahasan">Pembahasan: '+q.pembahasan+'</div>';
+    rl.appendChild(div);
+  });
+
+  document.getElementById('history-screen').style.display='none';
+  document.getElementById('result-screen').style.display='block';
+  document.getElementById('result-actions').innerHTML=
+    '<button class="btn" onclick="showScreen(\'history\')">← Kembali ke Riwayat</button>'+
+    '<button class="btn btn-blue" onclick="resetTest()">🔄 Coba Lagi</button>';
+  setActiveNav('history');
+}
+
+// ─────────────────────────────────────────
+// LOG AKTIVITAS
+// ─────────────────────────────────────────
+function loadLog(){try{return JSON.parse(localStorage.getItem(LOG_KEY))||[];}catch(e){return[];}}
+function addLog(entry){
+  const log=loadLog();
+  log.unshift({id:Date.now(),timestamp:new Date().toISOString(),username:currentUser?currentUser.username:'-',userName:currentUser?currentUser.name:'-',role:currentUser?currentUser.role:'-',action:entry.action||'-',nilai:entry.nilai!==undefined?entry.nilai:null,detail:entry.detail||'-'});
+  if(log.length>200) log.length=200;
+  localStorage.setItem(LOG_KEY,JSON.stringify(log));
+}
+function clearLog(){
+  if(currentUser?.role!=='admin'){alert('Hanya admin.');return;}
+  if(!confirm('Hapus semua log aktivitas?')) return;
+  localStorage.removeItem(LOG_KEY);
+  renderLog();
+}
+
+function renderLog(){
+  const isAdminView=currentUser?.role==='admin';
+  let log=loadLog();
+  if(!isAdminView) log=log.filter(l=>l.username===currentUser.username);
+  document.getElementById('log-th-user').style.display=isAdminView?'':'none';
+  const statRow=document.getElementById('log-stat-row');
+  const tryoutLogs=log.filter(l=>l.action==='Tryout Selesai');
+  const avgNilai=tryoutLogs.length?Math.round(tryoutLogs.reduce((s,l)=>s+l.nilai,0)/tryoutLogs.length):'-';
+  const best=tryoutLogs.length?Math.max(...tryoutLogs.map(l=>l.nilai)):'-';
+  statRow.innerHTML=
+    '<div class="log-stat-card"><div class="lsv">'+log.length+'</div><div class="lsl">Total Log</div></div>'+
+    '<div class="log-stat-card"><div class="lsv">'+tryoutLogs.length+'</div><div class="lsl">Tryout Selesai</div></div>'+
+    '<div class="log-stat-card"><div class="lsv">'+avgNilai+'</div><div class="lsl">Rata-rata Nilai</div></div>'+
+    '<div class="log-stat-card"><div class="lsv">'+best+'</div><div class="lsl">Nilai Terbaik</div></div>';
+  const tbody=document.getElementById('log-tbody');
+  if(log.length===0){tbody.innerHTML='<tr><td colspan="6" class="log-empty">Belum ada aktivitas tercatat.</td></tr>';return;}
+  tbody.innerHTML='';
+  log.forEach((l,i)=>{
+    const nilaiHtml=l.nilai!==null?'<span class="log-badge '+(l.nilai>=80?'excellent':l.nilai>=60?'good':'poor')+'">'+l.nilai+'</span>':'—';
+    const userTd=isAdminView?'<td>'+l.userName+' <span style="color:var(--text-sec);font-size:10px">('+l.username+')</span></td>':'';
+    const tr=document.createElement('tr');
+    tr.innerHTML='<td style="color:var(--text-sec)">'+(i+1)+'</td><td style="white-space:nowrap">'+formatDate(l.timestamp)+'</td>'+userTd+'<td><strong>'+l.action+'</strong></td><td>'+nilaiHtml+'</td><td style="color:var(--text-sec);font-size:11px">'+l.detail+'</td>';
+    tbody.appendChild(tr);
+  });
+}
+
+// ─────────────────────────────────────────
+// PDF — LAPORAN RIWAYAT (tombol di header history)
+// ─────────────────────────────────────────
+function downloadPDF(){
+  const btn=document.querySelector('[onclick="downloadPDF()"]');
+  const orig=btn.textContent; btn.textContent='⏳ Memuat...'; btn.disabled=true;
+  const hist=loadHistory().filter(r=>currentUser?.role==='admin'||r.username===currentUser.username);
+  if(hist.length===0){alert('Belum ada riwayat.');btn.textContent=orig;btn.disabled=false;return;}
+  const isAdmin=currentUser?.role==='admin';
+  const now=new Date().toLocaleString('id-ID',{day:'numeric',month:'long',year:'numeric',hour:'2-digit',minute:'2-digit'});
+  const avgNilai=Math.round(hist.reduce((s,r)=>s+r.nilai,0)/hist.length);
+  const best=Math.max(...hist.map(r=>r.nilai));
+  const worst=Math.min(...hist.map(r=>r.nilai));
+
+  const segColors=['#534AB7','#1D9E75','#BA7517','#C0367B'];
+  const segNames=['Fenomena Alam','Perubahan Sosial','Ekonomi Global','Sejarah Indonesia'];
+
+  const rows=hist.map((r,i)=>{
+    const warna=r.nilai>=80?'#27500A':r.nilai>=60?'#633806':'#791F1F';
+    const bg=r.nilai>=80?'#EAF3DE':r.nilai>=60?'#FAEEDA':'#FCEBEB';
+    const userCol=isAdmin?'<td style="padding:8px 10px;border-bottom:1px solid #eee">'+( r.userName||r.username)+'</td>':'';
+    let segCells='';
+    if(r.segScores){
+      r.segScores.forEach((sc,si)=>{
+        const sw=sc.nilai>=80?'#27500A':sc.nilai>=60?'#0C447C':'#791F1F';
+        const sb=sc.nilai>=80?'#EAF3DE':sc.nilai>=60?'#E6F1FB':'#FCEBEB';
+        segCells+='<td style="padding:8px 10px;border-bottom:1px solid #eee;text-align:center"><span style="background:'+sb+';color:'+sw+';font-size:11px;padding:2px 6px;border-radius:12px">'+sc.benar+'/'+sc.total+'</span></td>';
+      });
+    } else {
+      segCells='<td colspan="4" style="padding:8px 10px;border-bottom:1px solid #eee;color:#999;text-align:center">—</td>';
+    }
+    return '<tr>'+
+      '<td style="padding:8px 10px;border-bottom:1px solid #eee;text-align:center">'+(i+1)+'</td>'+
+      userCol+
+      '<td style="padding:8px 10px;border-bottom:1px solid #eee">'+formatDate(r.date)+'</td>'+
+      '<td style="padding:8px 10px;border-bottom:1px solid #eee;text-align:center"><span style="background:'+bg+';color:'+warna+';font-weight:700;padding:3px 10px;border-radius:20px;font-size:13px">'+r.nilai+'</span></td>'+
+      '<td style="padding:8px 10px;border-bottom:1px solid #eee;text-align:center;color:#27500A">✓ '+r.benar+'</td>'+
+      '<td style="padding:8px 10px;border-bottom:1px solid #eee;text-align:center;color:#791F1F">✗ '+r.salah+'</td>'+
+      '<td style="padding:8px 10px;border-bottom:1px solid #eee;text-align:center;color:#633806">— '+r.skip+'</td>'+
+      segCells+
+      '<td style="padding:8px 10px;border-bottom:1px solid #eee;text-align:center">'+formatTime(r.timeUsed)+'</td>'+
+      '</tr>';
+  }).join('');
+
+  const segHeaders=segNames.map((n,i)=>'<th style="padding:9px 8px;text-align:center;background:'+segColors[i]+';font-size:11px">'+n+'</th>').join('');
+  const userHeader=isAdmin?'<th style="padding:9px 10px;text-align:left">Siswa</th>':'';
+
+  const html=`<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Laporan Riwayat — OSN IPS Nicky</title>
+  <style>body{font-family:'Segoe UI',sans-serif;margin:0;padding:32px;color:#1a1a1a;background:#fff}
+  .header{background:linear-gradient(135deg,#26215C,#0C447C);color:#fff;padding:28px 32px;border-radius:12px;margin-bottom:24px}
+  .header h1{font-size:22px;margin:0 0 6px}.header p{font-size:12px;opacity:.75;margin:0}
+  .stats{display:flex;gap:16px;margin-bottom:24px}.stat-card{flex:1;background:#f5f5f3;border-radius:10px;padding:16px;text-align:center}
+  .stat-card .val{font-size:28px;font-weight:700;color:#26215C}.stat-card .lbl{font-size:11px;color:#6b6b6b;margin-top:4px}
+  .seg-legend{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:16px;padding:12px 16px;background:#f9f9f7;border-radius:8px}
+  .seg-chip{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:600;padding:4px 10px;border-radius:20px;color:#fff}
+  table{width:100%;border-collapse:collapse;font-size:12px}thead{background:#26215C;color:#fff}
+  th{padding:9px 10px;text-align:left;font-weight:600}tr:nth-child(even) td{background:#fafafa}
+  .footer{margin-top:24px;font-size:11px;color:#999;text-align:center}@media print{body{padding:0}}</style>
+  </head><body>
+  <div class="header"><h1>📋 Laporan Riwayat Latihan OSN IPS Nicky</h1>
+  <p>Dicetak: ${now} &nbsp;·&nbsp; ${isAdmin?'Admin — Semua Siswa':'Siswa: '+(currentUser.name)}</p></div>
+  <div class="stats">
+    <div class="stat-card"><div class="val">${hist.length}</div><div class="lbl">Total Percobaan</div></div>
+    <div class="stat-card"><div class="val">${avgNilai}</div><div class="lbl">Rata-rata Nilai</div></div>
+    <div class="stat-card"><div class="val">${best}</div><div class="lbl">Nilai Terbaik</div></div>
+    <div class="stat-card"><div class="val">${worst}</div><div class="lbl">Nilai Terendah</div></div>
+  </div>
+  <div class="seg-legend">
+    <strong style="font-size:11px;color:#555;margin-right:4px">Segmen:</strong>
+    ${segNames.map((n,i)=>'<span class="seg-chip" style="background:'+segColors[i]+'">'+n+'</span>').join('')}
+    <span style="font-size:11px;color:#888">(Kolom = Benar/Total per segmen)</span>
+  </div>
+  <table><thead><tr>
+    <th style="padding:9px 10px;text-align:center">#</th>
+    ${userHeader}
+    <th style="padding:9px 10px">Tanggal</th>
+    <th style="padding:9px 10px;text-align:center">Nilai</th>
+    <th style="padding:9px 10px;text-align:center">Benar</th>
+    <th style="padding:9px 10px;text-align:center">Salah</th>
+    <th style="padding:9px 10px;text-align:center">Skip</th>
+    ${segHeaders}
+    <th style="padding:9px 10px;text-align:center">Waktu</th>
+  </tr></thead><tbody>${rows}</tbody></table>
+  <div class="footer">Latihan OSN IPS Nicky &mdash; Laporan otomatis</div>
+  <script>window.onload=function(){window.print();}<\/script></body></html>`;
+
+  const blob=new Blob([html],{type:'text/html'});
+  const url=URL.createObjectURL(blob);
+  const win=window.open(url,'_blank');
+  if(!win) alert('Popup diblokir. Izinkan popup untuk mengunduh PDF.');
+  btn.textContent=orig; btn.disabled=false;
+}
+
+// ─────────────────────────────────────────
+// PDF — DETAIL SOAL (tombol per item riwayat)
+// ─────────────────────────────────────────
+function downloadSinglePDF(id){
+  const record=loadHistory().find(r=>r.id==id);
+  if(!record){alert('Riwayat tidak ditemukan.');return;}
+  if(currentUser.role!=='admin'&&record.username!==currentUser.username){alert('Akses ditolak.');return;}
+
+  const L=['A','B','C','D'];
+  const segColors=['#534AB7','#1D9E75','#BA7517','#C0367B'];
+  const segBgs=['#EEEDFE','#E1F5EE','#FAEEDA','#FCE8F3'];
+  const segIds=['A','B','C','D'];
+  const now=new Date().toLocaleString('id-ID',{day:'numeric',month:'long',year:'numeric',hour:'2-digit',minute:'2-digit'});
+
+  // Segment summary table
+  let segSummaryRows='';
+  if(record.segScores){
+    record.segScores.forEach((sc,si)=>{
+      const bw=sc.nilai>=80?'#27500A':sc.nilai>=60?'#0C447C':'#791F1F';
+      const bb=sc.nilai>=80?'#EAF3DE':sc.nilai>=60?'#E6F1FB':'#FCEBEB';
+      segSummaryRows+=`<tr>
+        <td style="padding:8px 12px;border-bottom:1px solid #eee">
+          <span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:${segColors[si]};margin-right:6px;vertical-align:middle"></span>
+          ${sc.segIcon} ${sc.segName}
+        </td>
+        <td style="padding:8px 12px;border-bottom:1px solid #eee;text-align:center;color:#27500A">${sc.benar}</td>
+        <td style="padding:8px 12px;border-bottom:1px solid #eee;text-align:center;color:#791F1F">${sc.salah}</td>
+        <td style="padding:8px 12px;border-bottom:1px solid #eee;text-align:center;color:#633806">${sc.skip}</td>
+        <td style="padding:8px 12px;border-bottom:1px solid #eee;text-align:center">
+          <span style="background:${bb};color:${bw};font-weight:700;padding:3px 10px;border-radius:20px">${sc.nilai}</span>
+        </td>
+      </tr>`;
+    });
+  }
+
+  // Questions
+  let questionsHtml='';
+  record.snapshot.forEach((q,i)=>{
+    const ua=q.userAnswer;
+    const isCorrect=ua!==null&&ua===q.answer;
+    const isSkip=ua===null;
+    const isWrong=ua!==null&&ua!==q.answer;
+    const si=segIds.indexOf(q.segId||'A');
+    const sc=Math.max(0,si);
+    const borderColor=isCorrect?'#639922':isWrong?'#E24B4A':'#aaa';
+    const bgColor=isCorrect?'#EAF3DE':isWrong?'#FCEBEB':'#f5f5f3';
+    const statusIcon=isCorrect?'✅':isWrong?'❌':'⬜';
+
+    let answerHtml='';
+    if(isSkip){
+      answerHtml='<div style="color:#888;font-size:12px;margin-top:6px">Tidak dijawab</div>';
+    } else if(isCorrect){
+      answerHtml='<div style="color:#27500A;font-size:12px;margin-top:6px">Jawaban Anda: '+L[ua]+'. '+q.options[ua]+' ✓</div>';
+    } else {
+      answerHtml='<div style="color:#791F1F;font-size:12px;margin-top:6px">Jawaban Anda: '+L[ua]+'. '+q.options[ua]+' ✗</div>'+
+        '<div style="color:#27500A;font-size:12px;margin-top:3px">Jawaban benar: '+L[q.answer]+'. '+q.options[q.answer]+'</div>';
+    }
+
+    questionsHtml+=`<div style="border:1.5px solid ${borderColor};background:${bgColor};border-radius:10px;padding:14px 16px;margin-bottom:12px;page-break-inside:avoid">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
+        <span style="background:#26215C;color:#fff;font-size:11px;font-weight:700;padding:3px 8px;border-radius:20px">Soal ${i+1}</span>
+        <span style="background:${segBgs[sc]};color:${segColors[sc]};font-size:10px;font-weight:600;padding:2px 8px;border-radius:20px">${(q.segIcon||'📌')} ${(q.segShort||'')}</span>
+        <span style="margin-left:auto;font-size:16px">${statusIcon}</span>
+      </div>
+      <div style="font-size:13px;font-weight:600;color:#1a1a1a;margin-bottom:10px;line-height:1.6">${q.text}</div>
+      <div style="font-size:12px;color:#444;margin-bottom:8px">
+        ${q.options.map((opt,oi)=>{
+          let os='padding:4px 0;';
+          if(oi===q.answer) os+='color:#27500A;font-weight:700;';
+          else if(oi===ua&&ua!==q.answer) os+='color:#791F1F;text-decoration:line-through;';
+          else os+='color:#666;';
+          return '<div style="'+os+'">'+L[oi]+'. '+opt+'</div>';
+        }).join('')}
+      </div>
+      ${answerHtml}
+      <div style="margin-top:8px;padding:8px 10px;background:rgba(0,0,0,.04);border-radius:7px;font-size:11px;color:#555;line-height:1.5">
+        <strong>Pembahasan:</strong> ${q.pembahasan}
+      </div>
+    </div>`;
+  });
+
+  const valW=record.nilai>=80?'#27500A':record.nilai>=60?'#633806':'#791F1F';
+  const valBg=record.nilai>=80?'#EAF3DE':record.nilai>=60?'#FAEEDA':'#FCEBEB';
+
+  const html=`<!DOCTYPE html><html><head><meta charset="UTF-8">
+  <title>Detail Tryout — ${record.userName||record.username} — ${formatDate(record.date)}</title>
+  <style>
+    body{font-family:'Segoe UI',sans-serif;margin:0;padding:28px;color:#1a1a1a;background:#fff;font-size:13px}
+    h2{margin:0 0 4px;font-size:18px}
+    @media print{body{padding:0}.no-print{display:none}h3{page-break-before:auto}}
+  </style></head><body>
+  <div style="background:linear-gradient(135deg,#26215C,#0C447C);color:#fff;padding:24px 28px;border-radius:12px;margin-bottom:20px">
+    <h2>📋 Detail Tryout OSN IPS Nicky</h2>
+    <p style="opacity:.75;font-size:11px;margin:4px 0 0">Siswa: ${record.userName||record.username} &nbsp;·&nbsp; Tanggal: ${formatDate(record.date)} &nbsp;·&nbsp; Dicetak: ${now}</p>
+  </div>
+
+  <div style="display:flex;gap:12px;margin-bottom:20px;flex-wrap:wrap">
+    <div style="flex:1;min-width:100px;background:#f5f5f3;border-radius:10px;padding:14px;text-align:center">
+      <div style="font-size:32px;font-weight:700;background:${valBg};color:${valW};width:64px;height:64px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center">${record.nilai}</div>
+      <div style="font-size:11px;color:#888;margin-top:4px">NILAI</div>
+    </div>
+    <div style="flex:1;min-width:80px;background:#EAF3DE;border-radius:10px;padding:14px;text-align:center">
+      <div style="font-size:26px;font-weight:700;color:#27500A">${record.benar}</div>
+      <div style="font-size:11px;color:#639922">Benar</div>
+    </div>
+    <div style="flex:1;min-width:80px;background:#FCEBEB;border-radius:10px;padding:14px;text-align:center">
+      <div style="font-size:26px;font-weight:700;color:#791F1F">${record.salah}</div>
+      <div style="font-size:11px;color:#E24B4A">Salah</div>
+    </div>
+    <div style="flex:1;min-width:80px;background:#f5f5f3;border-radius:10px;padding:14px;text-align:center">
+      <div style="font-size:26px;font-weight:700;color:#888">${record.skip}</div>
+      <div style="font-size:11px;color:#aaa">Skip</div>
+    </div>
+    <div style="flex:1;min-width:80px;background:#EEEDFE;border-radius:10px;padding:14px;text-align:center">
+      <div style="font-size:20px;font-weight:700;color:#534AB7">${formatTime(record.timeUsed)}</div>
+      <div style="font-size:11px;color:#888">Waktu</div>
+    </div>
+  </div>
+
+  <h3 style="font-size:14px;font-weight:600;margin:0 0 10px;color:#26215C">📊 Hasil Per Segmen</h3>
+  <table style="width:100%;border-collapse:collapse;font-size:12px;margin-bottom:24px">
+    <thead style="background:#26215C;color:#fff">
+      <tr>
+        <th style="padding:9px 12px;text-align:left">Segmen</th>
+        <th style="padding:9px 12px;text-align:center">Benar</th>
+        <th style="padding:9px 12px;text-align:center">Salah</th>
+        <th style="padding:9px 12px;text-align:center">Skip</th>
+        <th style="padding:9px 12px;text-align:center">Nilai</th>
+      </tr>
+    </thead>
+    <tbody>${segSummaryRows}</tbody>
+  </table>
+
+  <h3 style="font-size:14px;font-weight:600;margin:0 0 12px;color:#26215C">📝 Detail Per Soal</h3>
+  ${questionsHtml}
+  <div style="margin-top:20px;font-size:11px;color:#999;text-align:center">Latihan OSN IPS Nicky &mdash; Laporan detail tryout</div>
+  <script>window.onload=function(){window.print();}<\/script>
+  </body></html>`;
+
+  const blob=new Blob([html],{type:'text/html'});
+  const url=URL.createObjectURL(blob);
+  const win=window.open(url,'_blank');
+  if(!win) alert('Popup diblokir. Izinkan popup untuk mengunduh PDF.');
+}
+
+// ─────────────────────────────────────────
+// SCREEN ROUTING
+// ─────────────────────────────────────────
+function showScreen(screen){
+  document.getElementById('loading-screen').style.display='none';
+  document.getElementById('cbt-app').style.display='none';
+  document.getElementById('result-screen').style.display='none';
+  document.getElementById('history-screen').style.display='none';
+  document.getElementById('log-screen').style.display='none';
+  setActiveNav(screen);
+  if(screen==='tryout'){
+    document.getElementById('cbt-app').style.display='block';
+  } else if(screen==='history'){
+    const isAdmin=currentUser?.role==='admin';
+    document.getElementById('admin-clear-btn').style.display=isAdmin?'block':'none';
+    document.getElementById('admin-only-notice').style.display=isAdmin?'flex':'none';
+    renderHistory();
+    document.getElementById('history-screen').style.display='block';
+  } else if(screen==='log'){
+    renderLog();
+    document.getElementById('log-screen').style.display='block';
+  }
+}
+
+function setActiveNav(screen){
+  document.getElementById('nav-tryout').classList.toggle('active',screen==='tryout');
+  document.getElementById('nav-history').classList.toggle('active',screen==='history');
+  document.getElementById('nav-log').classList.toggle('active',screen==='log');
+}
+
+function resetTest(){
+  answers=new Array(questions.length).fill(null);
+  cur=0; timeLeft=CONFIG.duration;
+  document.getElementById('timer').textContent=pad(Math.floor(CONFIG.duration/60))+':00';
+  document.getElementById('timer-box').classList.remove('danger');
+  document.getElementById('result-screen').style.display='none';
+  document.getElementById('loading-screen').style.display='none';
+  addLog({action:'Mulai Tryout',detail:'Memulai sesi tryout baru'});
+  showScreen('tryout');
+  render();
+  startTimer();
+}
+
+// ─────────────────────────────────────────
+// BOOTSTRAP
+// ─────────────────────────────────────────
+document.addEventListener('keydown',e=>{
+  if(e.key==='Enter'&&document.getElementById('login-screen').style.display!=='none') doLogin(activeTab);
+});
+if(restoreSession()) startApp();
+</script>
+</body>
+</html>
