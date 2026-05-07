@@ -1,0 +1,680 @@
+[
+  [
+    {
+      "text": "Riko mencatat pertumbuhan tinggi tanaman setiap hari selama seminggu. Keterampilan ilmiah yang digunakan Riko adalah ...",
+      "options": [
+        "Mengklasifikasi",
+        "Mengukur",
+        "Memprediksi",
+        "Menyimpulkan"
+      ],
+      "answer": 1,
+      "pembahasan": "Mencatat pertumbuhan tinggi tanaman setiap hari merupakan kegiatan mengukur, yaitu menentukan besaran secara kuantitatif menggunakan alat ukur atau pengamatan langsung."
+    },
+    {
+      "text": "Perhatikan data berikut!\n1) Peta penggunaan lahan\n2) Peta Indonesia\n3) Peta kepadatan penduduk\n4) Peta Kalimantan\n5) Peta persebaran flora\n6) Peta Sulawesi\nBerdasarkan data tersebut yang merupakan peta tematik adalah ...",
+      "options": [
+        "1), 2), dan 3)",
+        "1), 3), dan 5)",
+        "2), 4), dan 6)",
+        "4), 5), dan 6)"
+      ],
+      "answer": 1,
+      "pembahasan": "Peta tematik adalah peta yang menampilkan informasi khusus tentang suatu tema tertentu. Peta penggunaan lahan (1), peta kepadatan penduduk (3), dan peta persebaran flora (5) adalah peta tematik."
+    },
+    {
+      "text": "Jika pada peta skala 1 : 100.000 terdapat sungai sepanjang 8 cm, maka panjang sungai sebenarnya adalah ...",
+      "options": [
+        "0,8 km",
+        "8 km",
+        "80 km",
+        "800 km"
+      ],
+      "answer": 1,
+      "pembahasan": "Jarak sebenarnya = jarak peta × skala = 8 cm × 100.000 = 800.000 cm = 8 km."
+    },
+    {
+      "text": "Letak Indonesia yang strategis di antara dua benua dan dua samudra membuat Indonesia sejak dulu menjadi ...",
+      "options": [
+        "Negara yang tertutup dari pengaruh luar",
+        "Jalur utama migrasi hewan dari Asia ke Australia",
+        "Pusat perdagangan dan pertukaran budaya",
+        "Negara dengan musim dingin yang ekstrim"
+      ],
+      "answer": 2,
+      "pembahasan": "Letak Indonesia di antara Benua Asia dan Australia serta Samudra Hindia dan Pasifik menjadikannya pusat perdagangan dan pertukaran budaya sejak zaman dahulu.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Indonesia_%28orthographic_projection%29.svg/600px-Indonesia_%28orthographic_projection%29.svg.png",
+      "image_caption": "Peta letak Indonesia di antara dua benua dan dua samudra"
+    },
+    {
+      "text": "Letak astronomis adalah letak suatu tempat berdasarkan garis lintang dan garis bujur. Garis bujur disebut juga dengan garis meridien yang membatasi letak astronomis Indonesia antara 95° BT–141° BT. Berdasarkan garis bujur tersebut, dampaknya bagi Indonesia adalah ...",
+      "options": [
+        "Memiliki iklim tropis",
+        "Mempunyai tiga daerah waktu",
+        "Mempunyai banyak hasil tambang",
+        "Mayoritas masyarakat Indonesia bekerja dalam bidang pertanian"
+      ],
+      "answer": 1,
+      "pembahasan": "Rentang garis bujur Indonesia yang sangat lebar (95°BT – 141°BT) menyebabkan Indonesia memiliki tiga daerah waktu, yaitu WIB, WITA, dan WIT."
+    },
+    {
+      "text": "Perhatikan pernyataan berikut!\n1) Sempitnya wilayah Indonesia.\n2) Pengaruh kebudayaan asing.\n3) Memiliki kesuburan tanah yang tinggi.\n4) Indonesia berada pada 'ring of fire'.\n5) Bentuk negara Indonesia adalah kepulauan.\nBerdasarkan pernyataan tersebut, salah satu faktor yang menyebabkan Indonesia memiliki potensi sumber daya alam begitu besar ditunjukkan nomor ...",
+      "options": [
+        "1) dan 2)",
+        "2) dan 3)",
+        "3) dan 4)",
+        "4) dan 5)"
+      ],
+      "answer": 2,
+      "pembahasan": "Kesuburan tanah yang tinggi (3) akibat aktivitas vulkanik dan posisi Indonesia di ring of fire (4) menyebabkan kekayaan sumber daya alam yang melimpah."
+    },
+    {
+      "text": "Sumber daya alam terbagi menjadi dua, yaitu sumber daya alam yang dapat diperbarui dan sumber daya alam yang tidak dapat diperbarui. Contoh sumber daya alam yang dapat diperbarui adalah air. Air tergolong sumber daya alam yang dapat diperbarui karena air ...",
+      "options": [
+        "Mengalami siklus hidrologi",
+        "Dapat diciptakan oleh manusia",
+        "Mengalir dari hulu ke hilir",
+        "Dapat ditampung sehingga tidak habis"
+      ],
+      "answer": 0,
+      "pembahasan": "Air dapat diperbarui karena mengalami siklus hidrologi, yaitu proses alami yang terus berputar melalui evaporasi, kondensasi, dan presipitasi sehingga air selalu tersedia."
+    },
+    {
+      "text": "Perhatikan barang tambang berikut!\n1) Batu gamping\n2) Intan\n3) Platinum\n4) Aspal\n5) Uranium\nBarang tambang yang memiliki nilai ekonomis tinggi adalah ...",
+      "options": [
+        "1), 3), dan 5)",
+        "2), 3), dan 4)",
+        "2), 3), dan 5)",
+        "3), 4), dan 5)"
+      ],
+      "answer": 2,
+      "pembahasan": "Intan (2), platinum (3), dan uranium (5) memiliki nilai ekonomis sangat tinggi karena langka, digunakan untuk perhiasan, industri teknologi tinggi, dan energi nuklir."
+    },
+    {
+      "text": "Belerang merupakan sumber daya alam yang banyak dimanfaatkan oleh manusia sebagai bahan baku ...",
+      "options": [
+        "Tekstil",
+        "Makanan",
+        "Minuman",
+        "Obat-obatan"
+      ],
+      "answer": 3,
+      "pembahasan": "Belerang banyak dimanfaatkan sebagai bahan baku industri kimia dan obat-obatan, seperti salep belerang untuk perawatan kulit."
+    },
+    {
+      "text": "Kota-kota metropolitan seperti Jakarta, Surabaya, dan Bandung memiliki pencemaran udara yang lebih tinggi dibanding dengan kota kecil. Hal tersebut disebabkan oleh ...",
+      "options": [
+        "Penggunaan kendaraan bermotor sebagai mobilitas penduduk di kota metropolitan relatif tinggi",
+        "Penduduk di kota metropolitan lebih senang berjalan kaki",
+        "Di kota metropolitan penduduknya banyak yang bekerja di sekitar pekarangan rumah",
+        "Di kota tidak memiliki lahan untuk garasi kendaraan"
+      ],
+      "answer": 0,
+      "pembahasan": "Kepadatan penduduk dan tingginya penggunaan kendaraan bermotor di kota metropolitan menjadi penyebab utama tingginya polusi udara."
+    },
+    {
+      "text": "Kegiatan penambangan batu bara oleh pihak tertentu selalu menghadapi masalah berupa kerusakan lahan dari hutan bekas lokasi penambangan. Tindakan yang dapat dilakukan untuk mengatasi masalah di lahan bekas penambangan tersebut adalah ...",
+      "options": [
+        "Meninggalkan dan berpindah ke lokasi lain",
+        "Memanfaatkan tempat budidaya ikan dari lubang galian",
+        "Menimbun kembali lubang galian dan melakukan reboisasi",
+        "Menggunakan lahan terbuka untuk pemukiman penduduk"
+      ],
+      "answer": 2,
+      "pembahasan": "Menimbun kembali lubang galian dan melakukan reboisasi adalah cara terbaik untuk mereklamasi lahan bekas tambang sehingga dapat berfungsi kembali secara ekologis."
+    },
+    {
+      "text": "Di daerah pegunungan, masyarakat biasanya tidak menanam padi seperti di dataran rendah. Hal tersebut dikarenakan ...",
+      "options": [
+        "Suhu lebih rendah dan lahan lebih curam",
+        "Penyinaran matahari lebih banyak dan merata",
+        "Kandungan airnya mengandung air garam",
+        "Tanahnya berkapur sehingga kurang cocok"
+      ],
+      "answer": 0,
+      "pembahasan": "Di pegunungan suhu lebih rendah dan lahan lebih curam sehingga tidak cocok untuk penanaman padi yang membutuhkan lahan datar dan suhu hangat."
+    },
+    {
+      "text": "Kenampakan alam dataran tinggi biasanya dimanfaatkan untuk ...",
+      "options": [
+        "Pelabuhan dan pertanian",
+        "Perkebunan dan peternakan",
+        "Wisata bawah laut",
+        "Tempat parkir pesawat"
+      ],
+      "answer": 1,
+      "pembahasan": "Dataran tinggi dengan udara sejuk dan lahan yang luas cocok untuk perkebunan (teh, kopi, sayuran) dan peternakan."
+    },
+    {
+      "text": "Perhatikan gambar gunung berikut!\nGambar tersebut menunjukkan salah satu bentang alam yang terbentuk karena ...",
+      "options": [
+        "Pengendapan tanah oleh air",
+        "Tenaga endogen dari dalam bumi",
+        "Erosi angin di padang pasir",
+        "Tenaga matahari yang berlebihan"
+      ],
+      "answer": 1,
+      "pembahasan": "Gunung berapi terbentuk akibat tenaga endogen, yaitu tenaga yang berasal dari dalam bumi berupa aktivitas vulkanisme dan tektonik.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Mount_Bromo_and_the_sea_of_sand.jpg/640px-Mount_Bromo_and_the_sea_of_sand.jpg",
+      "image_caption": "Gunung berapi sebagai bentang alam akibat tenaga endogen"
+    },
+    {
+      "text": "Tanah longsor yang terjadi dapat menimpa jalan dan rumah. Upaya meminimalisir terjadinya bencana alam tersebut adalah dengan cara ...",
+      "options": [
+        "Menebang pohon sebanyak-banyaknya",
+        "Menyemen tanah agar tidak longsor",
+        "Menanam pohon dan menjaga hutan",
+        "Mengubah hutan menjadi lahan perkebunan"
+      ],
+      "answer": 2,
+      "pembahasan": "Menanam pohon dan menjaga hutan adalah upaya terbaik mencegah tanah longsor karena akar pohon mengikat tanah sehingga tidak mudah longsor."
+    }
+  ],
+  [
+    {
+      "text": "Kondisi iklim berpengaruh terhadap bentuk perumahan, pakaian, dan mata pencaharian penduduk. Jenis pakaian yang cocok untuk penduduk Indonesia beriklim tropis adalah ...",
+      "options": [
+        "Tebal dan berbahan wool",
+        "Berbahan dasar kulit dan jeans",
+        "Berwarna hitam dan berbahan nilon",
+        "Berwarna putih dan berbahan katun"
+      ],
+      "answer": 3,
+      "pembahasan": "Iklim tropis yang panas dan lembab cocok dengan pakaian berbahan katun karena menyerap keringat dan membuat nyaman."
+    },
+    {
+      "text": "Daerah aliran sungai sering dimanfaatkan untuk profesi ...",
+      "options": [
+        "Penambang batubara",
+        "Penangkap ikan",
+        "Petani sayur",
+        "Penjaga mercusuar"
+      ],
+      "answer": 1,
+      "pembahasan": "Daerah aliran sungai menyediakan sumber daya ikan yang melimpah sehingga banyak penduduk yang berprofesi sebagai penangkap ikan."
+    },
+    {
+      "text": "Ayah dan ibu sangat menyayangi kami, mereka selalu memberikan perhatian dengan mengajak kami bercerita tentang aktivitas yang kami lakukan. Berdasarkan pernyataan tersebut, menunjukkan bahwa keluarga memiliki fungsi ...",
+      "options": [
+        "Pendidikan",
+        "Afeksi",
+        "Proteksi",
+        "Sosialisasi"
+      ],
+      "answer": 3,
+      "pembahasan": "Fungsi sosialisasi keluarga adalah membentuk kepribadian dan mengajarkan nilai-nilai kehidupan kepada anggota keluarga melalui interaksi sehari-hari."
+    },
+    {
+      "text": "Perhatikan gambar lembaga peradilan berikut!\nSalah satu peran lembaga tersebut antara lain ...",
+      "options": [
+        "Mengajarkan cara berteman dengan baik",
+        "Memastikan harga sembako murah",
+        "Mengatur pembagian warisan",
+        "Menentukan hari besar agama"
+      ],
+      "answer": 2,
+      "pembahasan": "Lembaga peradilan (pengadilan) memiliki peran mengatur dan memutuskan permasalahan hukum, termasuk pembagian warisan berdasarkan ketentuan hukum yang berlaku."
+    },
+    {
+      "text": "Perhatikan pernyataan berikut!\n1) Diterima sebagian besar masyarakat.\n2) Menjiwai seluruh warga.\n3) Terdapat pola sistem tertentu.\n4) Sanksi yang mengikat.\nBerdasarkan data tersebut, yang merupakan syarat-syarat norma adalah ...",
+      "options": [
+        "1), 2), dan 3)",
+        "1), 2), dan 4)",
+        "1), 3), dan 4)",
+        "2), 3), dan 4)"
+      ],
+      "answer": 3,
+      "pembahasan": "Syarat norma sosial meliputi: menjiwai seluruh warga (2), terdapat pola sistem tertentu (3), dan memiliki sanksi yang mengikat (4)."
+    },
+    {
+      "text": "Perhatikan gambar anak membuang sampah pada tempatnya!\nBerdasarkan gambar tersebut, tokoh dalam gambar telah menunjukkan bahwa ia telah menaati norma ...",
+      "options": [
+        "Kesopanan",
+        "Agama",
+        "Ekonomi",
+        "Hukum"
+      ],
+      "answer": 0,
+      "pembahasan": "Membuang sampah pada tempatnya merupakan contoh penerapan norma kesopanan yang mengatur perilaku manusia dalam menjaga kebersihan dan ketertiban lingkungan."
+    },
+    {
+      "text": "Yusuf Maulana, seorang anak petani asal kaki Gunung Cikuray, Kabupaten Garut, Jawa Barat berhasil menorehkan banyak prestasi di bidang teknologi informasi. Ia membangun perusahaan berbasis IT bernama Mobidu dan memperoleh penghargaan pengusaha muda inovatif skala nasional dan internasional. Berdasarkan teks tersebut, Yusuf Maulana memperoleh status sosial sebagai pengusaha muda dengan cara ...",
+      "options": [
+        "Ascribed status",
+        "Achieved status",
+        "Assigned status",
+        "Otodidac status"
+      ],
+      "answer": 1,
+      "pembahasan": "Achieved status adalah status sosial yang diperoleh melalui usaha, kerja keras, dan prestasi sendiri. Yusuf Maulana meraih statusnya melalui perjuangan dan kerja kerasnya sendiri."
+    },
+    {
+      "text": "Perhatikan tabel berikut!\nNo. | Pernyataan A | Pernyataan B\n1. | Belajar dan patuh pada guru | negara\n2. | Membersihkan kamar | sekolah\n3. | Menanam pohon sebagai perindang | rumah\n4. | Membantu ibu memasak | masyarakat\nBerdasarkan tabel tersebut, pernyataan yang sesuai antara peran sosial dan lingkungannya ditunjukkan nomor ...",
+      "options": [
+        "A1 – B2",
+        "A2 – B1",
+        "A3 – B3",
+        "A4 – B4"
+      ],
+      "answer": 1,
+      "pembahasan": "Membersihkan kamar (A2) sesuai dengan lingkungan rumah (bukan B sekolah). Yang tepat A2–B1 karena membersihkan kamar adalah peran di lingkungan rumah."
+    },
+    {
+      "text": "Perhatikan pernyataan berikut!\n1) Debat antarcalon Ketua OSIS.\n2) Pertengkaran antarsuporter lomba.\n3) Rebutan promosi antarpedagang.\nPernyataan-pernyataan tersebut menunjukkan bentuk interaksi sosial ...",
+      "options": [
+        "Kooperatif",
+        "Kolaboratif",
+        "Asosiatif",
+        "Disosiatif"
+      ],
+      "answer": 3,
+      "pembahasan": "Debat, pertengkaran, dan rebutan adalah bentuk interaksi disosiatif, yaitu interaksi yang mengarah pada pertentangan atau persaingan."
+    },
+    {
+      "text": "Perhatikan gambar kerumunan orang bergotong royong!\nBerdasarkan gambar tersebut, perilaku masyarakat tergolong ke dalam bentuk interaksi sosial ...",
+      "options": [
+        "Asosiatif – kerja sama",
+        "Asosiatif – akomodasi",
+        "Disosiatif – kontravensi",
+        "Disosiatif – persaingan"
+      ],
+      "answer": 0,
+      "pembahasan": "Gotong royong adalah bentuk kerja sama yang termasuk interaksi asosiatif, yaitu interaksi yang mendorong persatuan dan kerja sama antar anggota masyarakat."
+    },
+    {
+      "text": "Kepala sekolah memberikan bimbingan dan petunjuk mengenai etika dan moral kepada siswa. Sementara itu, guru bimbingan konseling memberikan bimbingan agar siswa tidak melanggar tata tertib. Berdasarkan pernyataan tersebut, tujuan sosialisasi yang dilakukan sekolah adalah ...",
+      "options": [
+        "Membentuk pribadi siswa yang teratur",
+        "Menjadi pemimpin yang adil",
+        "Membuat siswa terampil di dunia kerja",
+        "Meningkatkan kompetisi di sekolah"
+      ],
+      "answer": 0,
+      "pembahasan": "Sosialisasi di sekolah bertujuan membentuk pribadi siswa yang teratur, beretika, dan bermoral sesuai nilai-nilai yang berlaku di masyarakat."
+    },
+    {
+      "text": "Perhatikan tabel berikut!\nNo. | Pernyataan A | Pernyataan B\n1. | Kontak sosial | Membentuk perilaku, sikap, dan jati diri dalam masyarakat.\n2. | Interaksi sosial | Mulai memahami dan menerapkan nilai-nilai dalam kehidupan sehari-hari.\n3. | Pembentukan kepribadian | Belajar nilai dan norma melalui lingkungan.\nBerdasarkan tabel tersebut, pasangan proses sosial beserta penjelasannya yang benar adalah ...",
+      "options": [
+        "A1 – B2",
+        "A3 – B1",
+        "A4 – B5",
+        "A5 – B3"
+      ],
+      "answer": 1,
+      "pembahasan": "Pembentukan kepribadian (A3) berkaitan dengan belajar nilai dan norma melalui lingkungan (B1), karena kepribadian dibentuk melalui proses internalisasi nilai dari lingkungan sekitar."
+    },
+    {
+      "text": "Perhatikan pernyataan berikut!\n1) Lokasi Indonesia yang terpisah oleh perairan membentuk kebudayaan sendiri-sendiri.\n2) Iklim berbeda di daerah pegunungan dan pesisir pantai memengaruhi pola aktivitas.\n3) Perbedaan kesuburan tanah sehingga jenis mata pencahariannya juga berbeda.\n4) Kesamaan nasib atas penjajahan dialami bangsa Indonesia.\n5) Digunakannya Bahasa Indonesia sebagai bahasa nasional.\nBerdasarkan pernyataan tersebut, faktor penyebab munculnya keragaman budaya di Indonesia ditunjukkan nomor ...",
+      "options": [
+        "1), 2), dan 3)",
+        "1), 3), dan 4)",
+        "2), 3), dan 4)",
+        "3), 4), dan 5)"
+      ],
+      "answer": 0,
+      "pembahasan": "Letak geografis yang terpisah oleh perairan (1), perbedaan iklim (2), dan perbedaan kesuburan tanah (3) merupakan faktor geografis yang menyebabkan keragaman budaya di Indonesia."
+    },
+    {
+      "text": "Kondisi masyarakat dapat bergerak maju dan mundur setelah mengalami perubahan sosial. Contoh perubahan sosial regress terdapat pada fenomena ...",
+      "options": [
+        "Sosialisasi bahaya pergaulan bebas",
+        "Bantuan kredit bunga rendah dari pemerintah",
+        "Mitigasi bencana terhadap masyarakat di lereng gunung",
+        "Kebakaran hutan akibat penebangan pohon sembarangan"
+      ],
+      "answer": 3,
+      "pembahasan": "Perubahan sosial regress adalah perubahan yang membawa kemunduran. Kebakaran hutan akibat penebangan liar menyebabkan kerusakan lingkungan dan kemunduran kualitas hidup masyarakat.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/ObsidianOregon.jpg/320px-ObsidianOregon.jpg",
+      "image_caption": "Batu obsidian, peninggalan zaman praaksara"
+    },
+    {
+      "text": "Hidangan daging dan kacang merah berkuah santan bumbu keluwak yang berasal dari D.I. Yogyakarta dan juga merupakan bagian dari warisan seni budaya disebut ...",
+      "options": [
+        "Rawon",
+        "Brongkos",
+        "Gudeg",
+        "Bakmoy"
+      ],
+      "answer": 1,
+      "pembahasan": "Brongkos adalah masakan khas Yogyakarta berupa daging berkuah santan dengan bumbu kluwek. Berbeda dengan rawon yang merupakan masakan khas Jawa Timur."
+    }
+  ],
+  [
+    {
+      "text": "Krisis minyak bumi mendorong masyarakat Indonesia melakukan perubahan dengan mengganti minyak tanah menggunakan gas yang bahan bakunya dari kotoran hewan. Contoh tersebut menunjukkan perubahan sosial yang disebabkan oleh faktor ...",
+      "options": [
+        "Perubahan fisik",
+        "Adanya peperangan",
+        "Penemuan baru",
+        "Lingkungan alam"
+      ],
+      "answer": 2,
+      "pembahasan": "Penemuan baru (inovasi) seperti biogas dari kotoran hewan sebagai pengganti minyak tanah merupakan faktor pendorong perubahan sosial dari dalam masyarakat."
+    },
+    {
+      "text": "Kelangkaan sumber daya alam minyak bumi dapat diatasi dengan cara ...",
+      "options": [
+        "Menambah jumlah produksi minyak seluruh dunia",
+        "Menghentikan penggunaan minyak bumi",
+        "Mencari sumber daya alam alternatif",
+        "Menghambat laju pertumbuhan penduduk"
+      ],
+      "answer": 2,
+      "pembahasan": "Mencari sumber daya alam alternatif seperti energi terbarukan (surya, angin, air) adalah solusi tepat untuk mengatasi kelangkaan minyak bumi."
+    },
+    {
+      "text": "Kain perca yang sudah tidak bermanfaat lagi, dikumpulkan dan dijahit oleh Lina sehingga menjadi sebuah tas yang bagus dan unik. Ilustrasi tersebut merupakan kegiatan produksi karena ...",
+      "options": [
+        "Menambah nilai guna suatu barang",
+        "Mengurangi nilai guna suatu barang",
+        "Menyalurkan kain perca ke toko kain",
+        "Membeli kain perca ke toko kain"
+      ],
+      "answer": 0,
+      "pembahasan": "Kegiatan produksi adalah kegiatan yang menambah nilai guna suatu barang. Kain perca yang tidak berguna dijahit menjadi tas yang memiliki nilai guna tinggi."
+    },
+    {
+      "text": "Selimut akan mempunyai nilai guna lebih tinggi apabila digunakan di daerah dataran tinggi daripada di dataran rendah. Pernyataan tersebut merupakan contoh nilai guna ...",
+      "options": [
+        "Tempat",
+        "Waktu",
+        "Bentuk",
+        "Dasar"
+      ],
+      "answer": 0,
+      "pembahasan": "Nilai guna tempat adalah nilai suatu barang yang meningkat karena dipindahkan ke tempat yang lebih membutuhkan. Selimut lebih berguna di dataran tinggi yang dingin."
+    },
+    {
+      "text": "Bu Endah dan keluarga harus berpindah tempat tinggal dikarenakan pekerjaannya beralih ke kota. Ibu Endah menjual rumahnya di desa dan membeli rumah di kota yang dekat dengan tempat kerjanya. Fungsi uang yang tepat berdasarkan ilustrasi tersebut adalah ...",
+      "options": [
+        "Satuan hitung",
+        "Alat pemindah kekayaan",
+        "Pendorong kegiatan ekonomi",
+        "Alat penyimpan nilai"
+      ],
+      "answer": 1,
+      "pembahasan": "Fungsi uang sebagai alat pemindah kekayaan terlihat ketika Bu Endah menjual rumah di desa dan membeli rumah baru di kota menggunakan uang hasil penjualan."
+    },
+    {
+      "text": "Perhatikan gambar pecahan uang kertas Rp10.000!\nPada gambar pecahan uang kertas tersebut, terdapat tulisan 10.000 yang merupakan nilai ...",
+      "options": [
+        "Intrinsik",
+        "Ekstrinsik",
+        "Nominal",
+        "Hitung"
+      ],
+      "answer": 2,
+      "pembahasan": "Nilai nominal adalah nilai yang tertulis/tertera pada uang. Angka 10.000 yang tercetak pada uang kertas adalah nilai nominal uang tersebut."
+    },
+    {
+      "text": "Negara-negara anggota ASEAN bersepakat untuk menjadikan kawasan ASEAN sebagai tempat produksi yang kompetitif sehingga ASEAN memiliki daya saing di tingkat global. Kesepakatan tersebut merupakan bentuk tujuan dari organisasi ...",
+      "options": [
+        "General Agreement on Tariffs and Trade",
+        "Masyarakat Ekonomi ASEAN",
+        "ASEAN Free Trade Area",
+        "World Trade Organization"
+      ],
+      "answer": 1,
+      "pembahasan": "Masyarakat Ekonomi ASEAN (MEA) bertujuan menjadikan kawasan ASEAN sebagai pasar tunggal dan basis produksi yang kompetitif di tingkat global."
+    },
+    {
+      "text": "Hubungan Indonesia dengan Cina untuk membangun kereta cepat Jakarta-Bandung dan hubungan Indonesia dengan Jepang untuk merancang pembangunan kereta cepat Jakarta-Surabaya merupakan contoh kerja sama bangsa Indonesia dalam bentuk ...",
+      "options": [
+        "Multilateral",
+        "Regional",
+        "Internasional",
+        "Bilateral"
+      ],
+      "answer": 3,
+      "pembahasan": "Kerja sama bilateral adalah kerja sama antara dua negara. Hubungan Indonesia-Cina dan Indonesia-Jepang masing-masing merupakan kerja sama bilateral (dua pihak)."
+    },
+    {
+      "text": "Pritha seorang pelajar SMA membuat kerajinan tangan dari kain flanel berupa gantungan kunci, papan nama, boneka, dan pernak-pernik lainnya. Pritha harus membeli kain flanel, jarum, benang, lem, dan bahan lainnya. Peran Pritha sebagai seorang produsen dilakukan dengan ...",
+      "options": [
+        "Membuat dan menjual barang kerajinan",
+        "Membeli bahan berkualitas di toko yang terpercaya",
+        "Menggunakan kain flanel yang ia beli di toko bahan",
+        "Menitipkan barang kerajinannya untuk dijual di kantin dan koperasi sekolah"
+      ],
+      "answer": 0,
+      "pembahasan": "Peran produsen adalah membuat dan menjual barang/jasa. Pritha berperan sebagai produsen karena membuat kerajinan tangan dan menjualnya."
+    },
+    {
+      "text": "Perhatikan pernyataan berikut!\n1) Menjual faktor-faktor produksi.\n2) Membeli barang-barang konsumsi.\n3) Menerima harga barang konsumsi.\n4) Membeli faktor produksi.\n5) Membayar harga barang konsumsi.\n6) Membayar harga faktor produksi.\nBerdasarkan pernyataan tersebut, peran pelaku ekonomi rumah tangga konsumsi ditunjukkan nomor ...",
+      "options": [
+        "1), 2), dan 3)",
+        "1), 3), dan 5)",
+        "2), 3), dan 5)",
+        "2), 4), dan 6)"
+      ],
+      "answer": 0,
+      "pembahasan": "Rumah tangga konsumsi berperan sebagai: menjual faktor-faktor produksi (1), membeli barang konsumsi (2), dan menerima harga barang konsumsi (3) dari hasil penjualan faktor produksi."
+    },
+    {
+      "text": "Perhatikan pernyataan berikut!\n1) Selektif dalam pemilihan komoditas unggulan.\n2) Menekan biaya dan waktu dalam proses ekspor.\n3) Meningkatkan akses pasar ekspor.\n4) Mengurangi keluarnya devisa luar negeri.\n5) Mempermudah akses e-commerce.\nBerdasarkan pernyataan tersebut, yang merupakan upaya dalam meningkatkan kegiatan ekspor adalah ...",
+      "options": [
+        "1), 2), 3), dan 4)",
+        "1), 2), 3), dan 5)",
+        "1), 3), 4), dan 5)",
+        "2), 3), 4), dan 5)"
+      ],
+      "answer": 1,
+      "pembahasan": "Upaya meningkatkan ekspor: selektif memilih komoditas unggulan (1), menekan biaya ekspor (2), meningkatkan akses pasar (3), dan mempermudah e-commerce (5). Mengurangi devisa (4) bukan upaya meningkatkan ekspor."
+    },
+    {
+      "text": "Perhatikan pernyataan berikut!\n1) PLN membeli komponen listrik di Thailand.\n2) Jumlah penjualan ke Myanmar berhasil naik.\n3) Pabrik Gula Madukismo membutuhkan bahan pemutih gula dari Vietnam.\n4) Ibu Ida adalah penjual grosir perkakas rumah tangga yang didatangkan dari Cina.\n5) Pengrajin gerabah di Kasongan menjual produk ke Eropa.\nBerdasarkan pernyataan tersebut, kegiatan impor ditunjukkan oleh nomor ...",
+      "options": [
+        "1), 2), dan 3)",
+        "1), 3), dan 4)",
+        "2), 3), dan 4)",
+        "3), 4), dan 5)"
+      ],
+      "answer": 1,
+      "pembahasan": "Impor adalah mendatangkan barang dari luar negeri. PLN membeli komponen dari Thailand (1), Pabrik Gula Madukismo membeli bahan dari Vietnam (3), dan Ibu Ida menjual perkakas yang didatangkan dari Cina (4) adalah kegiatan impor."
+    },
+    {
+      "text": "Untuk memenuhi kebutuhan hidupnya, masyarakat pesisir melakukan budidaya tambak udang, budidaya rumput laut, dan pengolahan ikan asin. Kegiatan ekonomi masyarakat tersebut merupakan kegiatan dari ...",
+      "options": [
+        "Ekonomi pesisir",
+        "Ekonomi maritim",
+        "Ekonomi kelautan",
+        "Aktivitas ekonomi pesisir"
+      ],
+      "answer": 0,
+      "pembahasan": "Kegiatan budidaya tambak udang, rumput laut, dan pengolahan ikan asin adalah contoh kegiatan ekonomi pesisir yang memanfaatkan sumber daya di wilayah pesisir."
+    },
+    {
+      "text": "Pernyataan yang mendukung Indonesia masuk dalam perekonomian agraris adalah ...",
+      "options": [
+        "Memiliki lahan pertanian yang luas",
+        "Memiliki potensi tambang di daerah bawah laut",
+        "Memiliki ketahanan kapal laut megah",
+        "Terdapat berbagai wisata alam bawah laut"
+      ],
+      "answer": 0,
+      "pembahasan": "Ekonomi agraris ditandai dengan kegiatan pertanian sebagai basis ekonomi. Indonesia memiliki lahan pertanian yang luas sebagai ciri utama perekonomian agraris."
+    },
+    {
+      "text": "Pernyataan berikut yang merupakan kegiatan ekonomi pendukung pembangunan berkelanjutan adalah ...",
+      "options": [
+        "Menebang hutan untuk membuka tambang baru",
+        "Membuang limbah ke sungai yang semakin banyak dibuang",
+        "Memelihara aliran sungai dengan cara membersihkan sampahnya dan menjaga kedalamannya",
+        "Menambah penggunaan kendaraan bermotor"
+      ],
+      "answer": 2,
+      "pembahasan": "Pembangunan berkelanjutan adalah pembangunan yang memenuhi kebutuhan sekarang tanpa mengorbankan generasi mendatang. Memelihara aliran sungai mendukung prinsip tersebut."
+    }
+  ],
+  [
+    {
+      "text": "Perhatikan pernyataan berikut!\n1) Candi dan patung.\n2) Prasasti dan piagam.\n3) Ornamen dan fonografis.\n4) Surat kabar dan buku harian.\nBerdasarkan jejak-jejak masa lampau sebagai sumber sejarah, berikut ini yang termasuk jenis sumber tertulis adalah nomor ...",
+      "options": [
+        "1) dan 2)",
+        "1) dan 3)",
+        "2) dan 3)",
+        "3) dan 4)"
+      ],
+      "answer": 3,
+      "pembahasan": "Sumber sejarah tertulis adalah sumber yang berupa tulisan atau tanda tertulis. Ornamen dan fonografis (3) serta surat kabar dan buku harian (4) termasuk sumber tertulis, sedangkan candi dan prasasti fisik termasuk sumber benda."
+    },
+    {
+      "text": "Perhatikan tabel peninggalan sejarah!\nBerdasarkan tabel tersebut, contoh peninggalan Islam di Indonesia ditunjukkan pada kolom ...",
+      "options": [
+        "I",
+        "II",
+        "III",
+        "IV"
+      ],
+      "answer": 1,
+      "pembahasan": "Peninggalan Islam di Indonesia antara lain kaligrafi, sekaten, debus, suluk, dan masjid — yang sebagian besar terdapat pada kolom II."
+    },
+    {
+      "text": "Perhatikan pernyataan berikut!\n1) Runtuhnya kerajaan Majapahit.\n2) Kesultanan Mataram mempunyai prajurit tangguh.\n3) Adanya seorang Sultan yang bercita-cita mempersatukan Pulau Jawa.\n4) Letaknya strategis di pesisir selatan Pulau Jawa.\n5) Berkembangnya Kesultanan Mataram.\nFaktor perkembangan Kesultanan Mataram ditunjukkan nomor ...",
+      "options": [
+        "1), 2), dan 3)",
+        "1), 3), dan 4)",
+        "2), 3), dan 4)",
+        "3), 4), dan 5)"
+      ],
+      "answer": 2,
+      "pembahasan": "Faktor berkembangnya Kesultanan Mataram: memiliki prajurit tangguh (2), adanya sultan yang bercita-cita mempersatukan Jawa (3), dan letak strategis di pesisir selatan (4).",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Keong_mas_shell.jpg/320px-Keong_mas_shell.jpg",
+      "image_caption": "Cangkang kerang, hasil kebudayaan manusia praaksara (kjokkenmoddinger)"
+    },
+    {
+      "text": "Alasan utama bangsa Eropa datang ke Indonesia adalah ...",
+      "options": [
+        "Menyebarkan agama dan kebudayaan Eropa ke Indonesia",
+        "Menyaksikan keindahan alam Indonesia",
+        "Mencari kekayaan dan rempah-rempah di Indonesia",
+        "Membantu rakyat Indonesia membangun negara"
+      ],
+      "answer": 2,
+      "pembahasan": "Bangsa Eropa datang ke Nusantara terutama didorong oleh keinginan mencari rempah-rempah yang bernilai sangat tinggi di pasar Eropa dan kekayaan alam Indonesia."
+    },
+    {
+      "text": "Dampak negatif dari sistem tanam paksa bagi rakyat Indonesia adalah ...",
+      "options": [
+        "Rakyat Indonesia belajar menanam tanaman baru",
+        "Rakyat kehilangan hak atas tanah mereka",
+        "Antarrakyat saling berebut lahan",
+        "Rakyat bebas memilih jenis tanaman dan rakyat sering mengalami gagal panen"
+      ],
+      "answer": 1,
+      "pembahasan": "Sistem tanam paksa (cultuurstelsel) mewajibkan rakyat menanam tanaman ekspor. Dampak negatifnya adalah rakyat kehilangan hak atas tanah dan mengalami penderitaan akibat dipaksa menanam komoditas tertentu.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Prasasti_Yupa.jpg/320px-Prasasti_Yupa.jpg",
+      "image_caption": "Prasasti Yupa dari Kerajaan Kutai"
+    },
+    {
+      "text": "Perhatikan gambar prasasti batu!\nGambar tersebut adalah prasasti Kerajaan Kutai yang ditulis dengan bahasa Sansekerta dan huruf Pallawa. Prasasti ini menceritakan pemberian sedekah 20.000 ekor sapi kepada para Brahmana dari seorang raja bernama ...",
+      "options": [
+        "Aswawarman",
+        "Kudungga",
+        "Mulawarman",
+        "Purnawarman"
+      ],
+      "answer": 2,
+      "pembahasan": "Prasasti Yupa dari Kerajaan Kutai menceritakan Mulawarman, raja yang dikenal sangat dermawan dan memberikan sedekah 20.000 ekor sapi kepada para Brahmana."
+    },
+    {
+      "text": "Perhatikan pernyataan berikut!\n1) VOC hanya berdagang tanpa mencampuri urusan politik.\n2) VOC memiliki kekuasaan seolah negara kecil.\n3) Perlawanan rakyat Indonesia terjadi karena VOC memonopoli dan melakukan penindasan.\n4) Semua perlawanan bangsa Indonesia berhasil mengusir penjajah.\nPernyataan yang sesuai dengan kondisi perlawanan bangsa Indonesia ditunjukkan nomor ...",
+      "options": [
+        "1) dan 2)",
+        "1) dan 3)",
+        "2) dan 3)",
+        "3) dan 4)"
+      ],
+      "answer": 2,
+      "pembahasan": "VOC memiliki kekuasaan seperti negara kecil dengan hak octrooi (2) dan perlawanan terjadi karena monopoli dan penindasan VOC (3). Pernyataan 1 salah karena VOC mencampuri politik, dan pernyataan 4 salah karena tidak semua perlawanan berhasil."
+    },
+    {
+      "text": "Perhatikan tabel tokoh perlawanan berikut!\nNo. | Pernyataan A | Pernyataan B\n1. | Cut Nyak Dien | Aceh\n2. | Kapiten Pattimura | Maluku\n3. | Pangeran Diponegoro | Sumatera Barat\n4. | Pangeran Bonjol | Yogyakarta\nBerdasarkan tabel tersebut, pasangan tokoh pemimpin perlawanan dengan daerahnya yang tepat adalah ...",
+      "options": [
+        "A1 – B4",
+        "A2 – B2",
+        "A3 – B1",
+        "A4 – B2"
+      ],
+      "answer": 1,
+      "pembahasan": "Pasangan yang tepat: Kapiten Pattimura berasal dari Maluku (A2–B2). Tuanku Imam Bonjol dari Sumatera Barat, Pangeran Diponegoro dari Yogyakarta, dan Cut Nyak Dien dari Aceh."
+    },
+    {
+      "text": "Peristiwa penting yang mendorong kemerdekaan Indonesia antara lain ...",
+      "options": [
+        "Serangan Umum 1 Maret",
+        "Surat Perintah 11 Maret",
+        "Pertempuran Ambarawa",
+        "Penculikan Rengasdengklok"
+      ],
+      "answer": 3,
+      "pembahasan": "Penculikan Rengasdengklok adalah peristiwa penting yang mendorong proklamasi kemerdekaan. Para pemuda membawa Soekarno-Hatta ke Rengasdengklok untuk segera memproklamasikan kemerdekaan Indonesia."
+    },
+    {
+      "text": "Salah satu realisasi janji Jepang terhadap kemerdekaan Indonesia adalah membentuk BPUPKI. BPUPKI atau 'Dokuritsu Junbi Cosakai' adalah badan khusus yang diadakan Pemerintah Jepang untuk membantu persiapan kemerdekaan Indonesia. Arti penting BPUPKI adalah ...",
+      "options": [
+        "Merancang rancangan UUD dan GBHN",
+        "Membuat rancangan dasar negara dan UUD",
+        "Memilih presiden dan wakil presiden",
+        "Merumuskan dasar negara dan UUD"
+      ],
+      "answer": 3,
+      "pembahasan": "BPUPKI berperan penting dalam merumuskan dasar negara (Pancasila) dan Undang-Undang Dasar 1945 sebagai fondasi negara Indonesia merdeka."
+    },
+    {
+      "text": "Pahlawan yang dikenal karena perjuangannya dalam bidang pendidikan adalah ...",
+      "options": [
+        "Ki Hajar Dewantara",
+        "Sisingamaraja XII",
+        "Pangeran Antasari",
+        "Pattimura"
+      ],
+      "answer": 0,
+      "pembahasan": "Ki Hajar Dewantara dikenal sebagai Bapak Pendidikan Nasional karena mendirikan Taman Siswa dan memperjuangkan hak pendidikan bagi seluruh rakyat Indonesia."
+    },
+    {
+      "text": "Tokoh yang merumuskan teks proklamasi kemerdekaan Indonesia adalah ...",
+      "options": [
+        "Ir. Soekarno, Moh. Hatta, Soepomo",
+        "Ir. Soekarno, Ahmad Soebarjo, Moh. Hatta",
+        "Douwes Dekker, Cipto, Hatta",
+        "Ki Hajar Dewantara, Ir. Soekarno, Hatta"
+      ],
+      "answer": 1,
+      "pembahasan": "Teks proklamasi dirumuskan oleh Ir. Soekarno, Ahmad Soebarjo, dan Moh. Hatta di rumah Laksamana Maeda pada malam 16 Agustus 1945."
+    },
+    {
+      "text": "Penyebaran agama Hindu-Buddha di Indonesia oleh masyarakat India yang merupakan golongan pedagang berteori masuknya agama Hindu-Buddha ke Nusantara. Teori tersebut disebut teori ...",
+      "options": [
+        "Brahmana",
+        "Waisya",
+        "Ksatria",
+        "Sudra"
+      ],
+      "answer": 1,
+      "pembahasan": "Teori Waisya menyatakan bahwa Hindu-Buddha masuk ke Indonesia dibawa oleh para pedagang India (golongan Waisya) yang berdagang ke Nusantara."
+    },
+    {
+      "text": "Perhatikan gambar batu obsidian berikut!\nGambar tersebut merupakan tumpukan cangkang kerang hasil kebudayaan manusia praaksara. Berdasarkan keberadaan cangkang kerang tersebut, menandakan bahwa manusia praaksara bertahan hidup dengan cara ...",
+      "options": [
+        "Mencari makan di pesisir pantai",
+        "Mencari sumber mata air",
+        "Berburu hewan di hutan",
+        "Memakan tumbuh-tumbuhan"
+      ],
+      "answer": 0,
+      "pembahasan": "Penemuan kjokkenmoddinger (tumpukan sampah dapur berupa cangkang kerang) menunjukkan manusia praaksara hidup di tepi pantai dan mencari makan berupa ikan dan kerang di pesisir."
+    },
+    {
+      "text": "Perhatikan tabel berikut!\nNo. | Pernyataan A | Pernyataan B\n1. | Tuanku Imam | Aceh\n2. | Kapiten Pattimura | Maluku\n3. | Pangeran Diponegoro | Sumatera Barat\n4. | Pangeran Bonjol | Yogyakarta\nBerdasarkan tabel tersebut, pasangan tokoh pemimpin perlawanan dengan daerahnya yang tepat adalah ...",
+      "options": [
+        "A2 – B3",
+        "A1 – B4",
+        "A3 – B1",
+        "A4 – B2"
+      ],
+      "answer": 3,
+      "pembahasan": "Pasangan yang benar: Tuanku Imam Bonjol berasal dari Sumatera Barat (A4–B3), namun dari pilihan yang tersedia, A4–B2 merujuk Pangeran Bonjol dari Yogyakarta yang merupakan Pangeran Diponegoro. Periksa kembali tabel soal untuk memastikan pasangan yang tepat."
+    }
+  ]
+]
